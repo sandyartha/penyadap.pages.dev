@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::selection {
+    @apply bg-primary/40;
+  }
+}
+
+@layer utilities {
+  .bg-primary\/40 {
+    background-color: rgb(var(--color-primary-500) / 0.4);
+  }
+}

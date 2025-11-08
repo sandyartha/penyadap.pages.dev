@@ -1,5 +1,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  css: ['~/assets/css/tailwind.css'],
+  nitro: {
+    compatibilityDate: '2025-11-08'
+  },
   modules: [
     "@nuxt/ui",
     "nuxt-icon",
@@ -11,7 +15,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt"
   ],
   ui: {
-    icons: ["heroicons", "lucide"],
+    icons: ["heroicons", "lucide"]
   },
   app: {
     pageTransition: { name: "page", mode: "out-in" },
@@ -36,4 +40,28 @@ export default defineNuxtConfig({
       Inter: [400, 500, 600, 700, 800, 900],
     },
   },
+  image: {
+    dir: 'assets/images',
+    provider: 'ipx',
+    ipx: {
+      maxAge: 60 * 60 * 24 * 365, // 1 year
+    },
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'webp',
+          width: 64,
+          height: 64
+        }
+      }
+    }
+  },
+  vite: {
+    server: {
+      hmr: {
+        port: 24678,
+        protocol: 'ws'
+      }
+    }
+  }
 });
