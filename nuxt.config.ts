@@ -41,7 +41,10 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    provider: 'ipx'
+    provider: 'ipxStatic',
+    ipxStatic: {
+      dir: 'public/images', // sumber gambar kamu
+    },
   },
   vite: {
     server: {
@@ -50,5 +53,6 @@ export default defineNuxtConfig({
         protocol: 'ws'
       }
     }
-  }
+  },
+  
 });
