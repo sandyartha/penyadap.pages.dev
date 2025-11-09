@@ -1,28 +1,17 @@
 <template>
-  <main class="min-h-screen">
-    <AppHeader class="mb-12" title="Lab" :description="description" />
-    <div class="space-y-24">
-      <ContentList path="/lab" v-slot="{ list }">
-        <ContentQuery
-          v-for="item in list"
-          :key="item._path"
-          :path="item._path"
-          find="one"
-          v-slot="{ data }"
-        >
-          <ContentRenderer>
-            <ContentRendererMarkdown :value="data" />
-          </ContentRenderer>
-        </ContentQuery>
-      </ContentList>
+  <main class="min-h-screen flex items-center justify-center">
+    <div class="prose prose-lg text-center">
+      <h1>Halaman Lab (Sementara Dinonaktifkan)</h1>
+      <p>
+        Eksperimen dan catatan lab tidak ditampilkan untuk saat ini. Halaman
+        disimpan untuk digunakan lagi nanti.
+      </p>
+      <NuxtLink to="/" class="text-blue-600 hover:underline">Kembali ke
+        Beranda</NuxtLink>
     </div>
   </main>
 </template>
 
 <script setup>
-const description = "Some random experiments with UI I do in my free time.";
-useSeoMeta({
-  title: "Lab | Fayaz Ahmed",
-  description,
-});
+useSeoMeta({ title: "Lab | Dinonaktifkan" });
 </script>

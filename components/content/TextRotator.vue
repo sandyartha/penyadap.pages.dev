@@ -1,26 +1,27 @@
 <template>
-  <div class="px-4 py-8 flex items-center justify-center">
+  <div class="px-0 py-8">
     <div
       class="font-extrabold text-lg [text-wrap:balance] text-gray-700 dark:text-gray-200"
     >
-      We design and develop the best
+      Lindungi dia dari
       <span
         class="inline-flex flex-col h-[calc(theme(fontSize.lg)*theme(lineHeight.tight))] overflow-hidden"
       >
         <ul
           class="block text-left leading-tight [&_li]:block animate-text-slide"
         >
-          <li class="text-indigo-500">Mobile apps</li>
-          <li class="text-rose-500">Websites</li>
-          <li class="text-yellow-500">Admin dashboards</li>
-          <li class="text-teal-500">Landing pages</li>
-          <li class="text-pink-500">Illustrations</li>
-          <li class="text-sky-500">Icons</li>
+          <li class="text-indigo-500">Bullying Online</li>
+          <li class="text-rose-500">Konten Negatif & Dewasa</li>
+          <li class="text-yellow-500">Penggunaan Obat Terlarang</li>
+          <li class="text-emerald-500">Predator Dunia Maya</li>
+          <li class="text-orange-500">Kecanduan Gadget</li>
+          <li class="text-sky-500">Pergaulan Berisiko</li>
         </ul>
       </span>
     </div>
   </div>
 </template>
+
 
 <style>
 .animate-text-slide {

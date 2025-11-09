@@ -1,39 +1,25 @@
 <template>
   <div class="space-y-6">
-    <img src="/avatar.png" alt="Fayaz Ahmed"
-      class="ring-2 border ring-gray-200 border-gray-300 dark:ring-white/10 dark:border-gray-800 hover:ring-4 transition-all duration-300 bg-gray-200 dark:bg-gray-900 rounded-full h-12 w-12 sm:h-16 sm:w-16"
-      width="64" height="64" />
-
-    <NuxtImg src="/gravatar.png" width="128" height="128" format="webp" />
-
-    <img src="/images/gravatar.png" alt="Gravatar" class="rounded-full" width="64" height="64" />
-
+    <div class="text-2xl sm:text-3xl ring-2 border ring-gray-200 border-gray-300 dark:ring-white/10 dark:border-gray-800 hover:ring-4 transition-all duration-300 bg-gray-200 dark:bg-gray-900 rounded-full h-12 w-12 sm:h-16 sm:w-16 flex items-center justify-center">
+      🕵️
+    </div>
 
     <h1 class="text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100">
-      Hello!
+      Lindungi Keluarga dan Anak Anda dengan mSpy
     </h1>
-    <p class="text-gray-900 dark:text-gray-400">
-      I'm Fayaz, I work as a software, product engineer and designer from
-      Bengaluru, India. I specialize in building web applications and sites
-      using Javascript, React, Vue &amp; Node. I've procrastinated building this
-      website for years but finally it's here, I've carved out my own little
-      nook on the internet to share my silly experiments, nifty projects, and
-      thoughts (mostly about tech and design).
-    </p>
-    <p class="text-gray-900 dark:text-gray-400">
-      By day, I'm a Fullstack Developer at
-      <a href="https://headshotpro.com" target="_blank" class="underline">Headshotpro</a>, and
-      by night (and weekends), I'm busy tinkering with some random tool or app
-      that I am building.
-    </p>
+    <!-- Konten deskriptif dipindahkan ke halaman index.vue; komponen ini
+         hanya menampilkan gambar dan judul agar bisa dipakai ulang di
+         tempat lain tanpa teks panjang. -->
+
+    <TextRotator />
   </div>
 </template>
 
 <script setup>
 useSeoMeta({
-  title: "Fayaz Ahmed",
+  title: "Jasa Pemasangan Aplikasi Sadap Android — mSpy (Indonesia)",
   description:
-    "I'm Fayaz, your friendly neighborhood software, product engineer and designer from Bengaluru, India. I specialize in building web applications and sites using Javascript, React, Vue & Node.",
+    "Jasa pemasangan aplikasi parental control mSpy. Layanan meliputi instalasi, penggunaan penyadap hp android jarak jauh untuk orang tua.",
 });
 
 // Using direct static image path for avatar to avoid runtime image processing.
