@@ -6,7 +6,7 @@
 
     <NuxtImg
       format="webp"
-      src="images/avatar.png"
+      src="images/gravatar.png"
     />
 
     <h1 class="text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100">

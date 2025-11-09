@@ -41,8 +41,10 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    provider: 'static',
-    format: ['webp', 'avif']
+    provider: 'ipx',
+    ipx: {
+      baseURL: '/images' // sesuai folder kamu
+    }
   },
   vite: {
     server: {
