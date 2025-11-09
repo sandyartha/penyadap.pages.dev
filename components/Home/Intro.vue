@@ -44,7 +44,11 @@ const nuxtApp = useNuxtApp();
 // @nuxt/image) is available on the client. During SSR the helper may not be
 // present and we must avoid permanently falling back to the static PNG.
 import { ref, onMounted } from 'vue';
-const avatarSrc = ref('/avatar.png');
+// Prefer a pre-generated AVIF in public as a fast, reliable fallback during
+// builds/environments where Sharp/IPX isn't available (e.g. CI/CD). Put
+// `public/avatar.avif` in the repository (generated locally) and it will be
+// served directly.
+const avatarSrc = ref('/avatar.avif');
 onMounted(() => {
   if (nuxtApp && typeof nuxtApp.$img === 'function') {
     try {

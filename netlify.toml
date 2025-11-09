@@ -1,0 +1,9 @@
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+[build.environment]
+  # Increase V8 heap size to avoid "JavaScript heap out of memory" during build
+  NODE_OPTIONS = "--max_old_space_size=4096"
+  # Ensure pnpm uses enough memory and verbose logs if needed
+  NPM_CONFIG_LOGLEVEL = "warn"
