@@ -6,7 +6,7 @@
 
     <NuxtImg
       format="webp"
-      src="/avatar.png"
+      src="images/avatar.png"
     />
 
     <h1 class="text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100">
