@@ -41,20 +41,7 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    dir: 'assets/images',
-    provider: 'ipx',
-    ipx: {
-      maxAge: 60 * 60 * 24 * 365, // 1 year
-    },
-    presets: {
-      avatar: {
-        modifiers: {
-          format: 'webp',
-          width: 64,
-          height: 64
-        }
-      }
-    }
+    format: ['webp']
   },
   vite: {
     server: {
