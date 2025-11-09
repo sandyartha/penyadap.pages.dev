@@ -41,7 +41,8 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    format: ['webp']
+    provider: 'static',
+    format: ['webp', 'avif']
   },
   vite: {
     server: {
