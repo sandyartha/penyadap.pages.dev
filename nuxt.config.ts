@@ -43,7 +43,7 @@ export default defineNuxtConfig({
   image: {
     provider: 'ipxStatic',
     ipxStatic: {
-      dir: 'public/images', // sumber gambar kamu
+      dir: 'assets/images', // sumber gambar kamu
     },
   },
   vite: {
