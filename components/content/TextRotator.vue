@@ -1,9 +1,9 @@
 <template>
   <div class="px-0 py-8">
     <div
-      class="font-extrabold text-lg [text-wrap:balance] text-gray-700 dark:text-gray-200"
+      class="font-extrabold text-md [text-wrap:balance] text-gray-700 dark:text-gray-200"
     >
-      Lindungi dia dari
+      Lindungi dari
       <span
         class="inline-flex flex-col h-[calc(theme(fontSize.lg)*theme(lineHeight.tight))] overflow-hidden"
       >

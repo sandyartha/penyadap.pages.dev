@@ -32,7 +32,16 @@ export default defineNuxtConfig({
   content: {
     highlight: {
       theme: "github-dark",
+      preload: ['ts','js','css','java','json','bash','vue']
     },
+    markdown: {
+      anchorLinks: false,
+      toc: {
+        depth: 3,
+        searchDepth: 3
+      }
+    },
+    documentDriven: true
   },
   googleFonts: {
     display: "swap",

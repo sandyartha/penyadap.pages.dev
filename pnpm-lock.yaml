@@ -22,7 +22,7 @@ importers:
         version: 2.0.3
     devDependencies:
       '@nuxt/content':
-        specifier: ^2.10.0
+        specifier: ^2.13.4
         version: 2.13.4(db0@0.3.4)(ioredis@5.8.2)(magicast@0.5.1)(nuxt@3.9.1(@parcel/watcher@2.5.1)(encoding@0.1.13)(magicast@0.5.1)(rollup@4.53.1)(terser@5.44.1)(typescript@5.9.3)(vite@5.0.11(terser@5.44.1)))(vue@3.5.24(typescript@5.9.3))
       '@nuxt/devtools':
         specifier: 1.0.5
