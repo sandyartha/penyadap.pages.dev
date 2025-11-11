@@ -1,8 +1,8 @@
 ---
-title: "How to convert a SVG to PNG using Canvas"
-description: "A simple way to convert a SVG to PNG using Canvas"
-published: 2023/11/22
-slug: "how-to-convert-a-svg-to-png-using-canvas"
+title: "Cara Mengkonversi SVG ke PNG menggunakan Canvas"
+description: "Tutorial lengkap mengubah file SVG menjadi PNG menggunakan Canvas di JavaScript"
+published: "2023-11-10"
+slug: "konversi-svg-ke-png-canvas"
 ---
 
 > This article was created using ChatGPT and meant as a placeholder
