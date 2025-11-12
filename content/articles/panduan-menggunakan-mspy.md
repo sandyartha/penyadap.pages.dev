@@ -14,7 +14,7 @@ mSpy adalah aplikasi pemantauan yang powerful untuk melindungi keluarga Anda. Be
 
 ![dari /public/images](/images/gravatar.png)
 
-## Fitur Utama mSpy234234
+## Fitur Utama mSpy
 
 ### 1. Pemantauan Lokasi
 - Tracking lokasi real-time
