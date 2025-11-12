@@ -9,7 +9,6 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxtjs/google-fonts",
     "@nuxtjs/fontaine",
-    "@nuxt/image",
     "@nuxt/content",
     "@nuxthq/studio",
     "@vueuse/nuxt"
@@ -71,9 +70,5 @@ export default defineNuxtConfig({
         usePolling: true
       }
     }
-  },
-  image: {
-    provider: 'ipx',
-    quality: 80
   }
 });
