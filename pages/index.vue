@@ -3,12 +3,19 @@
     <div class="space-y-24">
       <HomeIntro />
 
-      <section class="max-w-4xl mx-auto prose dark:prose-invert">
+      <section v-if="indexDoc" class="max-w-4xl mx-auto prose dark:prose-invert">
+        <ContentRenderer :value="indexDoc" />
+        <!-- Debug: Check if image path is correct -->
+        <div v-if="process.dev" class="mt-4 p-4 bg-gray-100 dark:bg-gray-800 rounded">
+          <p class="text-sm">Debug: Image should be at /demo/aplikasi-sadap.jpg</p>
+          <img src="/demo/aplikasi-sadap.jpg" alt="Test" class="max-w-xs mt-2" />
+        </div>
+      </section>
+      <section v-else class="max-w-4xl mx-auto prose dark:prose-invert">
         <ContentDoc />
       </section>
 
       
-      <HomeFeatured />
       <HomeFeaturedArticles />
       <HomeSocialLinks />
       <HomeNewsletter />
@@ -23,7 +30,7 @@
 // Use frontmatter from `content/index.md` for SEO (title, description, og)
 const siteUrl = 'https://penyadap.pages.dev'
 const { data: indexDoc } = await useAsyncData('index-doc', () =>
-  queryContent().where({ _path: '/index' }).findOne()
+  queryContent('/index').findOne()
 )
 
 const metaTitle = indexDoc.value?.title || 'Jasa Pemasangan Parental Control — mSpy (Indonesia)'

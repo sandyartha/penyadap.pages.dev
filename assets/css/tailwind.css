@@ -8,6 +8,21 @@
   }
 }
 
+@layer components {
+  /* Ensure images in prose content are displayed */
+  .prose img {
+    @apply max-w-full h-auto rounded-lg my-4;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .prose img[src*="/demo/"],
+  .prose img[src*="/images/"] {
+    @apply mx-auto block;
+  }
+}
+
 @layer utilities {
   .bg-primary\/40 {
     background-color: rgb(var(--color-primary-500) / 0.4);

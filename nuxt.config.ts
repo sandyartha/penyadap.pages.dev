@@ -45,25 +45,21 @@ export default defineNuxtConfig({
       ]
     },
   },
-  content: {
-    highlight: {
-      theme: "github-dark"
-    },
-    markdown: {
-      anchorLinks: false
-    }
-  },
   googleFonts: {
     display: "swap",
     families: {
       Inter: [400, 500, 600, 700, 800, 900],
     },
   },
-  image: {
-    provider: 'ipxStatic',
-    ipxStatic: {
-      dir: 'assets/images', // sumber gambar kamu
+  content: {
+    highlight: {
+      theme: "github-dark"
     },
+    markdown: {
+      anchorLinks: false,
+      remarkPlugins: [],
+      rehypePlugins: []
+    }
   },
   vite: {
     server: {
@@ -76,5 +72,8 @@ export default defineNuxtConfig({
       }
     }
   },
-  
+  image: {
+    provider: 'ipx',
+    quality: 80
+  }
 });
