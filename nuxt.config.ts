@@ -1,8 +1,27 @@
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.NODE_ENV === 'development' },
   css: ['~/assets/css/tailwind.css'],
   nitro: {
-    compatibilityDate: '2025-11-08'
+    compatibilityDate: '2025-11-08',
+    // Optimize untuk Cloudflare Pages
+    preset: 'cloudflare-pages',
+    // Exclude dependencies yang tidak perlu di bundle
+    externals: {
+      // Exclude native dependencies yang besar
+      inline: ['sharp', '@parcel/watcher']
+    },
+    // Minify output
+    minify: true,
+    // Prerender routes untuk mengurangi bundle
+    prerender: {
+      crawlLinks: true
+    },
+    // Reduce bundle size dengan tree-shaking
+    esbuild: {
+      options: {
+        treeShaking: true
+      }
+    }
   },
   modules: [
     "@nuxt/ui",
@@ -11,7 +30,8 @@ export default defineNuxtConfig({
     "@nuxtjs/fontaine",
     "@nuxt/content",
     "nuxt-og-image",
-    "@nuxthq/studio",
+    // Hanya load @nuxthq/studio di development
+    ...(process.env.NODE_ENV === 'development' ? ["@nuxthq/studio"] : []),
     "@vueuse/nuxt"
   ],
   ogImage: {
@@ -71,6 +91,22 @@ export default defineNuxtConfig({
       watch: {
         usePolling: true
       }
+    },
+    build: {
+      // Optimize chunk size
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        output: {
+          // Manual chunk splitting untuk mengurangi ukuran
+          manualChunks: {
+            'vendor': ['vue', 'vue-router'],
+          }
+        }
+      }
     }
+  },
+  // Experimental features untuk mengurangi bundle size
+  experimental: {
+    payloadExtraction: false
   }
 });
