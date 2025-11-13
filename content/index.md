@@ -3,7 +3,6 @@ title: "Aplikasi Sadap iPhone & Android - WhatsApp, FB, Line, CALL"
 description: "Jasa Sadap iPhone / Android Secara Jarak Jauh - Panggilan WhatsApp, Line, Instagram dan Facebook, Buktikan pasangan selingkuh."
 published: "2025-11-12"
 slug: "/index"
-image: "/favicon-96x96.png"
 tags:
   - mSpy
   - parental control

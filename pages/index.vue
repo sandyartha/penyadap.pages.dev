@@ -51,31 +51,37 @@ const { data: indexDoc } = await useAsyncData('index-doc', async () => {
 	return doc || null
 })
 
-const metaTitle = computed(() => indexDoc.value?.title || 'Jasa Pemasangan Parental Control — mSpy (Indonesia)')
-const metaDescription = computed(() => indexDoc.value?.description || 'Layanan pemasangan dan konfigurasi aplikasi parental control mSpy untuk membantu orang tua memantau keamanan digital anak di Indonesia.')
-const metaImage = computed(() => `${siteUrl}/default.png`)
-const metaUrl = computed(() => siteUrl + route.path)
+const fallbackTitle = 'Jasa Pemasangan Parental Control — mSpy (Indonesia)';
+const fallbackDescription = 'Layanan pemasangan dan konfigurasi aplikasi parental control mSpy untuk membantu orang tua memantau keamanan digital anak di Indonesia.';
+const fallbackImage = '/default.png';
+const currentUrl = computed(() => siteUrl + route.path);
 
-// Set SEO meta dengan static image
+const metaTitle = computed(() => indexDoc.value?.title || fallbackTitle);
+const metaDescription = computed(() => indexDoc.value?.description || fallbackDescription);
+const metaImage = computed(() => {
+  const image = indexDoc.value?.image || indexDoc.value?.thumbnail || fallbackImage;
+  return image?.startsWith('http') ? image : `${siteUrl}${image}`;
+});
+
 useSeoMeta({
-	title: () => metaTitle.value,
-	description: () => metaDescription.value,
-	ogTitle: () => metaTitle.value,
-	ogDescription: () => metaDescription.value,
-	ogUrl: () => metaUrl.value,
-	ogImage: () => metaImage.value,
-	ogImageAlt: () => metaTitle.value,
-	ogType: 'website',
-	ogSiteName: 'penyadap.pages.dev',
-	twitterCard: 'summary_large_image',
-	twitterTitle: () => metaTitle.value,
-	twitterDescription: () => metaDescription.value,
-	twitterImage: () => metaImage.value
+  title: () => metaTitle.value,
+  description: () => metaDescription.value,
+  ogTitle: () => metaTitle.value,
+  ogDescription: () => metaDescription.value,
+  ogUrl: () => currentUrl.value,
+  ogImage: () => metaImage.value,
+  ogImageAlt: () => metaTitle.value,
+  ogType: 'website',
+  ogSiteName: 'penyadap.pages.dev',
+  twitterCard: 'summary_large_image',
+  twitterTitle: () => metaTitle.value,
+  twitterDescription: () => metaDescription.value,
+  twitterImage: () => metaImage.value
 })
 
 useHead(() => ({
-	link: [
-		{ rel: 'canonical', href: metaUrl.value }
-	]
+  link: [
+    { rel: 'canonical', href: currentUrl.value }
+  ]
 }))
 </script>
