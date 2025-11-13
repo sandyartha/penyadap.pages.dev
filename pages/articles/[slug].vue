@@ -5,12 +5,12 @@
         <template #default="{ doc }">
           <article class="prose dark:prose-invert max-w-none">
             <h1 class="mb-4">{{ doc.title }}</h1>
-            <div class="text-sm text-gray-500 mb-8">
-              {{ new Date(doc.published).toLocaleDateString('id-ID', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              }) }}
+            <div class="text-sm text-gray-500 mb-8 flex items-center">
+              <span v-if="formatDate(doc)">{{ formatDate(doc) }}</span>
+              <span v-if="formatDate(doc)" class="mx-2">·</span>
+              <span class="text-gray-400">
+                {{ getReadingTime(doc) }}
+              </span>
             </div>
             <ContentRenderer :value="doc" />
           </article>
@@ -35,6 +35,39 @@ const { data: article } = await useAsyncData(
   `article-${route.params.slug}`,
   () => queryContent('/articles').where({ slug: route.params.slug }).findOne()
 );
+
+const formatDate = (doc) => {
+  const rawDate = doc?.date || doc?.published || doc?.createdAt;
+  if (!rawDate) return '';
+  const parsed = new Date(rawDate);
+  if (Number.isNaN(parsed.valueOf())) return '';
+  return parsed.toLocaleDateString('id-ID', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+
+const getReadingTime = (doc) => {
+  // Traverse mdast to extract text content
+  const collectText = (node) => {
+    if (!node) return '';
+    if (Array.isArray(node)) return node.map(collectText).join(' ');
+    const type = node.type;
+    if (type === 'text' && typeof node.value === 'string') return node.value;
+    if (node.children && Array.isArray(node.children)) {
+      return node.children.map(collectText).join(' ');
+    }
+    return '';
+  };
+
+  const body = doc?.body;
+  const text = collectText(body).replace(/\s+/g, ' ').trim();
+  if (!text) return '1 menit baca';
+  const words = text.split(' ').filter(Boolean).length;
+  const minutes = Math.max(1, Math.round(words / 200)); // ~200 wpm
+  return `${minutes} menit baca`;
+};
 
 useSeoMeta({
   title: article.value?.title || 'Artikel',
