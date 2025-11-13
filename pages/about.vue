@@ -20,7 +20,7 @@ const title = 'Tentang Kami';
 const description = 'Tentang penyadap.pages.dev — layanan pemasangan dan panduan penggunaan mSpy untuk keamanan digital keluarga.';
 const url = computed(() => siteUrl + route.path);
 
-const image = '/favicon-96x96.png';
+const image = `${siteUrl}/default.png`;
 
 useSeoMeta({
   title,

@@ -29,14 +29,10 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxtjs/fontaine",
     "@nuxt/content",
-    "nuxt-og-image",
     // Hanya load @nuxthq/studio di development
     ...(process.env.NODE_ENV === 'development' ? ["@nuxthq/studio"] : []),
     "@vueuse/nuxt"
   ],
-  ogImage: {
-    fonts: ['Inter:400', 'Inter:500', 'Inter:600', 'Inter:700', 'Inter:800', 'Inter:900'],
-  },
   ui: {
     icons: ["heroicons", "lucide"]
   },

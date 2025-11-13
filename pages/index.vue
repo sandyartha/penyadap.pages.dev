@@ -53,31 +53,24 @@ const { data: indexDoc } = await useAsyncData('index-doc', async () => {
 
 const metaTitle = computed(() => indexDoc.value?.title || 'Jasa Pemasangan Parental Control — mSpy (Indonesia)')
 const metaDescription = computed(() => indexDoc.value?.description || 'Layanan pemasangan dan konfigurasi aplikasi parental control mSpy untuk membantu orang tua memantau keamanan digital anak di Indonesia.')
-const metaImage = computed(() => indexDoc.value?.image || '/favicon-96x96.png')
+const metaImage = computed(() => `${siteUrl}/default.png`)
 const metaUrl = computed(() => siteUrl + route.path)
 
-// Dynamic OG Image using nuxt-og-image
-// defineOgImageComponent akan otomatis generate OG image dan set meta tag
-// URL akan otomatis di-set ke /__og-image__/image/og.png
-defineOgImageComponent('Default', {
-	title: metaTitle.value,
-	description: metaDescription.value,
-})
-
-// Set SEO meta - ogImage akan otomatis di-set oleh defineOgImageComponent
+// Set SEO meta dengan static image
 useSeoMeta({
 	title: () => metaTitle.value,
 	description: () => metaDescription.value,
 	ogTitle: () => metaTitle.value,
 	ogDescription: () => metaDescription.value,
 	ogUrl: () => metaUrl.value,
+	ogImage: () => metaImage.value,
 	ogImageAlt: () => metaTitle.value,
 	ogType: 'website',
 	ogSiteName: 'penyadap.pages.dev',
 	twitterCard: 'summary_large_image',
 	twitterTitle: () => metaTitle.value,
 	twitterDescription: () => metaDescription.value,
-	// ogImage dan twitterImage akan otomatis di-set oleh defineOgImageComponent
+	twitterImage: () => metaImage.value
 })
 
 useHead(() => ({

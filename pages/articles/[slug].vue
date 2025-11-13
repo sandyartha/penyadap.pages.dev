@@ -170,15 +170,15 @@ const getReadingTime = (doc) => {
 
 const fallbackTitle = 'Artikel';
 const fallbackDescription = 'Artikel tentang mSpy dan keamanan digital keluarga.';
-const fallbackImage = '/preview.jpg';
+const fallbackImage = '/default.png';
 const currentUrl = computed(() => `${siteUrl}/articles/${route.params.slug}`);
 
 const metaTitle = computed(() => article.value?.title || fallbackTitle);
 const metaDescription = computed(() => article.value?.description || fallbackDescription);
-const metaImage = computed(() => article.value?.image || article.value?.thumbnail || fallbackImage);
-const metaImageAbsolute = computed(() =>
-  metaImage.value?.startsWith('http') ? metaImage.value : `${siteUrl}${metaImage.value}`
-);
+const metaImage = computed(() => {
+  const image = article.value?.image || article.value?.thumbnail || fallbackImage;
+  return image?.startsWith('http') ? image : `${siteUrl}${image}`;
+});
 
 useSeoMeta({
   title: () => metaTitle.value,
@@ -186,14 +186,14 @@ useSeoMeta({
   ogTitle: () => metaTitle.value,
   ogDescription: () => metaDescription.value,
   ogUrl: () => currentUrl.value,
-  ogImage: () => metaImageAbsolute.value,
+  ogImage: () => metaImage.value,
   ogImageAlt: () => metaTitle.value,
   ogType: 'article',
   ogSiteName: 'penyadap.pages.dev',
   twitterCard: 'summary_large_image',
   twitterTitle: () => metaTitle.value,
   twitterDescription: () => metaDescription.value,
-  twitterImage: () => metaImageAbsolute.value
+  twitterImage: () => metaImage.value
 });
 
 useHead(() => ({

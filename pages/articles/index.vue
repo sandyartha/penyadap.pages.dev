@@ -15,7 +15,7 @@ const siteUrl = 'https://penyadap.pages.dev';
 const title = "Artikel | mSpy Indonesia";
 const canonicalUrl = `${siteUrl}/articles`;
 
-const image = '/favicon-96x96.png';
+const image = `${siteUrl}/default.png`;
 
 useSeoMeta({
   title,

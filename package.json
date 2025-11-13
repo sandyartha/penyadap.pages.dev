@@ -28,7 +28,6 @@
     "@iconify-json/lucide": "1.1.145",
     "@nuxt/image": "1.1.0",
     "@nuxt/ui": "2.11.1",
-    "nuxt-og-image": "^5.1.12",
     "vue-use-fixed-header": "^2.0.0"
   },
   "pnpm": {
