@@ -80,7 +80,7 @@ Kami sarankan untuk memilih terlebih dahulu mana yang cocok untuk digunakan dari
 
 ![Cara Sadap Android Jarak Jauh](/wp-content/2022/02/17/sadap-handphone-android-jarak-jauh.jpg)
 
-{{< kontak >}}
+
 
 ## 1. XnSpy
 

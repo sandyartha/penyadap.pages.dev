@@ -54,7 +54,7 @@ Setelah software hack facebook terpasang pada ponsel target. Anda dapat mulai me
 
 Dan tidak perlu lagi untuk memegang / melihat ponsel target lagi, setelah *aplikasi hack facebook* terpasang akan dapat mengawasi secara jarak jauh.
 
-{{< kontak >}}
+
 
 ## Cara menggunakan di Android & iPhone?
 

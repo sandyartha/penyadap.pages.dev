@@ -44,7 +44,7 @@ Perangkat mata-mata ini digabungkan dengan semua fitur yang akan memberikan kemu
 
 ![Sadap Chat WhatsApp Highster Mobile](/wp-content/2022/02/16/HighsterMobi-770.png)
 
-{{< kontak >}}
+
 
 
 

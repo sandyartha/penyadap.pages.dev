@@ -10,9 +10,13 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxtjs/fontaine",
     "@nuxt/content",
+    "nuxt-og-image",
     "@nuxthq/studio",
     "@vueuse/nuxt"
   ],
+  ogImage: {
+    fonts: ['Inter:400', 'Inter:500', 'Inter:600', 'Inter:700', 'Inter:800', 'Inter:900'],
+  },
   ui: {
     icons: ["heroicons", "lucide"]
   },
@@ -27,13 +31,11 @@ export default defineNuxtConfig({
         class: "antialiased bg-gray-50 dark:bg-black min-h-screen",
       },
       meta: [
-        { name: 'description', content: 'Jasa Sadap iPhone / Android Secara Jarak Jauh - Panggilan WhatsApp, Line, Instagram dan Facebook, Buktikan pasangan selingkuh.' },
+        // Meta tag global - tidak akan override nilai dari halaman spesifik
         { property: 'og:site_name', content: 'penyadap.pages.dev' },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { property: 'og:title', content: 'Aplikasi Sadap iPhone & Android - WhatsApp, FB, Line, CALL' },
-        { property: 'og:description', content: 'Jasa Sadap iPhone / Android Secara Jarak Jauh - Panggilan WhatsApp, Line, Instagram dan Facebook, Buktikan pasangan selingkuh.' },
-        { property: 'og:image', content: '/favicon-96x96.png' }
+        // description, og:title, og:description, dan og:image akan di-set oleh useSeoMeta di setiap halaman
       ],
       link: [
         { rel: "icon", type: "image/png", href: "/favicon-96x96.png", sizes: "96x96" },

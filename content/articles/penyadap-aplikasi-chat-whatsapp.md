@@ -36,7 +36,7 @@ Dan pastikan ketersediaan akses internet yang selalu terhubung di ponsel target,
 
 ![Aplikasi penyadap hp flexispy](/wp-content/2022/02/02/flexispy-sadap-whatsapp.webp)
 
-{{< kontak >}}
+
 
 Persyaratan lain untuk jailbreak iPhone untuk memasang aplikasi karena ini dari aplikasi pihak ketiga, sedangkan untuk perangkat Android untuk mengakses fitur lengkap yang di membutuhkan rooting terlebih dulu.
 

@@ -92,7 +92,7 @@ Berikut tampilan utama dari aplikasi monitoring, dari setiap data yang berhasil 
 
 ![Aplikasi Sadap iPhone & iPad - mSpy](/wp-content/2022/02/10/mspy-sadap-iphone.png)
 
-{{< kontak >}}
+
 
 ## Daftar Fitur Sadap mSpy
 

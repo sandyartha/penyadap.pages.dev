@@ -38,7 +38,7 @@ Hubungan jarak jauh rentan terhadap prasangka dan fakta perselingkuhan. Hadirnya
 
 Tidak hanya pria yang rentan akan perselingkuhan, wanita pun bisa terbuai dengan pria lain, dengan cara sadap hp pacar ini kemungkinan efektif membuktikan pasangan selingkuh, dengan adanya fitur [remote kamera](/articles/sadap-kamera-hp-556) dan layar hp agar dapat memastikan lingkungan sekitar, atau rekam panggilan telepon.
 
-{{< kontak >}}
+
 
 ## Sadap WhatsApp
 

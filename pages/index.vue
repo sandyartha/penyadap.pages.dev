@@ -3,9 +3,19 @@
 		<div class="space-y-24">
 			<HomeIntro />
 
-			<section class="max-w-4xl mx-auto prose dark:prose-invert">
-				<ContentDoc />
-			</section>
+	<section class="max-w-4xl mx-auto prose dark:prose-invert">
+		<ContentRenderer v-if="indexDoc" :value="indexDoc" />
+		<ContentDoc v-else path="/index">
+			<template #default="{ doc }">
+				<ContentRenderer :value="doc" />
+			</template>
+			<template #not-found>
+				<div class="text-center py-8">
+					<p class="text-gray-500">Konten tidak ditemukan. Pastikan file content/index.md ada.</p>
+				</div>
+			</template>
+		</ContentDoc>
+	</section>
 
 			
 			<HomeFeaturedArticles />
@@ -21,23 +31,58 @@
 <script setup>
 // Use frontmatter from `content/index.md` for SEO (title, description, og)
 const siteUrl = 'https://penyadap.pages.dev'
-const { data: indexDoc } = await useAsyncData('index-doc', () =>
-	queryContent().where({ _path: '/index' }).findOne()
-)
+const route = useRoute()
+// Query for SEO meta - try multiple methods
+const { data: indexDoc } = await useAsyncData('index-doc', async () => {
+	// Method 1: Query by slug (from frontmatter)
+	let doc = await queryContent().where({ slug: '/index' }).findOne().catch(() => null)
+	if (doc) return doc
 
-const metaTitle = indexDoc.value?.title || 'Jasa Pemasangan Parental Control — mSpy (Indonesia)'
-const metaDescription = indexDoc.value?.description || 'Layanan pemasangan dan konfigurasi aplikasi parental control mSpy untuk membantu orang tua memantau keamanan digital anak di Indonesia.'
+	// Method 2: Query by path
+	doc = await queryContent('/index').findOne().catch(() => null)
+	if (doc) return doc
 
-useSeoMeta({
-	title: metaTitle,
-	description: metaDescription,
-	og: {
-		title: metaTitle,
-		description: metaDescription,
-		url: siteUrl + useRoute().path,
-		image: indexDoc.value?.image || '/favicon-96x96.png',
-		type: 'website'
-	},
-	twitter: { card: 'summary_large_image' }
+	// Method 3: Query by _path
+	doc = await queryContent().where({ _path: '/index' }).findOne().catch(() => null)
+	if (doc) return doc
+
+	// Method 4: Try without leading slash
+	doc = await queryContent('index').findOne().catch(() => null)
+	return doc || null
 })
+
+const metaTitle = computed(() => indexDoc.value?.title || 'Jasa Pemasangan Parental Control — mSpy (Indonesia)')
+const metaDescription = computed(() => indexDoc.value?.description || 'Layanan pemasangan dan konfigurasi aplikasi parental control mSpy untuk membantu orang tua memantau keamanan digital anak di Indonesia.')
+const metaImage = computed(() => indexDoc.value?.image || '/favicon-96x96.png')
+const metaUrl = computed(() => siteUrl + route.path)
+
+// Dynamic OG Image using nuxt-og-image
+// defineOgImageComponent akan otomatis generate OG image dan set meta tag
+// URL akan otomatis di-set ke /__og-image__/image/og.png
+defineOgImageComponent('Default', {
+	title: metaTitle.value,
+	description: metaDescription.value,
+})
+
+// Set SEO meta - ogImage akan otomatis di-set oleh defineOgImageComponent
+useSeoMeta({
+	title: () => metaTitle.value,
+	description: () => metaDescription.value,
+	ogTitle: () => metaTitle.value,
+	ogDescription: () => metaDescription.value,
+	ogUrl: () => metaUrl.value,
+	ogImageAlt: () => metaTitle.value,
+	ogType: 'website',
+	ogSiteName: 'penyadap.pages.dev',
+	twitterCard: 'summary_large_image',
+	twitterTitle: () => metaTitle.value,
+	twitterDescription: () => metaDescription.value,
+	// ogImage dan twitterImage akan otomatis di-set oleh defineOgImageComponent
+})
+
+useHead(() => ({
+	link: [
+		{ rel: 'canonical', href: metaUrl.value }
+	]
+}))
 </script>

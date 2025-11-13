@@ -42,7 +42,7 @@ Beberapa fitur khusus yang yang akan didapatkan pada *software sadap **Stealth G
 
 ![Sadap iPad dan iPhone](/wp-content/2022/02/14/penyadap-handphone-android-iphone-stelath-genie.png)
 
-{{< kontak >}}
+
 
 
 

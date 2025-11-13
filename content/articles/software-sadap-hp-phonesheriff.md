@@ -62,7 +62,7 @@ Buat yang mencari ***aplikasi pemantauan iPhone dan Android*** dengan fitur peny
 
 Pelajari kemampuan penyadap hp dari beberapa aplikasi, kami membahas secara detail dan bagaimana aplikasi dapat bekerja dengan mulus.
 
-{{< kontak >}}
+
 
 ![Penyadap Sosial Media Remaja Lewat HP](/wp-content/2022/02/06/monitoring-phonesheriff.jpg)
 

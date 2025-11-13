@@ -30,7 +30,7 @@ Sekarang ada teknologi dalam bentuk perangkat untuk ponsel yang dapat membantu u
 
 ![Aplikasi Sadap Highster Mobile](/wp-content/2022/02/04/highstermobile-co-situs.png)
 
-{{< kontak >}}
+
 
 
 

@@ -26,7 +26,7 @@ Platform chat untuk saling mengirim pesan suara juga mengirim file foto, video, 
 
 Jadi, sekarang saatnya membahas cara untuk memata-matai kebenaran tentang pasangan langsung dari WhatsApp yang dihapus oleh target, menjadi kekhawatiran bagi kebanyakan orang. Beberapa orang ingin sekali mengetahui bagaimana cara hack Chat WhatsApp seseorang.
 
-{{< kontak >}}
+
 
 ## Cara Hack WA Seseorang
 

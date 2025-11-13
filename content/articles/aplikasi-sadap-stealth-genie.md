@@ -56,7 +56,7 @@ Cara remote kamera dengan mudah perangkat sadap ini, untuk mendapatkan keadaan d
 
 ![Penyadap / Remote Kamera Depan Belakang Stealth Genie](/wp-content/2022/02/15/stealthgenie-sadap-kamera.png)
 
-{{< kontak >}}
+
 
 
 

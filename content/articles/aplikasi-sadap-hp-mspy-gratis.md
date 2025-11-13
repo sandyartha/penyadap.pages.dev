@@ -58,7 +58,7 @@ Semua informasi yang berkaitan dengan perangkat lunak penyadap ini. mSpy benar-b
 
 Kualitas dan fungsional keseluruhan adalah perhatian penting, karena itu dalam artikel berikut kita akan mendefinisikan semua detail tentang fitur aplikasi penyadap iPhone.
 
-{{< kontak >}}
+
 
 ## Sadap Skype
 

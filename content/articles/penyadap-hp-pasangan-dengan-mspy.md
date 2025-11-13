@@ -211,7 +211,7 @@ Agar dapat menginstall aplikasi sadap ini, memerlukan koneksi internet dan palin
 
 
 
-{{< kontak >}}
+
 
 ![Sadap HP pasangan selingkuh](/wp-content/2022/02/09/mspy-installation.jpg)
 

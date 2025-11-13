@@ -30,7 +30,7 @@ Program sadap ini bisa dianggap sebagai metode mudah untuk mendapatkan informasi
 
 Untuk mendapatkan perangkat lunak mata-mata ponsel terbaik, Anda perlu memilih program yang menawarkan kemampuan fitur yang lengkap, pastikan [program penyadap]() dapat merekam setiap panggilan telepon suara dari hp seseorang secara jarak jauh.
 
-{{< kontak >}}
+
 
 ## Sadap Pesan Snapchat
 

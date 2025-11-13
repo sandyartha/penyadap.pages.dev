@@ -34,7 +34,7 @@ Ada banyak pertanyaan tentang bagaimana cara ***Hack WA***? Di sini, Anda dapat 
 
 > *Tutorial hanya untuk bahan pembelajaran saja, tidak untuk digunakan sembarangan apalagi merugikan orang lain.*
 
-{{< kontak >}}
+
 
 ## Teknik Hack WhatsaApp Account
 
