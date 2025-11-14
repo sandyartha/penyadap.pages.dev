@@ -14,11 +14,5 @@
 </template>
 
 <script setup>
-useSeoMeta({
-  title: "Jasa Pemasangan Aplikasi Sadap Android — mSpy (Indonesia)",
-  description:
-    "Jasa pemasangan aplikasi parental control mSpy. Layanan meliputi instalasi, penggunaan penyadap hp android jarak jauh untuk orang tua.",
-});
-
 // Using direct static image path for avatar to avoid runtime image processing.
 </script>
