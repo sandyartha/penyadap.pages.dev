@@ -1,4 +1,4 @@
-const SITE_URL = 'https://penyadap.pages.dev';
+const SITE_URL = process.env.NUXT_PUBLIC_SITE_URL || 'https://penyadap.pages.dev';
 
 export default defineNuxtConfig({
   devtools: { enabled: process.env.NODE_ENV === 'development' },
@@ -43,50 +43,23 @@ export default defineNuxtConfig({
     defaultLocale: 'id'
   },
   sitemap: {
-    enabled: true,
-    siteUrl: SITE_URL,
     cacheTtl: 0,
     autoLastmod: true,
     defaults: {
       changefreq: 'weekly',
       priority: 0.7
     },
-    urls: async () => {
-      const now = new Date().toISOString();
-      const staticRoutes = ['/', '/about', '/articles', '/privacy-policy'].map((route) => ({
-        loc: route,
-        lastmod: now
-      }));
-
-      const { serverQueryContent } = await import('#content/server');
-      const articles = await serverQueryContent()
-        .where({ _path: { $regex: '^/articles/' }, draft: { $ne: true } })
-        .only(['_path', 'updatedAt', 'published', 'date', 'lastmod'])
-        .find();
-
-      const articleRoutes = articles.map((article) => ({
-        loc: article._path,
-        lastmod:
-          article.lastmod ||
-          article.updatedAt ||
-          article.date ||
-          article.published ||
-          now
-      }));
-
-      return [...staticRoutes, ...articleRoutes];
-    }
-  },
+    sources: ['/api/__sitemap__/articles']
+  } as any,
   robots: {
-    enabled: true,
     sitemap: [`${SITE_URL}/sitemap.xml`],
-    rules: [
+    policies: [
       {
         userAgent: '*',
         allow: '/'
       }
     ]
-  },
+  } as any,
   ui: {
     icons: ["heroicons", "lucide"]
   },
