@@ -18,12 +18,18 @@ const canonicalUrl = `${siteUrl}/articles`;
 const image = `${siteUrl}/default.png`;
 
 // Generate JSON-LD schema
-const jsonLd = useJsonLd('page', {
-  title,
-  description,
-  image,
-  url: canonicalUrl
-});
+const jsonLd = computed(() =>
+  useJsonLd(
+    'page',
+    {
+      title,
+      description,
+      image,
+      url: canonicalUrl
+    },
+    { siteUrl }
+  )
+);
 
 useSeoMeta({
   title,
@@ -38,14 +44,23 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: title,
   twitterDescription: description,
-  twitterImage: image,
-  jsonLd
+  twitterImage: image
 });
 
 useHead({
   link: [
     { rel: 'canonical', href: canonicalUrl }
-  ]
+  ],
+  script: jsonLd.value
+    ? [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify(jsonLd.value),
+          tagPriority: 'low',
+          key: 'jsonld-articles-index'
+        }
+      ]
+    : []
 });
 
 const { data: articles } = await useAsyncData("all-articles", () =>

@@ -42,6 +42,27 @@ export default defineNuxtConfig({
   },
   sitemap: {
     enabled: true,
+    siteUrl: 'https://penyadap.pages.dev',
+    cacheTtl: 60 * 60 * 24,
+    autoLastmod: true,
+    defaults: {
+      changefreq: 'weekly',
+      priority: 0.7
+    },
+    sources: ['/api/__sitemap__/articles']
+  },
+  robots: {
+    enabled: true,
+    sitemap: ['https://penyadap.pages.dev/sitemap.xml'],
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/'
+      }
+    ]
+  },
+  sitemap: {
+    enabled: true,
     cacheTtl: 60 * 60,
     inferStaticPagesAsRoutes: true,
     autoLastmod: true,

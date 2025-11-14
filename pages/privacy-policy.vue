@@ -49,13 +49,22 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: `${title} - penyadap.pages.dev`,
   twitterDescription: description,
-  twitterImage: image,
-  jsonLd: () => jsonLd.value
+  twitterImage: image
 });
 
 useHead(() => ({
   link: [
     { rel: 'canonical', href: url.value }
-  ]
+  ],
+  script: jsonLd.value
+    ? [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify(jsonLd.value),
+          tagPriority: 'low',
+          key: 'jsonld-privacy'
+        }
+      ]
+    : []
 }));
 </script>

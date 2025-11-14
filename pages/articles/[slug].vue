@@ -221,13 +221,22 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: () => metaTitle.value,
   twitterDescription: () => metaDescription.value,
-  twitterImage: () => metaImage.value,
-  jsonLd: () => jsonLd.value
+  twitterImage: () => metaImage.value
 });
 
 useHead(() => ({
   link: [
     { rel: 'canonical', href: currentUrl.value }
-  ]
+  ],
+  script: jsonLd.value
+    ? [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify(jsonLd.value),
+          tagPriority: 'low',
+          key: `jsonld-article-${route.params.slug}`
+        }
+      ]
+    : []
 }));
 </script>
