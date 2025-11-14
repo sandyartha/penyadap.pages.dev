@@ -40,6 +40,26 @@ export default defineNuxtConfig({
     description: 'Jasa Pemasangan Parental Control — mSpy (Indonesia)',
     defaultLocale: 'id'
   },
+  sitemap: {
+    enabled: true,
+    cacheTtl: 60 * 60,
+    inferStaticPagesAsRoutes: true,
+    autoLastmod: true,
+    defaults: {
+      changefreq: 'weekly',
+      priority: 0.7
+    }
+  },
+  robots: {
+    enabled: true,
+    sitemap: ['https://penyadap.pages.dev/sitemap.xml'],
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/'
+      }
+    ]
+  },
   ui: {
     icons: ["heroicons", "lucide"]
   },
