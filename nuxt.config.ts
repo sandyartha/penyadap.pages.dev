@@ -45,7 +45,7 @@ export default defineNuxtConfig({
   sitemap: {
     enabled: true,
     siteUrl: SITE_URL,
-    cacheTtl: 60 * 60 * 24,
+    cacheTtl: 0,
     autoLastmod: true,
     defaults: {
       changefreq: 'weekly',
