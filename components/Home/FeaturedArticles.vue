@@ -23,7 +23,7 @@
 const { data: articles } = await useAsyncData("articles-home", () =>
   queryContent("/articles")
     .sort({ published: -1 })
-    .limit(3)
+    .limit(20)
     .only(["title", "description", "published", "slug", "_path"])
     .find()
 );
