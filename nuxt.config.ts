@@ -29,10 +29,17 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxtjs/fontaine",
     "@nuxt/content",
+    "@nuxtjs/seo",
     // Hanya load @nuxthq/studio di development
     ...(process.env.NODE_ENV === 'development' ? ["@nuxthq/studio"] : []),
     "@vueuse/nuxt"
   ],
+  site: {
+    url: 'https://penyadap.pages.dev',
+    name: 'penyadap.pages.dev',
+    description: 'Jasa Pemasangan Parental Control — mSpy (Indonesia)',
+    defaultLocale: 'id'
+  },
   ui: {
     icons: ["heroicons", "lucide"]
   },
@@ -47,11 +54,7 @@ export default defineNuxtConfig({
         class: "antialiased bg-gray-50 dark:bg-black min-h-screen",
       },
       meta: [
-        // Meta tag global - tidak akan override nilai dari halaman spesifik
-        { property: 'og:site_name', content: 'penyadap.pages.dev' },
-        { property: 'og:type', content: 'website' },
-        { name: 'twitter:card', content: 'summary_large_image' },
-        // description, og:title, og:description, dan og:image akan di-set oleh useSeoMeta di setiap halaman
+        // Meta tag global - akan di-override oleh defineSeoMeta di setiap halaman
       ],
       link: [
         { rel: "icon", type: "image/png", href: "/favicon-96x96.png", sizes: "96x96" },

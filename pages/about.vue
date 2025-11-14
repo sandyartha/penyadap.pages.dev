@@ -22,6 +22,20 @@ const url = computed(() => siteUrl + route.path);
 
 const image = `${siteUrl}/default.png`;
 
+// Generate JSON-LD schema
+const jsonLd = computed(() =>
+  useJsonLd(
+    'page',
+    {
+      title,
+      description,
+      image,
+      url: url.value
+    },
+    { siteUrl }
+  )
+);
+
 useSeoMeta({
   title,
   description,
@@ -35,7 +49,8 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: `${title} - penyadap.pages.dev`,
   twitterDescription: description,
-  twitterImage: image
+  twitterImage: image,
+  jsonLd: () => jsonLd.value
 });
 
 useHead(() => ({

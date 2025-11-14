@@ -17,6 +17,14 @@ const canonicalUrl = `${siteUrl}/articles`;
 
 const image = `${siteUrl}/default.png`;
 
+// Generate JSON-LD schema
+const jsonLd = useJsonLd('page', {
+  title,
+  description,
+  image,
+  url: canonicalUrl
+});
+
 useSeoMeta({
   title,
   description,
@@ -30,7 +38,8 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: title,
   twitterDescription: description,
-  twitterImage: image
+  twitterImage: image,
+  jsonLd
 });
 
 useHead({

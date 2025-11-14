@@ -51,17 +51,29 @@ const { data: indexDoc } = await useAsyncData('index-doc', async () => {
 	return doc || null
 })
 
-const fallbackTitle = 'Jasa Pemasangan Parental Control — mSpy (Indonesia)';
-const fallbackDescription = 'Layanan pemasangan dan konfigurasi aplikasi parental control mSpy untuk membantu orang tua memantau keamanan digital anak di Indonesia.';
 const fallbackImage = '/default.png';
 const currentUrl = computed(() => siteUrl + route.path);
 
-const metaTitle = computed(() => indexDoc.value?.title || fallbackTitle);
-const metaDescription = computed(() => indexDoc.value?.description || fallbackDescription);
+const metaTitle = computed(() => indexDoc.value?.title);
+const metaDescription = computed(() => indexDoc.value?.description);
 const metaImage = computed(() => {
   const image = indexDoc.value?.image || indexDoc.value?.thumbnail || fallbackImage;
   return image?.startsWith('http') ? image : `${siteUrl}${image}`;
 });
+
+// Generate JSON-LD schema
+const jsonLd = computed(() =>
+  useJsonLd(
+    'index',
+    {
+      title: metaTitle.value,
+      description: metaDescription.value,
+      image: metaImage.value,
+      url: currentUrl.value
+    },
+    { siteUrl }
+  )
+);
 
 useSeoMeta({
   title: () => metaTitle.value,
@@ -76,7 +88,8 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: () => metaTitle.value,
   twitterDescription: () => metaDescription.value,
-  twitterImage: () => metaImage.value
+  twitterImage: () => metaImage.value,
+  jsonLd: () => jsonLd.value
 })
 
 useHead(() => ({

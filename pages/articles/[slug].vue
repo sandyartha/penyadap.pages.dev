@@ -168,17 +168,45 @@ const getReadingTime = (doc) => {
   return `${minutes} menit baca`;
 };
 
-const fallbackTitle = 'Artikel';
-const fallbackDescription = 'Artikel tentang mSpy dan keamanan digital keluarga.';
 const fallbackImage = '/default.png';
 const currentUrl = computed(() => `${siteUrl}/articles/${route.params.slug}`);
 
-const metaTitle = computed(() => article.value?.title || fallbackTitle);
-const metaDescription = computed(() => article.value?.description || fallbackDescription);
+const metaTitle = computed(() => article.value?.title);
+const metaDescription = computed(() => article.value?.description);
 const metaImage = computed(() => {
   const image = article.value?.image || article.value?.thumbnail || fallbackImage;
   return image?.startsWith('http') ? image : `${siteUrl}${image}`;
 });
+
+// Format dates for JSON-LD
+const datePublished = computed(() => {
+  const date = article.value?.published || article.value?.date || article.value?.createdAt;
+  if (!date) return undefined;
+  return new Date(date).toISOString();
+});
+
+const dateModified = computed(() => {
+  const date = article.value?.dateModified || article.value?.updatedAt || article.value?.published || article.value?.date;
+  if (!date) return undefined;
+  return new Date(date).toISOString();
+});
+
+// Generate JSON-LD schema
+const jsonLd = computed(() =>
+  useJsonLd(
+    'post',
+    {
+      title: metaTitle.value,
+      description: metaDescription.value,
+      image: metaImage.value,
+      url: currentUrl.value,
+      author: 'penyadap.pages.dev',
+      datePublished: datePublished.value,
+      dateModified: dateModified.value
+    },
+    { siteUrl }
+  )
+);
 
 useSeoMeta({
   title: () => metaTitle.value,
@@ -193,7 +221,8 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: () => metaTitle.value,
   twitterDescription: () => metaDescription.value,
-  twitterImage: () => metaImage.value
+  twitterImage: () => metaImage.value,
+  jsonLd: () => jsonLd.value
 });
 
 useHead(() => ({
