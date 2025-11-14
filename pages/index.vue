@@ -75,6 +75,15 @@ const jsonLd = computed(() =>
   )
 );
 
+const jsonLdScript = computed(() => {
+  if (!jsonLd.value) return null;
+  return {
+    type: 'application/ld+json',
+    key: 'jsonld-index',
+    innerHTML: JSON.stringify(jsonLd.value)
+  };
+});
+
 useSeoMeta({
   title: () => metaTitle.value,
   description: () => metaDescription.value,
@@ -95,15 +104,11 @@ useHead(() => ({
   link: [
     { rel: 'canonical', href: currentUrl.value }
   ],
-  script: jsonLd.value
-    ? [
-        {
-          type: 'application/ld+json',
-          innerHTML: JSON.stringify(jsonLd.value),
-          tagPriority: 'low',
-          key: 'jsonld-index'
-        }
-      ]
-    : []
+  script: jsonLdScript.value ? [jsonLdScript.value] : [],
+  __dangerouslyDisableSanitizersByTagID: jsonLdScript.value
+    ? {
+        'jsonld-index': ['innerHTML']
+      }
+    : undefined
 }))
 </script>

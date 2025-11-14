@@ -50,17 +50,7 @@ useSeoMeta({
 useHead({
   link: [
     { rel: 'canonical', href: canonicalUrl }
-  ],
-  script: jsonLd.value
-    ? [
-        {
-          type: 'application/ld+json',
-          innerHTML: JSON.stringify(jsonLd.value),
-          tagPriority: 'low',
-          key: 'jsonld-articles-index'
-        }
-      ]
-    : []
+  ]
 });
 
 const { data: articles } = await useAsyncData("all-articles", () =>

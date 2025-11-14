@@ -55,16 +55,6 @@ useSeoMeta({
 useHead(() => ({
   link: [
     { rel: 'canonical', href: url.value }
-  ],
-  script: jsonLd.value
-    ? [
-        {
-          type: 'application/ld+json',
-          innerHTML: JSON.stringify(jsonLd.value),
-          tagPriority: 'low',
-          key: 'jsonld-privacy'
-        }
-      ]
-    : []
+  ]
 }));
 </script>

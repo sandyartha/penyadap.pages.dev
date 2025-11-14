@@ -227,16 +227,6 @@ useSeoMeta({
 useHead(() => ({
   link: [
     { rel: 'canonical', href: currentUrl.value }
-  ],
-  script: jsonLd.value
-    ? [
-        {
-          type: 'application/ld+json',
-          innerHTML: JSON.stringify(jsonLd.value),
-          tagPriority: 'low',
-          key: `jsonld-article-${route.params.slug}`
-        }
-      ]
-    : []
+  ]
 }));
 </script>
