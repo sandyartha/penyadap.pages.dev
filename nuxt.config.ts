@@ -1,3 +1,5 @@
+const SITE_URL = 'https://penyadap.pages.dev';
+
 export default defineNuxtConfig({
   devtools: { enabled: process.env.NODE_ENV === 'development' },
   css: ['~/assets/css/tailwind.css'],
@@ -35,45 +37,49 @@ export default defineNuxtConfig({
     "@vueuse/nuxt"
   ],
   site: {
-    url: 'https://penyadap.pages.dev',
+    url: SITE_URL,
     name: 'penyadap.pages.dev',
     description: 'Jasa Pemasangan Parental Control — mSpy (Indonesia)',
     defaultLocale: 'id'
   },
   sitemap: {
     enabled: true,
-    siteUrl: 'https://penyadap.pages.dev',
+    siteUrl: SITE_URL,
     cacheTtl: 60 * 60 * 24,
     autoLastmod: true,
     defaults: {
       changefreq: 'weekly',
       priority: 0.7
     },
-    sources: ['/api/__sitemap__/articles']
-  },
-  robots: {
-    enabled: true,
-    sitemap: ['https://penyadap.pages.dev/sitemap.xml'],
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/'
-      }
-    ]
-  },
-  sitemap: {
-    enabled: true,
-    cacheTtl: 60 * 60,
-    inferStaticPagesAsRoutes: true,
-    autoLastmod: true,
-    defaults: {
-      changefreq: 'weekly',
-      priority: 0.7
+    urls: async () => {
+      const now = new Date().toISOString();
+      const staticRoutes = ['/', '/about', '/articles', '/privacy-policy'].map((route) => ({
+        loc: route,
+        lastmod: now
+      }));
+
+      const { serverQueryContent } = await import('#content/server');
+      const articles = await serverQueryContent()
+        .where({ _path: { $regex: '^/articles/' }, draft: { $ne: true } })
+        .only(['_path', 'updatedAt', 'published', 'date', 'lastmod'])
+        .find();
+
+      const articleRoutes = articles.map((article) => ({
+        loc: article._path,
+        lastmod:
+          article.lastmod ||
+          article.updatedAt ||
+          article.date ||
+          article.published ||
+          now
+      }));
+
+      return [...staticRoutes, ...articleRoutes];
     }
   },
   robots: {
     enabled: true,
-    sitemap: ['https://penyadap.pages.dev/sitemap.xml'],
+    sitemap: [`${SITE_URL}/sitemap.xml`],
     rules: [
       {
         userAgent: '*',
