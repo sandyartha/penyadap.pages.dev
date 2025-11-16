@@ -69,44 +69,52 @@ useSeoMeta({
 useHead(() => ({
   link: [
     { rel: 'canonical', href: currentUrl.value }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      key: 'schema-org-graph',
+      'data-nuxt-schema-org': 'true',
+      'data-hid': 'schema-org-graph',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@id': `${siteUrl.value}/#website`,
+            '@type': 'WebSite',
+            description: 'Jasa Pemasangan Parental Control — mSpy (Indonesia)',
+            inLanguage: 'id-ID',
+            name: 'penyadap.pages.dev',
+            url: siteUrl.value,
+            potentialAction: [
+              {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: `${siteUrl.value}/?s={search_term_string}`
+                },
+                'query-input': 'required name=search_term_string'
+              }
+            ]
+          },
+          {
+            '@id': `${currentUrl.value.replace(/\/$/, '')}/#webpage`,
+            '@type': 'WebPage',
+            description: metaDescription.value || 'Jasa Sadap iPhone / Android Secara Jarak Jauh - Panggilan WhatsApp, Line, Instagram dan Facebook, Buktikan pasangan selingkuh.',
+            name: metaTitle.value || 'Aplikasi Sadap iPhone & Android - WhatsApp, FB, Line, CALL',
+            url: currentUrl.value,
+            inLanguage: 'id-ID',
+            isPartOf: {
+              '@id': `${siteUrl.value}/#website`
+            },
+            mainEntityOfPage: {
+              '@id': `${currentUrl.value.replace(/\/$/, '')}/#webpage`
+            }
+          }
+        ]
+      })
+    }
   ]
 }))
-
-// Override auto-generated schema with custom WebSite and WebPage schema
-// Using @id will replace the auto-generated schema with the same ID
-useSchemaOrg([
-  defineWebSite({
-    '@id': `${siteUrl.value}/#website`,
-    name: 'penyadap.pages.dev',
-    description: 'Jasa Pemasangan Parental Control — mSpy (Indonesia)',
-    url: siteUrl.value,
-    inLanguage: 'id-ID',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${siteUrl.value}/?s={search_term_string}`
-      },
-      'query-input': 'required name=search_term_string'
-    }
-  }),
-  defineWebPage({
-    '@id': `${currentUrl.value.replace(/\/$/, '')}/#webpage`,
-    name: metaTitle.value,
-    description: metaDescription.value,
-    url: currentUrl.value,
-    inLanguage: 'id-ID',
-    isPartOf: {
-      '@id': `${siteUrl.value}/#website`
-    },
-    mainEntityOfPage: {
-      '@id': `${currentUrl.value.replace(/\/$/, '')}/#webpage`
-    },
-
-    // ⛔ Hilangkan ReadAction bawaan @nuxtjs/seo
-    potentialAction: []
-
-  })
-])
 
 </script>

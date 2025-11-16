@@ -46,31 +46,38 @@ useHead(() => ({
   script: [
     {
       type: 'application/ld+json',
+      key: 'schema-org-graph',
+      'data-nuxt-schema-org': 'true',
+      'data-hid': 'schema-org-graph',
       children: JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'AboutPage',
-        '@id': `${url.value}/#about`,
-        url: url.value,
-        name: title,
-        description: description,
-        inLanguage: 'id-ID',
-        isPartOf: {
-          '@type': 'WebSite',
-          '@id': `${siteUrl.value}/#website`,
-          url: siteUrl.value,
-          name: 'penyadap.pages.dev'
-        },
-        about: {
-          '@type': 'Organization',
-          '@id': `${siteUrl.value}/#organization`,
-          name: 'penyadap.pages.dev',
-          url: siteUrl.value,
-          description: 'Jasa Pemasangan Parental Control — mSpy (Indonesia)'
-        },
-        mainEntity: {
-          '@type': 'Organization',
-          '@id': `${siteUrl.value}/#organization`
-        }
+        '@graph': [
+          {
+            '@type': 'AboutPage',
+            '@id': `${url.value}/#about`,
+            url: url.value,
+            name: title,
+            description: description,
+            inLanguage: 'id-ID',
+            isPartOf: {
+              '@type': 'WebSite',
+              '@id': `${siteUrl.value}/#website`,
+              url: siteUrl.value,
+              name: 'penyadap.pages.dev'
+            },
+            about: {
+              '@type': 'Organization',
+              '@id': `${siteUrl.value}/#organization`,
+              name: 'penyadap.pages.dev',
+              url: siteUrl.value,
+              description: 'Jasa Pemasangan Parental Control — mSpy (Indonesia)'
+            },
+            mainEntity: {
+              '@type': 'Organization',
+              '@id': `${siteUrl.value}/#organization`
+            }
+          }
+        ]
       })
     }
   ]

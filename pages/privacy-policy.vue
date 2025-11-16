@@ -46,43 +46,52 @@ useHead(() => ({
   script: [
     {
       type: 'application/ld+json',
+      key: 'schema-org-graph',
+      'data-nuxt-schema-org': 'true',
+      'data-hid': 'schema-org-graph',
       children: JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'WebPage',
-        '@id': `${url.value}/#webpage`,
-        url: url.value,
-        name: title,
-        description: description,
-        inLanguage: 'id-ID',
-        isPartOf: {
-          '@type': 'WebSite',
-          '@id': `${siteUrl.value}/#website`,
-          url: siteUrl.value,
-          name: 'penyadap.pages.dev',
-          publisher: {
-            '@type': 'Organization',
-            '@id': `${siteUrl.value}/#organization`,
-            name: 'penyadap.pages.dev'
-          }
-        },
-        breadcrumb: {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Home',
-              item: siteUrl.value
+        '@graph': [
+          {
+            '@type': 'WebPage',
+            '@id': `${url.value}/#webpage`,
+            url: url.value,
+            name: title,
+            description: description,
+            inLanguage: 'id-ID',
+            isPartOf: {
+              '@type': 'WebSite',
+              '@id': `${siteUrl.value}/#website`,
+              url: siteUrl.value,
+              name: 'penyadap.pages.dev',
+              publisher: {
+                '@type': 'Organization',
+                '@id': `${siteUrl.value}/#organization`,
+                name: 'penyadap.pages.dev'
+              }
             },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: title
+            breadcrumb: {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: siteUrl.value
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: title
+                }
+              ]
             }
-          ]
-        }
+          }
+        ]
       })
     }
   ]
 }));
 </script>
+
+
