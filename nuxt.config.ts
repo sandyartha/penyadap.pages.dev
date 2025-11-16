@@ -1,28 +1,39 @@
 const SITE_URL = process.env.NUXT_PUBLIC_SITE_URL || 'https://penyadap.pages.dev';
+const PORT = Number(process.env.PORT ?? 5000);
+const REPL_HOST = process.env.REPL_SLUG && process.env.REPL_OWNER 
+  ? `${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co` 
+  : 'localhost';
 
 export default defineNuxtConfig({
   devtools: { enabled: process.env.NODE_ENV === 'development' },
   css: ['~/assets/css/tailwind.css'],
+  runtimeConfig: {
+    public: {
+      siteUrl: SITE_URL
+    }
+  },
+  devServer: {
+    host: '0.0.0.0',
+    port: PORT,
+    url: `http://0.0.0.0:${PORT}`
+  },
   nitro: {
     compatibilityDate: '2025-11-08',
-    // Optimize untuk Cloudflare Pages
-    preset: 'cloudflare-pages',
-    // Exclude dependencies yang tidak perlu di bundle
+    preset: process.env.NODE_ENV === 'production' ? 'cloudflare-pages' : undefined,
     externals: {
-      // Exclude native dependencies yang besar
-      inline: ['sharp', '@parcel/watcher']
+      inline: process.env.NODE_ENV === 'production' ? ['sharp'] : []
     },
-    // Minify output
     minify: true,
-    // Prerender routes untuk mengurangi bundle
     prerender: {
       crawlLinks: true
     },
-    // Reduce bundle size dengan tree-shaking
     esbuild: {
       options: {
         treeShaking: true
       }
+    },
+    experimental: {
+      wasm: true
     }
   },
   modules: [
@@ -32,7 +43,6 @@ export default defineNuxtConfig({
     "@nuxtjs/fontaine",
     "@nuxt/content",
     "@nuxtjs/seo",
-    // Hanya load @nuxthq/studio di development
     ...(process.env.NODE_ENV === 'development' ? ["@nuxthq/studio"] : []),
     "@vueuse/nuxt"
   ],
@@ -40,7 +50,8 @@ export default defineNuxtConfig({
     url: SITE_URL,
     name: 'penyadap.pages.dev',
     description: 'Jasa Pemasangan Parental Control — mSpy (Indonesia)',
-    defaultLocale: 'id'
+    defaultLocale: 'id',
+    indexable: true
   },
   sitemap: {
     cacheTtl: 0,
@@ -73,15 +84,15 @@ export default defineNuxtConfig({
       bodyAttrs: {
         class: "antialiased bg-gray-50 dark:bg-black min-h-screen",
       },
-      meta: [
-        // Meta tag global - akan di-override oleh defineSeoMeta di setiap halaman
-      ],
+      meta: [],
       link: [
         { rel: "icon", type: "image/png", href: "/favicon-96x96.png", sizes: "96x96" },
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
         { rel: "shortcut icon", href: "/favicon.ico" },
         { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
-        { rel: "manifest", href: "/site.webmanifest" }
+        { rel: "manifest", href: "/site.webmanifest" },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }
       ]
     },
   },
@@ -101,30 +112,27 @@ export default defineNuxtConfig({
       rehypePlugins: []
     }
   },
+  vue: {
+    compilerOptions: {
+      whitespace: 'condense' // Condense whitespace to avoid hydration mismatch
+    }
+  },
   vite: {
-    server: {
-      hmr: {
-        clientPort: 24678,
-        port: 24678
-      },
-      watch: {
-        usePolling: true
-      }
-    },
     build: {
-      // Optimize chunk size
+      cssCodeSplit: false, // Extract all CSS into single file for faster loading
       chunkSizeWarningLimit: 1000,
       rollupOptions: {
         output: {
-          // Manual chunk splitting untuk mengurangi ukuran
           manualChunks: {
             'vendor': ['vue', 'vue-router'],
           }
         }
       }
+    },
+    css: {
+      devSourcemap: false // Disable sourcemap in dev for faster CSS loading
     }
   },
-  // Experimental features untuk mengurangi bundle size
   experimental: {
     payloadExtraction: false
   }

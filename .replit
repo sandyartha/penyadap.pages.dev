@@ -1,0 +1,54 @@
+modules = ["vue-node-20", "nodejs-20", "web"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[[ports]]
+localPort = 5000
+externalPort = 5000
+
+[[ports]]
+localPort = 24678
+externalPort = 3001
+
+[[ports]]
+localPort = 45243
+externalPort = 3002
+
+[[ports]]
+localPort = 46827
+externalPort = 3000
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "dev"
+
+[[workflows.workflow]]
+name = "dev"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm dev"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["pnpm", "run", "build"]

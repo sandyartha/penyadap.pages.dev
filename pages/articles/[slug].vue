@@ -99,7 +99,7 @@
 </template>
 <script setup>
 const route = useRoute();
-const siteUrl = 'https://penyadap.pages.dev';
+const siteUrl = useSiteUrl()
 const currentPath = `/articles/${route.params.slug}`;
 
 const { data: article } = await useAsyncData(
@@ -148,7 +148,6 @@ const formatDate = (doc) => {
 };
 
 const getReadingTime = (doc) => {
-  // Traverse mdast to extract text content
   const collectText = (node) => {
     if (!node) return '';
     if (Array.isArray(node)) return node.map(collectText).join(' ');
@@ -164,49 +163,52 @@ const getReadingTime = (doc) => {
   const text = collectText(body).replace(/\s+/g, ' ').trim();
   if (!text) return '1 menit baca';
   const words = text.split(' ').filter(Boolean).length;
-  const minutes = Math.max(1, Math.round(words / 200)); // ~200 wpm
+  const minutes = Math.max(1, Math.round(words / 200));
   return `${minutes} menit baca`;
 };
 
 const fallbackImage = '/default.png';
-const currentUrl = computed(() => `${siteUrl}/articles/${route.params.slug}`);
+const currentUrl = computed(() => `${siteUrl.value}/articles/${route.params.slug}`);
 
-const metaTitle = computed(() => article.value?.title);
-const metaDescription = computed(() => article.value?.description);
+const metaTitle = computed(() => article.value?.title || 'Artikel');
+const metaDescription = computed(() => article.value?.description || 'Artikel mSpy Indonesia');
 const metaImage = computed(() => {
-  const image = article.value?.image || article.value?.thumbnail || fallbackImage;
-  return image?.startsWith('http') ? image : `${siteUrl}${image}`;
+  if (!article.value) return `${siteUrl.value}${fallbackImage}`;
+  const image = article.value.image || article.value.thumbnail || fallbackImage;
+  return image?.startsWith('http') ? image : `${siteUrl.value}${image}`;
 });
 
-// Format dates for JSON-LD
 const datePublished = computed(() => {
-  const date = article.value?.published || article.value?.date || article.value?.createdAt;
-  if (!date) return undefined;
+  if (!article.value) return null;
+  const date = article.value.published || article.value.date || article.value.createdAt;
+  if (!date) return null;
   return new Date(date).toISOString();
 });
 
 const dateModified = computed(() => {
-  const date = article.value?.dateModified || article.value?.updatedAt || article.value?.published || article.value?.date;
-  if (!date) return undefined;
+  if (!article.value) return null;
+  const date = article.value.dateModified || article.value.updatedAt || article.value.published || article.value.date;
+  if (!date) return null;
   return new Date(date).toISOString();
 });
 
-// Generate JSON-LD schema
-const jsonLd = computed(() =>
-  useJsonLd(
-    'post',
-    {
-      title: metaTitle.value,
-      description: metaDescription.value,
-      image: metaImage.value,
-      url: currentUrl.value,
-      author: 'penyadap.pages.dev',
-      datePublished: datePublished.value,
-      dateModified: dateModified.value
-    },
-    { siteUrl }
-  )
-);
+const wordCount = computed(() => {
+  if (!article.value?.body) return 0;
+  
+  const collectText = (node) => {
+    if (!node) return '';
+    if (Array.isArray(node)) return node.map(collectText).join(' ');
+    const type = node.type;
+    if (type === 'text' && typeof node.value === 'string') return node.value;
+    if (node.children && Array.isArray(node.children)) {
+      return node.children.map(collectText).join(' ');
+    }
+    return '';
+  };
+
+  const text = collectText(article.value.body).replace(/\s+/g, ' ').trim();
+  return text.split(' ').filter(Boolean).length;
+});
 
 useSeoMeta({
   title: () => metaTitle.value,
@@ -218,6 +220,10 @@ useSeoMeta({
   ogImageAlt: () => metaTitle.value,
   ogType: 'article',
   ogSiteName: 'penyadap.pages.dev',
+  articlePublishedTime: () => datePublished.value,
+  articleModifiedTime: () => dateModified.value,
+  articleSection: 'Technology',
+  articleTag: () => article.value?.tags || [],
   twitterCard: 'summary_large_image',
   twitterTitle: () => metaTitle.value,
   twitterDescription: () => metaDescription.value,
@@ -228,5 +234,82 @@ useHead(() => ({
   link: [
     { rel: 'canonical', href: currentUrl.value }
   ]
-}));
+}))
+
+// Use Nuxt SEO module's useSchemaOrg with manual schema objects
+const schemas = computed(() => {
+  if (!article.value || !metaTitle.value || !datePublished.value) {
+    return [];
+  }
+  
+  return [
+    {
+      '@type': 'Article',
+      '@id': `${currentUrl.value}/#article`,
+      headline: metaTitle.value,
+      description: metaDescription.value,
+      image: {
+        '@type': 'ImageObject',
+        url: metaImage.value,
+        width: 1200,
+        height: 630
+      },
+      datePublished: datePublished.value,
+      dateModified: dateModified.value || datePublished.value,
+      author: {
+        '@type': 'Organization',
+        '@id': `${siteUrl.value}/#organization`,
+        name: 'penyadap.pages.dev',
+        url: siteUrl.value
+      },
+      publisher: {
+        '@type': 'Organization',
+        '@id': `${siteUrl.value}/#organization`,
+        name: 'penyadap.pages.dev',
+        url: siteUrl.value,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${siteUrl.value}/logo.png`
+        }
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': currentUrl.value
+      },
+      articleSection: 'Technology',
+      keywords: article.value?.tags?.join(', ') || '',
+      wordCount: wordCount.value,
+      inLanguage: 'id-ID',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': `${siteUrl.value}/#website`
+      }
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${currentUrl.value}/#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: siteUrl.value
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Artikel',
+          item: `${siteUrl.value}/articles`
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: metaTitle.value
+        }
+      ]
+    }
+  ];
+});
+
+useSchemaOrg(schemas);
 </script>
