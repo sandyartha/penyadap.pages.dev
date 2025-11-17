@@ -52,58 +52,65 @@ const articleListItems = computed(() => {
   }));
 });
 
+const schemaGraph = computed(() => ({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${canonicalUrl.value}#collectionpage`,
+      url: canonicalUrl.value,
+      name: title,
+      description,
+      inLanguage: 'id-ID',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': `${siteUrl.value}#website`,
+        url: siteUrl.value,
+        name: 'penyadap.pages.dev'
+      },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: siteUrl.value
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Artikel',
+            item: canonicalUrl.value
+          }
+        ]
+      }
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${canonicalUrl.value}#itemlist`,
+      url: canonicalUrl.value,
+      name: 'Daftar Artikel',
+      description,
+      numberOfItems: articles.value?.length || 0,
+      itemListElement: articleListItems.value
+    }
+  ]
+}))
+
 useHead(() => ({
   link: [
     { rel: 'canonical', href: canonicalUrl.value }
   ],
   script: [
     {
+      key: 'schema-org-articles',
       type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@graph': [
-          {
-            '@type': 'CollectionPage',
-            '@id': `${canonicalUrl.value}/#collectionpage`,
-            url: canonicalUrl.value,
-            name: title,
-            description: description,
-            inLanguage: 'id-ID',
-            isPartOf: {
-              '@type': 'WebSite',
-              '@id': `${siteUrl.value}/#website`,
-              url: siteUrl.value,
-              name: 'penyadap.pages.dev'
-            },
-            breadcrumb: {
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                {
-                  '@type': 'ListItem',
-                  position: 1,
-                  name: 'Home',
-                  item: siteUrl.value
-                },
-                {
-                  '@type': 'ListItem',
-                  position: 2,
-                  name: 'Artikel'
-                }
-              ]
-            }
-          },
-          {
-            '@type': 'ItemList',
-            '@id': `${canonicalUrl.value}/#itemlist`,
-            url: canonicalUrl.value,
-            name: 'Daftar Artikel',
-            description: description,
-            numberOfItems: articles.value?.length || 0,
-            itemListElement: articleListItems.value
-          }
-        ]
-      })
+      innerHTML: JSON.stringify(schemaGraph.value)
     }
-  ]
+  ],
+  __dangerouslyDisableSanitizersByTagID: {
+    'schema-org-articles': ['innerHTML']
+  }
 }));
 </script>

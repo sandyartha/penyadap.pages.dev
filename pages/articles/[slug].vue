@@ -236,80 +236,104 @@ useHead(() => ({
   ]
 }))
 
-// Use Nuxt SEO module's useSchemaOrg with manual schema objects
-const schemas = computed(() => {
-  if (!article.value || !metaTitle.value || !datePublished.value) {
-    return [];
-  }
-  
-  return [
-    {
-      '@type': 'Article',
-      '@id': `${currentUrl.value}/#article`,
-      headline: metaTitle.value,
-      description: metaDescription.value,
-      image: {
+const schemaGraph = computed(() => {
+  if (!article.value || !metaTitle.value || !datePublished.value) return null;
+
+  const articleId = `${currentUrl.value}#article`;
+  const breadcrumbId = `${currentUrl.value}#breadcrumb`;
+  const organizationId = `${siteUrl.value}#organization`;
+  const websiteId = `${siteUrl.value}#website`;
+
+  const articleNode = {
+    '@type': 'Article',
+    '@id': articleId,
+    headline: metaTitle.value,
+    description: metaDescription.value,
+    image: {
+      '@type': 'ImageObject',
+      url: metaImage.value,
+      width: 1200,
+      height: 630
+    },
+    datePublished: datePublished.value,
+    dateModified: dateModified.value || datePublished.value,
+    author: {
+      '@type': 'Organization',
+      '@id': organizationId,
+      name: 'penyadap.pages.dev',
+      url: siteUrl.value
+    },
+    publisher: {
+      '@type': 'Organization',
+      '@id': organizationId,
+      name: 'penyadap.pages.dev',
+      url: siteUrl.value,
+      logo: {
         '@type': 'ImageObject',
-        url: metaImage.value,
-        width: 1200,
-        height: 630
-      },
-      datePublished: datePublished.value,
-      dateModified: dateModified.value || datePublished.value,
-      author: {
-        '@type': 'Organization',
-        '@id': `${siteUrl.value}/#organization`,
-        name: 'penyadap.pages.dev',
-        url: siteUrl.value
-      },
-      publisher: {
-        '@type': 'Organization',
-        '@id': `${siteUrl.value}/#organization`,
-        name: 'penyadap.pages.dev',
-        url: siteUrl.value,
-        logo: {
-          '@type': 'ImageObject',
-          url: `${siteUrl.value}/logo.png`
-        }
-      },
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': currentUrl.value
-      },
-      articleSection: 'Technology',
-      keywords: article.value?.tags?.join(', ') || '',
-      wordCount: wordCount.value,
-      inLanguage: 'id-ID',
-      isPartOf: {
-        '@type': 'WebSite',
-        '@id': `${siteUrl.value}/#website`
+        url: `${siteUrl.value}/logo.png`,
+        width: 512,
+        height: 512
       }
     },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': `${currentUrl.value}/#breadcrumb`,
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: siteUrl.value
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Artikel',
-          item: `${siteUrl.value}/articles`
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: metaTitle.value
-        }
-      ]
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': currentUrl.value
+    },
+    articleSection: 'Technology',
+    keywords: article.value?.tags?.join(', ') || '',
+    wordCount: wordCount.value,
+    inLanguage: 'id-ID',
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': websiteId
     }
-  ];
+  }
+
+  const breadcrumbNode = {
+    '@type': 'BreadcrumbList',
+    '@id': breadcrumbId,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl.value
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Artikel',
+        item: `${siteUrl.value}/articles`
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: metaTitle.value,
+        item: currentUrl.value
+      }
+    ]
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [articleNode, breadcrumbNode]
+  };
 });
 
-useSchemaOrg(schemas);
+useHead(() => {
+  if (!schemaGraph.value) return {};
+
+  return {
+    script: [
+      {
+        key: 'schema-org-article',
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(schemaGraph.value)
+      }
+    ],
+    __dangerouslyDisableSanitizersByTagID: {
+      'schema-org-article': ['innerHTML']
+    }
+  };
+});
 </script>

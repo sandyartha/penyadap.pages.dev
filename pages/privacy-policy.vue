@@ -39,58 +39,59 @@ useSeoMeta({
   twitterImage: () => image.value
 });
 
+const schemaGraph = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'PrivacyPolicy',
+  '@id': `${url.value}#privacy`,
+  url: url.value,
+  name: title,
+  description,
+  inLanguage: 'id-ID',
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': `${siteUrl.value}#website`,
+    url: siteUrl.value,
+    name: 'penyadap.pages.dev',
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${siteUrl.value}#organization`,
+      name: 'penyadap.pages.dev',
+      url: siteUrl.value
+    }
+  },
+  breadcrumb: {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl.value
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: title,
+        item: url.value
+      }
+    ]
+  }
+}))
+
 useHead(() => ({
   link: [
     { rel: 'canonical', href: url.value }
   ],
   script: [
     {
+      key: 'schema-org-privacy',
       type: 'application/ld+json',
-      key: 'schema-org-graph',
-      'data-nuxt-schema-org': 'true',
-      'data-hid': 'schema-org-graph',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@graph': [
-          {
-            '@type': 'WebPage',
-            '@id': `${url.value}/#webpage`,
-            url: url.value,
-            name: title,
-            description: description,
-            inLanguage: 'id-ID',
-            isPartOf: {
-              '@type': 'WebSite',
-              '@id': `${siteUrl.value}/#website`,
-              url: siteUrl.value,
-              name: 'penyadap.pages.dev',
-              publisher: {
-                '@type': 'Organization',
-                '@id': `${siteUrl.value}/#organization`,
-                name: 'penyadap.pages.dev'
-              }
-            },
-            breadcrumb: {
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                {
-                  '@type': 'ListItem',
-                  position: 1,
-                  name: 'Home',
-                  item: siteUrl.value
-                },
-                {
-                  '@type': 'ListItem',
-                  position: 2,
-                  name: title
-                }
-              ]
-            }
-          }
-        ]
-      })
+      innerHTML: JSON.stringify(schemaGraph.value)
     }
-  ]
+  ],
+  __dangerouslyDisableSanitizersByTagID: {
+    'schema-org-privacy': ['innerHTML']
+  }
 }));
 </script>
 

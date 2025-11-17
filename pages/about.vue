@@ -39,6 +39,45 @@ useSeoMeta({
   twitterImage: () => image.value
 });
 
+const schemaGraph = computed(() => ({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@id': 'https://penyadap.pages.dev/#website',
+      '@type': 'WebSite',
+      name: 'penyadap.pages.dev',
+      alternateName: 'Jasa Pemasangan Parental Control mSpy Indonesia',
+      description: 'Jasa Pemasangan Parental Control — mSpy (Indonesia)',
+      url: 'https://penyadap.pages.dev',
+      inLanguage: 'id',
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://penyadap.pages.dev/#organization',
+        name: 'penyadap.pages.dev',
+        url: 'https://penyadap.pages.dev'
+      }
+    },
+    {
+      '@id': 'https://penyadap.pages.dev/about#webpage',
+      '@type': ['WebPage', 'AboutPage'],
+      name: title,
+      description,
+      url: 'https://penyadap.pages.dev/about',
+      isPartOf: {
+        '@id': 'https://penyadap.pages.dev/#website'
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': 'https://penyadap.pages.dev/about'
+      },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://penyadap.pages.dev/#organization'
+      }
+    }
+  ]
+}));
+
 useHead(() => ({
   link: [
     { rel: 'canonical', href: url.value }
@@ -49,37 +88,11 @@ useHead(() => ({
       key: 'schema-org-graph',
       'data-nuxt-schema-org': 'true',
       'data-hid': 'schema-org-graph',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@graph': [
-          {
-            '@type': 'AboutPage',
-            '@id': `${url.value}/#about`,
-            url: url.value,
-            name: title,
-            description: description,
-            inLanguage: 'id-ID',
-            isPartOf: {
-              '@type': 'WebSite',
-              '@id': `${siteUrl.value}/#website`,
-              url: siteUrl.value,
-              name: 'penyadap.pages.dev'
-            },
-            about: {
-              '@type': 'Organization',
-              '@id': `${siteUrl.value}/#organization`,
-              name: 'penyadap.pages.dev',
-              url: siteUrl.value,
-              description: 'Jasa Pemasangan Parental Control — mSpy (Indonesia)'
-            },
-            mainEntity: {
-              '@type': 'Organization',
-              '@id': `${siteUrl.value}/#organization`
-            }
-          }
-        ]
-      })
+      innerHTML: JSON.stringify(schemaGraph.value)
     }
-  ]
+  ],
+  __dangerouslyDisableSanitizersByTagID: {
+    'schema-org-graph': ['innerHTML']
+  }
 }));
 </script>
