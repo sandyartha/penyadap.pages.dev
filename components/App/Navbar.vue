@@ -48,6 +48,11 @@ const items = [
     path: "/articles",
     icon: "solar:document-add-outline",
   },
+  {
+    name: "Pemesanan",
+    path: "/pemesanan-aplikasi",
+    icon: "solar:cart-outline",
+  },
   { name: "Tentang", path: "/about", icon: "solar:user-outline" },
   {
     name: "Kebijakan Privasi",
