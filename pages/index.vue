@@ -18,6 +18,116 @@
         </ContentDoc>
       </section>
 
+      <section class="max-w-5xl mx-auto space-y-6">
+        <div class="text-center space-y-3">
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-500">Layanan</p>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Paket Sadap Unggulan</h2>
+          <p class="text-gray-600 dark:text-gray-400">
+            Pilih solusi sesuai perangkat target—semua sudah termasuk instalasi jarak jauh dan dukungan penuh.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="grid gap-6 grid-cols-1 md:grid-cols-2">
+            <article
+              v-for="service in visibleServices"
+              :key="service.id"
+              class="rounded-3xl border border-gray-200/80 dark:border-gray-800 bg-white dark:bg-zinc-900/70 shadow-sm p-6 flex flex-col"
+            >
+              <div
+                class="text-blue-500 dark:text-blue-300"
+                v-html="service.icon"
+              />
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                {{ service.name }}
+              </h3>
+              <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                {{ service.description }}
+              </p>
+            </article>
+          </div>
+
+          <div class="mt-6 flex items-center justify-center gap-3">
+            <button
+              type="button"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-zinc-900/70 text-gray-600 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+              @click="prevServiceSlide"
+              aria-label="Sebelumnya"
+            >
+              <Icon name="solar:alt-arrow-left-outline" class="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-zinc-900/70 text-gray-600 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+              @click="nextServiceSlide"
+              aria-label="Berikutnya"
+            >
+              <Icon name="solar:alt-arrow-right-outline" class="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-5xl mx-auto space-y-6">
+        <div class="text-center space-y-3">
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-500">
+            Testimonial
+          </p>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+            Cerita dari pengguna mSpy Indonesia
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400">
+            Pengalaman nyata dari orang tua dan pengguna yang mengandalkan aplikasi sadap untuk
+            keamanan digital keluarga.
+          </p>
+        </div>
+
+        <div
+          class="grid gap-6 md:grid-cols-2"
+        >
+          <article
+            v-for="item in testimonialItems"
+            :key="item.id"
+            class="relative rounded-3xl border border-gray-200/80 dark:border-gray-800 bg-white/90 dark:bg-zinc-900/80 shadow-sm p-6 flex flex-col overflow-hidden"
+          >
+            <span
+              class="pointer-events-none absolute -top-6 -left-6 h-20 w-20 rounded-full bg-blue-100/70 dark:bg-blue-500/10 blur-2xl"
+            ></span>
+            <span
+              class="pointer-events-none absolute -bottom-10 -right-10 h-24 w-24 rounded-full bg-blue-100/60 dark:bg-blue-500/10 blur-3xl"
+            ></span>
+
+            <p class="relative text-sm leading-relaxed text-gray-700 dark:text-gray-200 whitespace-pre-line">
+              “{{ item.quote }}”
+            </p>
+
+            <div class="relative mt-5 flex items-center justify-between gap-3">
+              <div>
+                <p class="text-sm font-semibold text-gray-900 dark:text-white">
+                  {{ item.name }}
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                  {{ item.city }}
+                </p>
+              </div>
+              <img
+                v-if="item.image"
+                :src="item.image"
+                :alt="`Foto ${item.name}`"
+                loading="lazy"
+                class="h-12 w-12 rounded-full object-cover ring-2 ring-blue-100 dark:ring-blue-500/40"
+              />
+              <div
+                v-else
+                class="h-10 w-10 flex items-center justify-center rounded-full border border-blue-100/70 dark:border-blue-500/30 bg-blue-50/70 dark:bg-blue-500/10 text-blue-600 dark:text-blue-300 text-xs font-semibold"
+              >
+                mSpy
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <HomeFeaturedArticles />
       <HomeSocialLinks />
       <HomeNewsletter />
@@ -27,7 +137,7 @@
           <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-500">FAQ</p>
           <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Pertanyaan yang sering diajukan</h2>
           <p class="text-gray-600 dark:text-gray-400">
-            Semua informasi penting sebelum memesan layanan pemasangan aplikasi mSpy Indonesia.
+            Semua informasi penting layanan pemasangan aplikasi Spy Indonesia.
           </p>
         </div>
 
@@ -71,6 +181,8 @@
 <script setup>
 import { parse } from 'yaml'
 import faqSource from '~/data/index_faq.yml?raw'
+import servicesSource from '~/data/index_services.yml?raw'
+import testimonialsSource from '~/data/index_testimonials.yml?raw'
 
 const route = useRoute()
 const siteUrl = useSiteUrl()
@@ -172,8 +284,33 @@ useHead({
 })
 
 // ======================
-// FAQ SECTION
+// HOME DATA (Services, FAQ, Testimonials)
 // ======================
+const serviceCards = (parse(servicesSource)?.services ?? []).map((service, index) => ({
+  ...service,
+  id: `${index}-${service.name}`
+}))
+
+const serviceSlide = ref(0)
+const visibleServices = computed(() => {
+  if (serviceCards.length <= 2) return serviceCards
+
+  const current = serviceCards[serviceSlide.value % serviceCards.length]
+  const next = serviceCards[(serviceSlide.value + 1) % serviceCards.length]
+  return [current, next]
+})
+
+const nextServiceSlide = () => {
+  if (!serviceCards.length) return
+  serviceSlide.value = (serviceSlide.value + 1) % serviceCards.length
+}
+
+const prevServiceSlide = () => {
+  if (!serviceCards.length) return
+  serviceSlide.value =
+    (serviceSlide.value - 1 + serviceCards.length) % serviceCards.length
+}
+
 const faqItems = (parse(faqSource)?.faq ?? []).map((item, index) => ({
   ...item,
   id: `${index}-${item.question}`
@@ -182,4 +319,11 @@ const activeFaq = ref(0)
 const toggleFaq = (index) => {
   activeFaq.value = activeFaq.value === index ? -1 : index
 }
+
+const testimonialItems = (parse(testimonialsSource)?.testimonials ?? []).map(
+  (item, index) => ({
+    ...item,
+    id: `${index}-${item.name}`
+  })
+)
 </script>
