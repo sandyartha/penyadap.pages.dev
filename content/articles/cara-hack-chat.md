@@ -20,7 +20,7 @@ tags:
 
 ## Sadap HP Pacar Selingkuh
 
-Bagaimana ***cara sadap hp pacar yang selingkuh?*** untuk [cek data WA](/pemesanan), Line, Facebook, Instagram, Telegram, Tinder, Kik, Snapchat, Viber, Skype, untuk membuktikan pacar selingkuh lewat aktivitas dari obrolan rahasia baik itu menggunakan iPhone atau Android.
+Bagaimana ***cara sadap hp pacar yang selingkuh?*** untuk [cek data WA](/pemesanan-aplikasi), Line, Facebook, Instagram, Telegram, Tinder, Kik, Snapchat, Viber, Skype, untuk membuktikan pacar selingkuh lewat aktivitas dari obrolan rahasia baik itu menggunakan iPhone atau Android.
 
 Selingkuh hati nyatanya sangat sulit ditebak & diselesaikan daripada selingkuh secara tindakan. Jika selingkuh fisik itu berarti pasangan sudah benar - benar mendua dan menjalin sebuah hubungan dengan sering bertemu, selingkuh hati yang berarti pasangan memendam rasa pada seseorang.
 

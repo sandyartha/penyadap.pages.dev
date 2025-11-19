@@ -22,7 +22,7 @@ tags:
 
 **Aplikasi KeyLogger dari [Highster Mobile](http://highstermobile.com)** untuk iPhone dan Android- adalah perangkat penyadap yang membantu untuk pengawasan hp seseorang melalui data komunikasi rahasia dan mencari tahu semua kebenaran lewat gadget seseorang.
 
-Aplikasi sadap hp juga dapat digunakan untuk orang tua dan untuk buktikan kesetiaan pasangan. Atau bahkan untuk [sadap hp teman](/pemesanan) (pastikan tidak untuk buat ilegal).
+Aplikasi sadap hp juga dapat digunakan untuk orang tua dan untuk buktikan kesetiaan pasangan. Atau bahkan untuk [sadap hp teman](/pemesanan-aplikasi) (pastikan tidak untuk buat ilegal).
 
 Aplikasi *Highster Mobile* kompatibel dengan hampir semua platform ponsel terbaru, dan akan menjalankan semua tugas untuk [melacak lokasi](/articles/lacak-hp-hilang-tanpa-aplikasi) dan pengambilan data komunikasi secara diam-diam. 
 

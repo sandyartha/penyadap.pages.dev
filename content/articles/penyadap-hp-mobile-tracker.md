@@ -24,7 +24,7 @@ Aplikasi sadap iPhone dan Android bekerja sebagai mata ketiga dan dengan mode te
 
 Apapun yang dilakukan dengan menggunakan aplikasi chat Facebook Messenger atau panggilan telepon apapun itu Anda dapat dengan mudah mengetahui.   
 
-Aplikasi [Hack Facebook](/pemesanan) ini harus dipasang pada perangkat smartphone target untuk dapat menyadap setiap kegiatan yang dilakukannya dari Messenger secara jarak jauh.
+Aplikasi [Hack Facebook](/pemesanan-aplikasi) ini harus dipasang pada perangkat smartphone target untuk dapat menyadap setiap kegiatan yang dilakukannya dari Messenger secara jarak jauh.
 
 Fitur panggilan telepon keluar atau masuk, dan sadap pesan SMS WA, Instagram, dan Telegram yang dikirim / diterima bahkan yang sudah dihapus.
 

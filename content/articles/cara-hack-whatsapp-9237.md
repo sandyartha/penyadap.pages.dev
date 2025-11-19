@@ -179,7 +179,7 @@ Anda perlu mempertimbangkan faktor berikut untuk memilih aplikasi penyadaphp.
 * Efisiensi aplikasi sadap
 * Setiap aktivitas mata-mata akan disembunyikan dan tidak terdeteksi dari hp target Anda.   
 
-Beberapa aplikasi sama bagusnya, tapi saya rekomendasi menggunakan mSpy adalah aplikasi atau program yang sangat bagus yang bisa digunakan untuk [hack akun WA orang lain](/pemesanan). 
+Beberapa aplikasi sama bagusnya, tapi saya rekomendasi menggunakan mSpy adalah aplikasi atau program yang sangat bagus yang bisa digunakan untuk [hack akun WA orang lain](/pemesanan-aplikasi). 
 
 ## Berikut Contoh Hasil Sadap dari mSpy
 

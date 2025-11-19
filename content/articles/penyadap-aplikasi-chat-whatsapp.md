@@ -170,7 +170,7 @@ Kenapa harus memilih aplikasi sadap ini? mungkin sudah diterangkan dengan disert
 * Bahkan jika target menggunakan Antivirus di perangkat dia, perangkat lunak mata-mata ini tidak akan terdeteksi.
 * Flexispy memiliki fitur sadap yang memungkinkan Anda menyembunyikan aplikasi SU ***\[SuperUser]*** dan aplikasi Cydia setelah *Rooting* dan Jailbreak dari ponsel target.
 * Pengaturan fitur sangat ***User Friendly*** untuk digunakan bersama dengan wizard instalasi yang mudah dilakukan oleh siapapun.
-* Aplikasi [sadap wa](/pemesanan) tidak meninggalkan jejak file log atau file yang mencurigakan yang dapat dilihat dengan mengunjungi pilihan ***task manager***.
+* Aplikasi [sadap wa](/pemesanan-aplikasi) tidak meninggalkan jejak file log atau file yang mencurigakan yang dapat dilihat dengan mengunjungi pilihan ***task manager***.
 * Lisensi aplikasi dapat ditransfer pada setiap platform perangkat mobile apapun yang berarti tidak perlu OS mobile target harus sama bila ingin memindahkan, tidak perlu sama dengan perangkat ponsel yang sebelumnya.
 * Fitur ini sangat bermanfaat, jika memindahkan software dari perangkat target seperti Android ke iPhone atau sebaliknya. Singkatnya kasus seperti ini apabila target mengganti gadget atau ingin pindah ke target lain dengan ponsel yang berbeda.
 

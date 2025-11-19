@@ -236,7 +236,7 @@ useHead(() => ({
   ]
 }))
 
-const schemaGraph = computed(() => {
+const schemaJson = computed(() => {
   if (!article.value || !metaTitle.value || !datePublished.value) return null;
 
   const articleId = `${currentUrl.value}#article`;
@@ -314,21 +314,21 @@ const schemaGraph = computed(() => {
     ]
   }
 
-  return {
+  return JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [articleNode, breadcrumbNode]
-  };
+  });
 });
 
 useHead(() => {
-  if (!schemaGraph.value) return {};
+  if (!schemaJson.value) return {};
 
   return {
     script: [
       {
         key: 'schema-org-article',
         type: 'application/ld+json',
-        innerHTML: JSON.stringify(schemaGraph.value)
+        innerHTML: schemaJson.value
       }
     ],
     __dangerouslyDisableSanitizersByTagID: {

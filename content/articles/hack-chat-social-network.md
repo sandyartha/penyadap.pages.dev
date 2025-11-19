@@ -26,9 +26,9 @@ Tak harus selalu di depan keluarga, hal ini bisa dilakukan hanya berdua dengan p
 
 Apa jadinya bila calon suami / [istri selingkuh dengan pria](/articles/penyadap-hp-pasangan-dengan-mspy) atau wanita lain padahal sudah komitmen, kasus perselingkuhan dapat menghampiri siapapun bahkan yang sudah lama menikah sangat rentan.
 
-Penyadap iPhone dan Android adalah salah satu [aplikasi sadap hp](/pemesanan) yang paling banyak digunakan selama beberapa tahun terakhir.
+Penyadap iPhone dan Android adalah salah satu [aplikasi sadap hp](/pemesanan-aplikasi) yang paling banyak digunakan selama beberapa tahun terakhir.
 
-Fitur sadap ini menarik seperti dukungan lintas platform, untuk ***[sadap sosial media](/pemesanan)*** dan kemudahan penggunaan telah menjadikan WhatsApp, Telegram, Facebook Messenger, Skype atau Snapchat sebagai pilihan utama di antara sebagian besar pengguna aplikasi chat. 
+Fitur sadap ini menarik seperti dukungan lintas platform, untuk ***[sadap sosial media](/pemesanan-aplikasi)*** dan kemudahan penggunaan telah menjadikan WhatsApp, Telegram, Facebook Messenger, Skype atau Snapchat sebagai pilihan utama di antara sebagian besar pengguna aplikasi chat. 
 
 Di sisi lain, sosial media juga menjadi cara favorit untuk berselingkuh untuk bertukar pesan rahasia dan mencari hubungan dengan pria atau wanita lain.
 

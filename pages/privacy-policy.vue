@@ -1,15 +1,19 @@
 <template>
-  <main class="min-h-screen prose dark:prose-invert prose-lg mx-auto p-6 text-gray-900 dark:text-gray-100">
-    <h1>Kebijakan Privasi</h1>
-    <p>
-      Kami menghargai privasi pengunjung. Halaman ini menjelaskan bagaimana data
-      dikumpulkan dan digunakan pada situs ini.
-    </p>
-    <p>
-      Kami tidak menjual data pengguna. Beberapa data dasar seperti alamat IP dan
-      informasi analitik dapat dikumpulkan untuk tujuan pemantauan performa dan
-      perbaikan situs.
-    </p>
+  <main class="min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <ContentDoc path="/privacy-policy">
+        <template #default="{ doc }">
+          <article class="prose dark:prose-invert max-w-none">
+            <ContentRenderer :value="doc" />
+          </article>
+        </template>
+        <template #not-found>
+          <div class="text-center py-8">
+            <p class="text-gray-500">Konten tidak ditemukan. Pastikan file content/privacy-policy.md ada.</p>
+          </div>
+        </template>
+      </ContentDoc>
+    </div>
   </main>
 </template>
 
@@ -17,66 +21,72 @@
 const route = useRoute();
 const siteUrl = useSiteUrl()
 
-const title = 'Kebijakan Privasi';
-const description = 'Kebijakan privasi penyadap.pages.dev — bagaimana data dikumpulkan dan digunakan.';
+const { data: privacyDoc } = await useAsyncData('privacy-doc', () =>
+  queryContent('/privacy-policy').findOne()
+)
+
+const title = computed(() => privacyDoc.value?.title || 'Kebijakan Privasi');
+const description = computed(() => privacyDoc.value?.description || 'Kebijakan privasi penyadap.pages.dev — bagaimana data dikumpulkan dan digunakan.');
 const url = computed(() => siteUrl.value + route.path);
 
 const image = computed(() => `${siteUrl.value}/default.png`);
 
 useSeoMeta({
-  title,
-  description,
-  ogTitle: `${title} - penyadap.pages.dev`,
-  ogDescription: description,
+  title: () => title.value,
+  description: () => description.value,
+  ogTitle: () => `${title.value} - penyadap.pages.dev`,
+  ogDescription: () => description.value,
   ogUrl: () => url.value,
   ogImage: () => image.value,
-  ogImageAlt: title,
+  ogImageAlt: () => title.value,
   ogType: 'website',
   ogSiteName: 'penyadap.pages.dev',
   twitterCard: 'summary_large_image',
-  twitterTitle: `${title} - penyadap.pages.dev`,
-  twitterDescription: description,
+  twitterTitle: () => `${title.value} - penyadap.pages.dev`,
+  twitterDescription: () => description.value,
   twitterImage: () => image.value
 });
 
-const schemaGraph = computed(() => ({
-  '@context': 'https://schema.org',
-  '@type': 'PrivacyPolicy',
-  '@id': `${url.value}#privacy`,
-  url: url.value,
-  name: title,
-  description,
-  inLanguage: 'id-ID',
-  isPartOf: {
-    '@type': 'WebSite',
-    '@id': `${siteUrl.value}#website`,
-    url: siteUrl.value,
-    name: 'penyadap.pages.dev',
-    publisher: {
-      '@type': 'Organization',
-      '@id': `${siteUrl.value}#organization`,
+const schemaJson = computed(() =>
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'PrivacyPolicy',
+    '@id': `${url.value}#privacy`,
+    url: url.value,
+    name: title.value,
+    description: description.value,
+    inLanguage: 'id-ID',
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${siteUrl.value}#website`,
+      url: siteUrl.value,
       name: 'penyadap.pages.dev',
-      url: siteUrl.value
-    }
-  },
-  breadcrumb: {
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: siteUrl.value
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: title,
-        item: url.value
+      publisher: {
+        '@type': 'Organization',
+        '@id': `${siteUrl.value}#organization`,
+        name: 'penyadap.pages.dev',
+        url: siteUrl.value
       }
-    ]
-  }
-}))
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: siteUrl.value
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: title.value,
+          item: url.value
+        }
+      ]
+    }
+  })
+)
 
 useHead(() => ({
   link: [
@@ -86,7 +96,7 @@ useHead(() => ({
     {
       key: 'schema-org-privacy',
       type: 'application/ld+json',
-      innerHTML: JSON.stringify(schemaGraph.value)
+      innerHTML: schemaJson.value
     }
   ],
   __dangerouslyDisableSanitizersByTagID: {

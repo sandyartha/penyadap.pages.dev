@@ -26,7 +26,7 @@ Dengan aplikasi PhoneSheriff dapat melakukannya pengawasan dengan memantau setia
 
 Bagi orang tua yang ingin mengetahui video dan foto yang disimpan di ponsel anak untuk memperhatikan konten yang dia simpan dan mengawasi sosial media dengan cara sadap hp.
 
-Saya menguji coba aplikasi [PhoneSheriff](http://phonesheriff.com) beberapa kali dengan hp pribadi, jadi yang perlu diketahui berdasarkan yang pernah menggunakan dengan aplikasi sadap ini, memiliki beberapa fitur menarik lain seperti [rekam panggilan telepon](/articles/sadap-hp-dengan-ikeymonitor) dan [hack chat WA](/pemesanan). 
+Saya menguji coba aplikasi [PhoneSheriff](http://phonesheriff.com) beberapa kali dengan hp pribadi, jadi yang perlu diketahui berdasarkan yang pernah menggunakan dengan aplikasi sadap ini, memiliki beberapa fitur menarik lain seperti [rekam panggilan telepon](/articles/sadap-hp-dengan-ikeymonitor) dan [hack chat WA](/pemesanan-aplikasi). 
 
 Aplikasi ini memberi kemudahan dan kenyamanan sambil mengawasi gadget anak remaja melalui perangkat apapun yang akan digunakan dengan aman untuk melindungi anak remaja dari sosial media dan aplikasi chat.
 

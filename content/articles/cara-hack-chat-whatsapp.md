@@ -20,7 +20,7 @@ tags:
 
 ## Buktikan Suami Selingkuh Dengan Sadap HP
 
-Cara mudah untuk buktikan pasangan selingkuh dengan [aplikasi sadap hp]() untuk Android & iPhone, untuk pastikan kesetiaan suami ketika menggunakan sosial media dan komunikasi [rahasia dari pesan WhatsApp](/pemesanan) yang dihapus oleh target.
+Cara mudah untuk buktikan pasangan selingkuh dengan [aplikasi sadap hp]() untuk Android & iPhone, untuk pastikan kesetiaan suami ketika menggunakan sosial media dan komunikasi [rahasia dari pesan WhatsApp](/pemesanan-aplikasi) yang dihapus oleh target.
 
 Buktikan suami yang selingkuh dengan [cara sadap hp](/articles/aplikasi-sadap-hp-terbaik), dengan metode ini akan lebih mudah membuktikan kesetiaan pasangan, dengan kemudahan komunikasi jaman sekarang.
 
