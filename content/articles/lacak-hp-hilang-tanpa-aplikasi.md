@@ -414,7 +414,7 @@ Itu mudah salah satu masalahnya - sudah seperti namanya sudah mengembalikan kond
 
 Untuk melacak lokasi hal yang paling penting adalah koneksi ke akun Google - bila seperti itu maka tidak akan ada lagi cara lain.
 
-Jika belum menginstall aplikasi pelacak dengan akses root, seperti [Cerberus](https://play.google.com/store/apps/details?id=com.lsdroid.cerberus), maka tidak akan dapat menemukan lagi.
+Jika belum menginstall aplikasi pelacak dengan akses root, seperti [Cerberus](/), maka tidak akan dapat menemukan lagi.
 
 **Dapatkah saya menemukan lokasi seseorang saya menggunakan nomor IMEI?**
 

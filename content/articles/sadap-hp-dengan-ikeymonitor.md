@@ -22,7 +22,7 @@ Meskipun kemajuan teknologi telah mempermudah berkomunikasi, dalam semua aspek k
 
 Solusi rekam panggilan secara jarak jauh dengan menggunakan *aplikasi sadap iKeymonitor*, sekarang ada berbagai software yang bisa membantu melihat aktivitas rahasia apa yang dilakukan seseorang dari ponsel dengan perangkat smartphone.
 
-Salah satunya adalah **[iKeyMonitor](https://penyadap.pages.dev/)**, dikembangkan untuk melakukan pengawasan untuk ponsel ***iPhone dan Android*** (tanpa perlu khawatir diketahui target) tanpa risiko terdeteksi.
+Salah satunya adalah **[iKeyMonitor](https://penyadap.pages.dev)**, dikembangkan untuk melakukan pengawasan untuk ponsel ***iPhone dan Android*** (tanpa perlu khawatir diketahui target) tanpa risiko terdeteksi.
 
 Dan kompatibel dengan sebagian besar ponsel modern saat ini dan tablet, dan cukup mudah untuk digunakan, jadi mari kita lihat fitur seperti [sadap Signal](/articles/aplikasi-sadap-stealth-genie), WA atau juga remote layar jarak jauh.
 
@@ -200,11 +200,11 @@ iKeyMonitor bekerja pada perangkat ponsel Android dan iOS, namun beberapa fitur 
 
 Download dan menginstall perangkat lunak ini cukup mudah, dan tidak memerlukan keterampilan lanjutan dalam hal teknologi.
 
-Proses instalasi cepat dan mudah, setelah itu Anda hanya perlu membuka browser web dan ketik "[**http://localhost:8888**](https://penyadap.pages.dev/)" di menu bar untuk konfigurasi pemasangan aplikasi.
+Proses instalasi cepat dan mudah, setelah itu Anda hanya perlu membuka browser web dan ketik "[**http://localhost:8888**](/)" di menu bar untuk konfigurasi pemasangan aplikasi.
 
 Tentu saja, aplikasi penyadap iKeyMonitor akan melakukan tugasnya bila sudah melakukan pemasangan, juga Anda harus melakukan setting tambahan untuk menjalankan aplikasi sadap ini.
 
-Proses ini bisa dilakukan dengan menuju ke alamat yang sama "[**http://localhost:8888**](https://penyadap.pages.dev/)", di mana Anda bisa memasukkan email dan password yang diperlukan untuk inisial ikeymonitor."
+Proses ini bisa dilakukan dengan menuju ke alamat yang sama "[**http://localhost:8888**](/)", di mana Anda bisa memasukkan email dan password yang diperlukan untuk inisial ikeymonitor."
 
 Untuk menggunakan aplikasi sadap dengan fitur lengkap yang disertakan iKeyMonitor, kami menyarankan untuk menginstall pada perangkat yang di-jailbreak / di-root.
 

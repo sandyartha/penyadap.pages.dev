@@ -322,7 +322,7 @@ Fitur yang dimiliki sama dengan aplikasi sebelumnya seperti ***Backup SMS & Cont
 
 **Download SMS Backup+**
 
-https://play.google.com/store/apps/details?id=com.zegoggles.smssync&hl=en
+[https://play.google.com/store/apps/details?id=com.zegoggles.smssync&hl=en](/)
 
 ## 9. Backup Your Mobile
 

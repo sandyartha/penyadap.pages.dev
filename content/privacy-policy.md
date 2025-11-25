@@ -8,7 +8,7 @@ Welcome to the official Web site of penyadap.pages.dev. penyadap® is committed 
 
 If our policy practices change in the future, we will let you know by posting the policy changes on our Web site. However, we will treat all personal information we collect in accordance with the privacy notice in effect at the time the information is collected.
 
-penyadap.pages.dev’s online properties comprise of, but are not limited to, all pages found under  [penyadap.pages.dev](https://penyadap.pages.dev/), including our online shop.
+penyadap.pages.dev’s online properties comprise of, but are not limited to, all pages found under [penyadap.pages.dev](https://penyadap.pages.dev), including our online shop.
 
 Cookies and Other Tracking Technologies
 

@@ -171,7 +171,7 @@ Dengan aplikasi sadap yang dapat merekam data pesan rahasia SNAPCHAT untuk peran
 
 **SADAP SNAPCHAT**
 
-Pengguna Snapchat adalah pengguna yang aktif dalam perkembangan aplikasi chating saat ini. semua alasan lebih untuk memata-matai obrolan SNAPCHAT untuk  [mengintip sosmed pasangan](/articles/cara-hack-chat/)  dan anak remaja dan apa yang mereka lakukan.
+Pengguna Snapchat adalah pengguna yang aktif dalam perkembangan aplikasi chating saat ini. semua alasan lebih untuk memata-matai obrolan SNAPCHAT untuk  [mengintip sosmed pasangan](/articles/cara-hack-chat)  dan anak remaja dan apa yang mereka lakukan.
 
 Anda tidak hanya bisa melihat setiap obrolan rahasia, Anda juga dapat memantau pesan status dan teman mereka sehingga Anda akan tahu persis seseorang dari Snapnya, Anda juga dapat melihat siapa saja yang sering berkomunikasi dengan target.
 

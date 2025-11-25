@@ -64,7 +64,7 @@ Setelah setuju dengan persyaratan dan penggunaan dari Mobile Spy, Anda dapat mul
 
 Pastikan Anda punya akses untuk menginstall aplikasi sadap Facebook pada ponsel target. Ketentuan dari Mobile Spy dilarang menggunakan perangkat lunak untuk tujuan ilegal.
 
-* Download aplikasi dari halaman ini [http://www.mobile-spy.com/purchase.html](https://penyadap.pages.dev/). Biaya untuk versi basic adalah **$49,97** dan versi premium **$ 64,97**.
+* Download aplikasi dari halaman ini [http://www.mobile-spy.com/purchase.html](https://penyadap.pages.dev). Biaya untuk versi basic adalah **$49,97** dan versi premium **$ 64,97**.
 * Mengisi semua bagian dan menerima persyaratan dan perjanjian.
 * Masukkan informasi pelanggan dan kartu kredit.
 * Menyelesaikan pemesanan dan memeriksa pemberitahuan melalui email.
@@ -75,7 +75,7 @@ Download dan instalasi rincian dapat ditemukan dari halaman petunjuk kunjungi li
 
 Pastikan untuk mengaktifkan opsi '*Izinkan pemasangan aplikasi dari sumber yang tidak dikenal*' bisa ditemukan di menu **Setting** > **Security** di ponsel Android target.  
 
-Kunjungi ***URL*** **[http://www.mobile-spy.com/userguide.html](https://penyadap.pages.dev/)**  dari browser ponsel Anda dan download aplikasi sadap untuk iPhone dan Android.
+Kunjungi ***URL*** **[http://www.mobile-spy.com/userguide.html](https://penyadap.pages.dev)**  dari browser ponsel Anda dan download aplikasi sadap untuk iPhone dan Android.
 
 ![Download Aplikasi Penyadap Mobile Spy](/wp-content/2022/02/08/download-mobile-spy.png)
 
@@ -94,7 +94,7 @@ Kunjungi ***URL*** **[http://www.mobile-spy.com/userguide.html](https://penyadap
 
 Setelah persyaratan dilakukan ***Software Hack Facebook Messenger*** akan berjalan secara real-time, bahkan jika target mematikan ponsel. Aplikasi Mobile Spy akan tetap aktif.
 
-Anda dapat login ke akun Anda dari halaman login [https://www.mobilespylogs.com/panel/login.php](https://penyadap.com) dengan memasukkan username dan password yang sama.
+Anda dapat login ke akun Anda dari halaman login [https://www.mobilespylogs.com/panel/login.php](/) dengan memasukkan username dan password yang sama.
 
 Pada halaman ini akan diarahkan ke control panel perangkat dimana kegiatan yang tersedia pada panel sisi kiri. Anda dapat mulai melihat setiap aktivitas dari ponsel target.
 
