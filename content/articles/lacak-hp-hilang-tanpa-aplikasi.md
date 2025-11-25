@@ -454,11 +454,11 @@ Beberapa tips buat Anda yang harus disiapkan sebelum sesuatu itu terjadi lagi ke
 
 Menggunakan aplikasi pelacak / anti-pencurian pada ponsel sangat meningkatkan kemungkinan mendapatkan ponsel kamu kembali bila hilang.
 
-Ada banyak *aplikasi tracking location* yang berbeda-beda tapi saya menyarankan untuk menggunakan [Cerberus](https://play.google.com/store/apps/details?id=com.lsdroid.cerberus), karena menawarkan banyak fitur dan mudah digunakan.
+Ada banyak *aplikasi tracking location* yang berbeda-beda tapi saya menyarankan untuk menggunakan [Cerberus](/), karena menawarkan banyak fitur dan mudah digunakan.
 
 Beberapa dari banyak pilihan yang pelacak lokasi, mengambil video atau gambar dengan kedua kamera depan atau belakang, memeriksa log panggilan, riwayat lokasi dan backup semua data.   
 
-Anda bisa mendapatkan Cerberus [satu minggu gratis](https://play.google.com/store/apps/details?id=com.lsdroid.cerberus), setelah itu dapat membeli lisensi seumur hidup untuk saat ini **4,99 €**.
+Anda bisa mendapatkan Cerberus [satu minggu gratis](/), setelah itu dapat membeli lisensi seumur hidup untuk saat ini **4,99 €**.
 
 
 
