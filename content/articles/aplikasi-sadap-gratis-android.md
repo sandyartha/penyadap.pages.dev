@@ -202,7 +202,7 @@ Sebelum pasangan jangan lupa kalau aplikasi ini di pasang di hp target, *bukan d
 
 **Menginstall**
 
-1. Pertama download terlebih dahulu aplikasi > **[Txtract MMS & SMS.](https://play.google.com/store/apps/details?id=com.brilaps.android.txtractpro.withmms&hl=en)**
+1. Pertama download terlebih dahulu aplikasi > **[Txtract MMS & SMS.](/)**
 2. Setelah pemasangan selesai maka langkah selanjutnya. 
 3. Setelah ada tampilan pada aplikasi pilih > **Extract All.**
 4. Setelah di extract semua data yang ada hp target maka langkah selanjuntya adalah mengirim data ke email > **Email the output** > Pilih > **OK.**
@@ -212,7 +212,7 @@ Sebelum pasangan jangan lupa kalau aplikasi ini di pasang di hp target, *bukan d
 
 **Download Txtract MMS & SMS**
 
-https://play.google.com/store/apps/details?id=com.brilaps.android.txtractpro.withmms&hl=id
+[https://play.google.com/store/apps/details?id=com.brilaps.android.txtractpro.withmms&hl=id](/)
 
 ## 6. Super Backup: SMS & Contacts
 
@@ -301,7 +301,7 @@ Fitur yang dimiliki sama dengan aplikasi sebelumnya seperti ***Backup SMS & Cont
 
 **Menginstall Backup+**
 
-1. Langkah awal sebelum pengaturan download terlebih dahulu >> **[SMS Backup+.](https://play.google.com/store/apps/details?id=com.zegoggles.smssync&hl=en)**
+1. Langkah awal sebelum pengaturan download terlebih dahulu >> **[SMS Backup+.](/)**
 2. Setelah download selesai maka pemasangan aplikasi seperti biasa buka tab notifikasi > Pilih > SMS Backup+. 
 3. Kemudian buka aplikasi nya di daftar menu hp target. 
 4. Setelah masuk maka tampilan seperti screenshot dibawah > daftar pilah pengaturan paling atas ada **Connect with Gmail.**
@@ -334,7 +334,7 @@ Karena tidak ada fitur kririm data ke email gmail. Agan harus mengambil data sec
 
 **Menginstall (Backup Your Mobile)**
 
-1. Pertama download aplikasi >> **[Backup Your Mobile.](https://play.google.com/store/apps/details?id=com.backupyourmobile)**
+1. Pertama download aplikasi >> **[Backup Your Mobile.](/)**
 2. Kedua buka aplikasinya di daftar menu hp target.
 3. Kemudian pilih data apa saja ingin kamu sadap gan seperti screenshot dibawah. Setelah dipilih tombol **BACKUP** kalau sudah ditentukan file apa saja tunggu prosesnya dan pindahkan file tersebut ke hp pribadi dengan menggunakan aplikasi **SHAREit.** 
 

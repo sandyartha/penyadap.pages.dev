@@ -64,18 +64,18 @@ Setelah setuju dengan persyaratan dan penggunaan dari Mobile Spy, Anda dapat mul
 
 Pastikan Anda punya akses untuk menginstall aplikasi sadap Facebook pada ponsel target. Ketentuan dari Mobile Spy dilarang menggunakan perangkat lunak untuk tujuan ilegal.
 
-* Download aplikasi dari halaman ini <http://www.mobile-spy.com/purchase.html>. Biaya untuk versi basic adalah **$49,97** dan versi premium **$ 64,97**.
+* Download aplikasi dari halaman ini [http://www.mobile-spy.com/purchase.html](https://penyadap.pages.dev/). Biaya untuk versi basic adalah **$49,97** dan versi premium **$ 64,97**.
 * Mengisi semua bagian dan menerima persyaratan dan perjanjian.
 * Masukkan informasi pelanggan dan kartu kredit.
 * Menyelesaikan pemesanan dan memeriksa pemberitahuan melalui email.
 
 Email tersebut berisi penerimaan dan pendaftaran, kode yang digunakan untuk mendaftarkan akun Anda. Juga termasuk *link download* untuk menginstall software ***hack facebook*** pada smartphone target. 
 
-Download dan instalasi rincian dapat ditemukan dari halaman petunjuk kunjungi link berikut **[http://www.mobile-spy.com/userguide.html](https://penyadap.com)**.
+Download dan instalasi rincian dapat ditemukan dari halaman petunjuk kunjungi link berikut **[http://www.mobile-spy.com/userguide.html](https://penyadap.pages.dev)**.
 
 Pastikan untuk mengaktifkan opsi '*Izinkan pemasangan aplikasi dari sumber yang tidak dikenal*' bisa ditemukan di menu **Setting** > **Security** di ponsel Android target.  
 
-Kunjungi ***URL*** **[http://www.mobile-spy.com/userguide.html](https://penyadap.com)**  dari browser ponsel Anda dan download aplikasi sadap untuk iPhone dan Android.
+Kunjungi ***URL*** **[http://www.mobile-spy.com/userguide.html](https://penyadap.pages.dev/)**  dari browser ponsel Anda dan download aplikasi sadap untuk iPhone dan Android.
 
 ![Download Aplikasi Penyadap Mobile Spy](/wp-content/2022/02/08/download-mobile-spy.png)
 

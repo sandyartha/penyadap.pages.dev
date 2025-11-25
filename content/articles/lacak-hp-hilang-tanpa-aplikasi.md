@@ -91,7 +91,7 @@ Bila tidak ada komputer / laptop untuk  digunakan memulai melakukan lacak hp and
 
 Dengan menggunakan web browser ponsel, Anda juga dapat **menggunakan aplikasi Pengelola Perangkat Android** agar dapat memudahkan pencarian dan tindakan lain. 
 
-Jika memiliki hp lain selain ponsel yang hilang, hanya dengan aplikasi berikut: [download di sini](https://play.google.com/store/apps/details?id=com.google.android.apps.adm&hl=in&gl=US).
+Jika memiliki hp lain selain ponsel yang hilang, hanya dengan aplikasi berikut: [download di sini](https://play.google.com/store/).
 
 Dapat masuk menggunakan mode sebagai tamu dan login dengan akun Google Anda.
 
@@ -127,7 +127,7 @@ Cara ini adalah yang lebih rumit untuk melacak ponsel yang hilang. Pada dasarnya
 
 Bagaimana pengguna menginstall sesuatu ketika tidak memiliki akses ponsel yang sudah terlanjur hilang? Itu sangat mudah.
 
-Anda dapat menginstall aplikasi dari perangkat langsung dari browser komputer melalui [Google Play,](https://play.google.com/store) cukup arahkan ke [Android Lost](https://play.google.com/store/apps/details?id=com.androidlost) dan klik tombol install.
+Anda dapat menginstall aplikasi dari perangkat langsung dari browser komputer melalui [Google Play,](https://play.google.com/store) cukup arahkan ke [Android Lost](https://play.google.com/store/) dan klik tombol install.
 
 Proses instalasi untuk Android Lost sangat mudah dan hanya membutuhkan beberapa metode berikut ponsel Anda masih terhubung dengan akun Google milik Anda.
 
@@ -137,7 +137,7 @@ Jadi inilah yang harus dilakukan:
 
 **Langkah 1 . Instal Android Lost dari jarak jauh**
 
-Instal [aplikasi Android Lost jarak jauh melalui Google Play](https://play.google.com/store/apps/details?id=com.androidlost) buka browser komputer dan di instal pada ponsel dari pc / laptop.
+Instal [aplikasi Android Lost jarak jauh melalui Google Play](https://play.google.com/store/) buka browser komputer dan di instal pada ponsel dari pc / laptop.
 
 Seperti yang sudah saya sebutkan, bahwa hp masih terhubung ke akun Google. Jika tidak, ini tidak akan bekerja dengan baik.
 
@@ -151,7 +151,7 @@ Maka kamu harus mendaftarkan perangkat dari jarak jauh, dengan mengirim SMS deng
 
 SMS ini dapat dikirim dari ponsel mana pun. Metode ini akan memicu Android Lost untuk mendaftar secara otomatis menggunakan kredensial di akun Google, tetapi cara ini sudah tidak berjalan untuk Android versi terbaru.
 
-Jika Anda memiliki tablet, dengan cara SMS mungkin tidak menjadi pilihan. Dalam kasus ini, install “[Android Lost Jumpstart](https://play.google.com/store/apps/details?id=com.androidlost.jumpstart)” sebelum  Anda menginstall aplikasi Android Lost akan memulai proses pendaftaran ketika Android Lost sedang di install.
+Jika Anda memiliki tablet, dengan cara SMS mungkin tidak menjadi pilihan. Dalam kasus ini, install “[Android Lost Jumpstart](https://play.google.com/store/)” sebelum  Anda menginstall aplikasi Android Lost akan memulai proses pendaftaran ketika Android Lost sedang di install.
 
 **Langkah 3: Login ke situs Android Lost**
 
@@ -255,7 +255,7 @@ Anda juga dapat memata-matai panggilan, pesan teks, mengakses entri kalender, me
 
 Jika ***Android Lost*** tidak bekerja untuk melacak hp yang hilang, bila masih menggunakan Android versi lama bisa menggunakan aplikasi Plan B.
 
-Dengan menginstall aplikasi langsung dari Play Store ( [DOWNLOAD](https://play.google.com/store/apps/details?id=com.lookout.labs.planb) ) ke perangkat dan, jika berhasil, Plan B akan mengirimkan setiap detail lokasi perangkat ke alamat email Anda. 
+Dengan menginstall aplikasi langsung dari Play Store ( [DOWNLOAD](/) ) ke perangkat dan, jika berhasil, Plan B akan mengirimkan setiap detail lokasi perangkat ke alamat email Anda. 
 
 Aplikasi pelacak lokasi ***PLAN B*** akan mengirimkan pemberitahuan email setiap 10 menit dengan lokasi terbaru tergantung HP berada dari tempat yang berbeda - beda.
 
@@ -372,7 +372,7 @@ Sejauh inilah satu-satunya dengan cara menggunakan Dropbox untuk membantu mendap
 
 Saya harap dengan membaca artikel ini dapat membantu siapapun dalam menemukan hp yang hilang dan saya sarankan menginstall aplikasi pelacak yang baik ***SEBELUM*** hilang. 
 
-Aplikasi yang saya sarankan adalah [Cerberus](https://www.cerberusapp.com), yang [tersedia juga di Google Play](https://play.google.com/store/apps/details?id=com.lsdroid.cerberus).
+Aplikasi yang saya sarankan adalah [Cerberus](https://www.cerberusapp.com), yang [tersedia juga di Google Play](/).
 
 
 
