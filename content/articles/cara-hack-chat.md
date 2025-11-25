@@ -203,4 +203,4 @@ Prasangka akan merubah hubungan kalian menjadi lebih buruk, dengan curiga hubung
 
 Nah, itu dia sadap hp untuk kamu yang sedang hubungan pacaran jarak jauh. Selama kamu dan si dia sama-sama berusaha, menjalani *Long Distance Relationship* atau **LDR** bukan hal yang tidak mungkin.
 
-Terima Kasih.
+Terima Kasih. - penyadap.pages.dev

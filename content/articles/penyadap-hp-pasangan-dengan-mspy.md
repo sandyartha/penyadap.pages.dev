@@ -234,3 +234,5 @@ Instalasi bisa jadi rumit jika Anda perlu root atau jailbreak perangkat, selain 
 Untuk garansi, kami merasa sedikit sulit karena hampir tidak mungkin mendapatkannya. Itu sebabnya Anda harus memastikan untuk memeriksa fitur mana yang diperlukan dan cocok dengan perangkat target.
 
 Meskipun saya tidak perlu menggunakan dukungan pelanggan, beberapa pengguna menyebutkan aplikasi tidak dapat menggunakan semua fitur dengan lancar. Tapi setiap kendala teknis ada dukungan pelanggan gratis, untuk layanan pengguna aplikasi sadap.
+
+- penyadap.pages.dev

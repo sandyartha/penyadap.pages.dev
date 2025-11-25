@@ -186,4 +186,4 @@ Saya harap ulasan aplikasi sadap hp Flexispy, semoga menjawab dari semua pertany
 
 Bila ada pertanyaan ? silahkan buat komentar atau kirim WhatsApp dengan jelas & detail ya, agar saya tanggapi.
 
-Sekian
+Sekian - penyadap.pages.dev

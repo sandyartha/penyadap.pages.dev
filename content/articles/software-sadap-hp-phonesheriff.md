@@ -282,3 +282,5 @@ Fungsi tambahan, ada perlindungan anti-pencurian dengan fitur ini memberikan keg
 Aplikasi sadap ini memiliki masalah stabilitas selama penggunaan meskipun terjadi hanya sesekali namun kendala ini dikarenakan jaringan internet yang tersedia dari ponsel target. 
 
 Kami berharap dukungan pelanggan akan membaik kedepan karena karena kami dapat menyimpulkan, untuk produk penyadap ini tidak memadai mengingat harga yang tidak murah untuk rangkaian pemantauan dikemas fitur sadap yang standar saja.
+
+- penyadap.pages.dev

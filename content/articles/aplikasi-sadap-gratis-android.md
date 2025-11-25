@@ -345,3 +345,5 @@ Karena tidak ada fitur kririm data ke email gmail. Agan harus mengambil data sec
 {{< btn link="https://play.google.com/store/apps/details?id=com.backupyourmobile" title="Backup Your Mobile" >}}
 
 Sekian dari **tutorial cara sadap Android dan Tablet gratis terbaik** kali ini. Semoga bermanfaat bagi teman yang sudah mampi di blog ini, jangan salah gunakan aplikasi untuk tujuan ilegal, kami tidak bertanggung jawab apabila disalah gunakan.
+
+- penyadap.pages.dev

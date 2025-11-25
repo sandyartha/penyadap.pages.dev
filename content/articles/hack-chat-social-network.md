@@ -210,4 +210,4 @@ Hayo, jujur aja deh, ada berapa tanda yang kamu temukan dalam diri pasangan? yan
 
 
 
-Terima kasih.
+Terima kasih. - penyadap.pages.dev

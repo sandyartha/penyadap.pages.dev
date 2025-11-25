@@ -213,4 +213,4 @@ Software sadap hp ini membutuhkan jaringan internet yang pertama pastikan kalau 
 
 
 
-Terima Kasih.
+Terima Kasih. - penyadap.pages.dev

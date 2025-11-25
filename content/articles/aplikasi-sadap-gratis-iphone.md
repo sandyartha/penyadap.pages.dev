@@ -243,3 +243,6 @@ Saran kami apabila pertama kali melakukan penyadapan pilihlah software dan sesua
 * [https://id.wikipedia.org/wiki/Android_(sistem_operasi)](https://id.wikipedia.org/wiki/Android_(sistem_operasi))
 * <https://apple.com>
 * <https://android.com>
+
+
+- penyadap.pages.dev

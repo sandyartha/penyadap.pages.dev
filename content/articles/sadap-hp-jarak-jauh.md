@@ -187,3 +187,5 @@ Dan juga bagi pengusaha yang ingin memantau produktivitas karyawan dalam untuk m
 Jika memiliki dan komentar atau saran tentang ulasan ini dari perangkat *sadap Highster Mobile* dapat dengan hubungi kami lewat panggilan dan WhatsApp yang sudah disediakan, ditunggu ya :).
 
 **Terima Kasih**
+
+- penyadap.pages.dev

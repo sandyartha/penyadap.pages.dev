@@ -230,3 +230,5 @@ Beberapa aplikasi sama bagusnya, tapi saya rekomendasi menggunakan mSpy adalah a
 3. Lindungi ponsel dengan beberapa layar kunci, sehingga orang lain tidak dapat mengakses ponsel tanpa izin Anda.   
 
 > **Catatan** : Tutorial ini hanya untuk tujuan pendidikan. Penulis atau pemilik blog tidak bertanggung jawab atas jenis penyalahgunaan informasi yang diberikan.
+
+- penyadap.pages.dev

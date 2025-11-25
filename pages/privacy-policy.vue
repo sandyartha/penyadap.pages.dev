@@ -3,6 +3,10 @@
     <div class="max-w-4xl mx-auto px-4 py-8">
       <ContentDoc path="/privacy-policy">
         <template #default="{ doc }">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+              {{ doc.title }}
+          </h1>
+
           <article class="prose dark:prose-invert max-w-none">
             <ContentRenderer :value="doc" />
           </article>

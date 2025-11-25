@@ -236,4 +236,4 @@ Aplikasi ini mendukung semua penyedia jaringan selular utama yang meliputi, Telk
 
 
 
-Terima kasih.
+Terima kasih. - penyadap.pages.dev

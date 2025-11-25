@@ -245,3 +245,5 @@ Apakah benar-benar perlu untuk mengawasi putra / putri remaja Anda dari teman - 
 Media sosial remaja sangat identik upload foto yang tidak pantas, cobalah untuk memastikan akun media sosial mereka.
 
 Lihat apa saja yang dia posting, dan siapa temannya. Dorong selalu anak remaja untuk menjadi anak yang tidak ceroboh dan bertanggung jawab, untuk orang tua juga harus membantu menjelaskan hal apa yang tidak pantas dalam penggunaan internet.
+
+- penyadap.pages.dev

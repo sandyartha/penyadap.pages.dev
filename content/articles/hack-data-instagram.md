@@ -198,3 +198,6 @@ Ada pengeluaran tak terduga dan tidak bisa dijelaskan oleh pasangan. Namun, kita
 Selain itu juga, ***Yvone Filler*** juga menjelaskan bahwa pasangan yang sedang berselingkuh akan terus mencari alasan untuk tidak mendiskusikan rencana masa depan kalian berdua.
 
 > "Biasanya. sang istri mendapati suami-nya tidak mau melakukan hal-hal besar seperti rencana untuk mendesain tata ruang rumah atau menabung untuk liburan," ucapnya.
+
+
+- penyadap.pages.dev

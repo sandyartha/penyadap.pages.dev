@@ -13,7 +13,7 @@
 const siteUrl = useSiteUrl()
 
 const description = "Artikel dan panduan berguna seputar penggunaan mSpy dan keamanan digital keluarga.";
-const title = "Artikel | mSpy Indonesia";
+const title = "Artikel ";
 const canonicalUrl = computed(() => `${siteUrl.value}/articles`);
 
 const image = computed(() => `${siteUrl.value}/default.png`);
