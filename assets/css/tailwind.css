@@ -6,6 +6,12 @@
   ::selection {
     @apply bg-primary/40;
   }
+
+  /* Make long links wrap instead of stretching layout */
+  a {
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+  }
 }
 
 @layer components {

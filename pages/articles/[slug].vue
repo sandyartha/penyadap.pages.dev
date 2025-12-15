@@ -236,11 +236,10 @@ useHead(() => ({
   ]
 }))
 
-const schemaJson = computed(() => {
+const articleSchemaJson = computed(() => {
   if (!article.value || !metaTitle.value || !datePublished.value) return null;
 
   const articleId = `${currentUrl.value}#article`;
-  const breadcrumbId = `${currentUrl.value}#breadcrumb`;
   const organizationId = `${siteUrl.value}#organization`;
   const websiteId = `${siteUrl.value}#website`;
 
@@ -289,6 +288,17 @@ const schemaJson = computed(() => {
     }
   }
 
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    ...articleNode
+  });
+});
+
+const breadcrumbSchemaJson = computed(() => {
+  if (!article.value || !metaTitle.value || !datePublished.value) return null;
+
+  const breadcrumbId = `${currentUrl.value}#breadcrumb`;
+
   const breadcrumbNode = {
     '@type': 'BreadcrumbList',
     '@id': breadcrumbId,
@@ -316,24 +326,37 @@ const schemaJson = computed(() => {
 
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@graph': [articleNode, breadcrumbNode]
+    ...breadcrumbNode
   });
 });
 
 useHead(() => {
-  if (!schemaJson.value) return {};
+  const script = [];
+  const sanitizers = {};
+
+  if (articleSchemaJson.value) {
+    script.push({
+      key: 'schema-org-article',
+      type: 'application/ld+json',
+      innerHTML: articleSchemaJson.value
+    });
+    sanitizers['schema-org-article'] = ['innerHTML'];
+  }
+
+  if (breadcrumbSchemaJson.value) {
+    script.push({
+      key: 'schema-org-breadcrumb',
+      type: 'application/ld+json',
+      innerHTML: breadcrumbSchemaJson.value
+    });
+    sanitizers['schema-org-breadcrumb'] = ['innerHTML'];
+  }
+
+  if (!script.length) return {};
 
   return {
-    script: [
-      {
-        key: 'schema-org-article',
-        type: 'application/ld+json',
-        innerHTML: schemaJson.value
-      }
-    ],
-    __dangerouslyDisableSanitizersByTagID: {
-      'schema-org-article': ['innerHTML']
-    }
+    script,
+    __dangerouslyDisableSanitizersByTagID: sanitizers
   };
 });
 </script>

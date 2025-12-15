@@ -1,6 +1,6 @@
 <template>
   <main class="min-h-screen">
-    <AppHeader class="mb-16" title="Articles" :description="description" />
+    <AppHeader class="mb-16" title="Review Aplikasi Parental Control Terbaik" :description="description" />
     <ul class="space-y-16">
       <li v-for="(article, id) in articles" :key="id">
         <AppArticleCard :article="article" />
@@ -12,8 +12,8 @@
 <script setup>
 const siteUrl = useSiteUrl()
 
-const description = "Artikel dan panduan berguna seputar penggunaan mSpy dan keamanan digital keluarga.";
-const title = "Artikel ";
+const description = "Artikel dan panduan berguna seputar penggunaan aplikasi sadap hp dari mSpy dan keamanan digital keluarga.";
+const title = "Review Aplikasi Parental Control Terbaik";
 const canonicalUrl = computed(() => `${siteUrl.value}/articles`);
 
 const image = computed(() => `${siteUrl.value}/default.png`);
@@ -52,67 +52,83 @@ const articleListItems = computed(() => {
   }));
 });
 
-const schemaJson = computed(() =>
+const webPageSchemaJson = computed(() =>
   JSON.stringify({
     '@context': 'https://schema.org',
-    '@graph': [
+    '@type': 'WebPage',
+    '@id': `${canonicalUrl.value}#webpage`,
+    url: canonicalUrl.value,
+    name: title,
+    description,
+    inLanguage: 'id-ID',
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${siteUrl.value}#website`,
+      url: siteUrl.value,
+      name: 'penyadap.pages.dev'
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      '@id': `${canonicalUrl.value}#itemlist`,
+      url: canonicalUrl.value,
+      name: 'Daftar Artikel',
+      description,
+      numberOfItems: articles.value?.length || 0,
+      itemListElement: articleListItems.value
+    }
+  })
+)
+
+const breadcrumbSchemaJson = computed(() =>
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    '@id': `${canonicalUrl.value}#breadcrumb`,
+    itemListElement: [
       {
-        '@type': 'CollectionPage',
-        '@id': `${canonicalUrl.value}#collectionpage`,
-        url: canonicalUrl.value,
-        name: title,
-        description,
-        inLanguage: 'id-ID',
-        isPartOf: {
-          '@type': 'WebSite',
-          '@id': `${siteUrl.value}#website`,
-          url: siteUrl.value,
-          name: 'penyadap.pages.dev'
-        },
-        breadcrumb: {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Home',
-              item: siteUrl.value
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: 'Artikel',
-              item: canonicalUrl.value
-            }
-          ]
-        }
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl.value
       },
       {
-        '@type': 'ItemList',
-        '@id': `${canonicalUrl.value}#itemlist`,
-        url: canonicalUrl.value,
-        name: 'Daftar Artikel',
-        description,
-        numberOfItems: articles.value?.length || 0,
-        itemListElement: articleListItems.value
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Artikel',
+        item: canonicalUrl.value
       }
     ]
   })
 )
 
-useHead(() => ({
-  link: [
-    { rel: 'canonical', href: canonicalUrl.value }
-  ],
-  script: [
-    {
-      key: 'schema-org-articles',
+useHead(() => {
+  const script = [];
+  const sanitizers = {};
+
+  if (webPageSchemaJson.value) {
+    script.push({
+      key: 'schema-org-articles-webpage',
       type: 'application/ld+json',
-      innerHTML: schemaJson.value
-    }
-  ],
-  __dangerouslyDisableSanitizersByTagID: {
-    'schema-org-articles': ['innerHTML']
+      innerHTML: webPageSchemaJson.value
+    });
+    sanitizers['schema-org-articles-webpage'] = ['innerHTML'];
   }
-}));
+
+  if (breadcrumbSchemaJson.value) {
+    script.push({
+      key: 'schema-org-articles-breadcrumb',
+      type: 'application/ld+json',
+      innerHTML: breadcrumbSchemaJson.value
+    });
+    sanitizers['schema-org-articles-breadcrumb'] = ['innerHTML'];
+  }
+
+  return {
+    link: [
+      { rel: 'canonical', href: canonicalUrl.value }
+    ],
+    script,
+    __dangerouslyDisableSanitizersByTagID: sanitizers
+  };
+});
 </script>

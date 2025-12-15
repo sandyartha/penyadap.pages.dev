@@ -33,8 +33,8 @@ const { data: orderDoc } = await useAsyncData('order-doc', () =>
   queryContent('/pemesanan-aplikasi').findOne()
 )
 
-const title = computed(() => orderDoc.value?.title || 'Pemesanan Aplikasi mSpy Indonesia')
-const description = computed(() => orderDoc.value?.description || 'Pesan layanan pemasangan aplikasi mSpy resmi untuk memantau WhatsApp, Telegram, panggilan, dan lokasi perangkat jarak jauh dengan dukungan penuh berbahasa Indonesia.')
+const title = computed(() => orderDoc.value?.title || 'Jasa Pemesanan Aplikasi Parental Control Dari FlexiSpy Indonesia')
+const description = computed(() => orderDoc.value?.description || 'Pesan layanan pemasangan aplikasi FlexiSpy resmi untuk memantau WhatsApp, Telegram, panggilan, dan lokasi perangkat jarak jauh dengan dukungan penuh berbahasa Indonesia.')
 const currentUrl = computed(() => siteUrl.value + route.path)
 const image = computed(() => `${siteUrl.value}/default.png`)
 
@@ -54,75 +54,73 @@ useSeoMeta({
   twitterImage: () => image.value
 })
 
-const schemaJson = computed(() =>
+const webPageSchemaJson = computed(() =>
   JSON.stringify({
     '@context': 'https://schema.org',
-    '@graph': [
+    '@type': 'WebPage',
+    '@id': `${currentUrl.value}#webpage`,
+    name: title.value,
+    description: description.value,
+    url: currentUrl.value,
+    inLanguage: 'id-ID',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'penyadap.pages.dev',
+      url: siteUrl.value
+    }
+  })
+)
+
+const breadcrumbSchemaJson = computed(() =>
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
       {
-        '@id': 'https://penyadap.pages.dev/#website',
-        '@type': 'WebSite',
-        name: 'penyadap.pages.dev',
-        alternateName: 'Jasa Pemasangan Parental Control mSpy Indonesia',
-        description: 'Jasa Pemasangan Parental Control — mSpy (Indonesia)',
-        url: 'https://penyadap.pages.dev',
-        inLanguage: 'id',
-        publisher: {
-          '@type': 'Organization',
-          '@id': 'https://penyadap.pages.dev/#organization',
-          name: 'penyadap.pages.dev',
-          url: 'https://penyadap.pages.dev'
-        }
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Beranda',
+        item: siteUrl.value
       },
       {
-        '@id': `${currentUrl.value}#webpage`,
-        '@type': 'WebPage',
-        name: title.value,
-        description: description.value,
-        url: currentUrl.value,
-        isPartOf: {
-          '@id': 'https://penyadap.pages.dev/#website'
-        },
-        mainEntity: {
-          '@type': 'Service',
-          '@id': `${currentUrl.value}#service`,
-          name: 'Paket pemasangan aplikasi mSpy Indonesia',
-          description: 'Instalasi jarak jauh, konfigurasi, dan pelatihan penggunaan mSpy lengkap untuk memantau perangkat target.',
-          provider: {
-            '@type': 'Organization',
-            '@id': 'https://penyadap.pages.dev/#organization',
-            name: 'penyadap.pages.dev'
-          },
-          areaServed: {
-            '@type': 'Country',
-            name: 'Indonesia'
-          },
-          offers: {
-            '@type': 'Offer',
-            priceCurrency: 'IDR',
-            price: '2900000',
-            availability: 'https://schema.org/InStock',
-            url: currentUrl.value
-          }
-        }
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Pemesanan Aplikasi FlexiSpy',
+        item: currentUrl.value
       }
     ]
   })
 )
 
-useHead(() => ({
-  link: [
-    { rel: 'canonical', href: currentUrl.value }
-  ],
-  script: [
-    {
-      key: 'schema-org-order',
+useHead(() => {
+  const script = [];
+  const sanitizers = {};
+
+  if (webPageSchemaJson.value) {
+    script.push({
+      key: 'schema-org-order-webpage',
       type: 'application/ld+json',
-      innerHTML: schemaJson.value
-    }
-  ],
-  __dangerouslyDisableSanitizersByTagID: {
-    'schema-org-order': ['innerHTML']
+      innerHTML: webPageSchemaJson.value
+    });
+    sanitizers['schema-org-order-webpage'] = ['innerHTML'];
   }
-}))
+
+  if (breadcrumbSchemaJson.value) {
+    script.push({
+      key: 'schema-org-order-breadcrumb',
+      type: 'application/ld+json',
+      innerHTML: breadcrumbSchemaJson.value
+    });
+    sanitizers['schema-org-order-breadcrumb'] = ['innerHTML'];
+  }
+
+  return {
+    link: [
+      { rel: 'canonical', href: currentUrl.value }
+    ],
+    script,
+    __dangerouslyDisableSanitizersByTagID: sanitizers
+  };
+})
 </script>
 

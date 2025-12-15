@@ -50,62 +50,86 @@ useSeoMeta({
   twitterImage: () => image.value
 });
 
-const schemaJson = computed(() =>
+const webPageSchemaJson = computed(() =>
   JSON.stringify({
     '@context': 'https://schema.org',
-    '@graph': [
+    '@type': 'AboutPage',
+    '@id': `${url.value}#webpage`,
+    name: title.value,
+    description: description.value,
+    url: url.value,
+    inLanguage: 'id-ID',
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${siteUrl.value}#website`,
+      name: 'penyadap.pages.dev',
+      url: siteUrl.value
+    },
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${siteUrl.value}#organization`,
+      name: 'penyadap.pages.dev',
+      url: siteUrl.value,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl.value}/logo.png`,
+        width: 512,
+        height: 512
+      }
+    }
+  })
+);
+
+const breadcrumbSchemaJson = computed(() =>
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    '@id': `${url.value}#breadcrumb`,
+    itemListElement: [
       {
-        '@id': 'https://penyadap.pages.dev/#website',
-        '@type': 'WebSite',
-        name: 'penyadap.pages.dev',
-        alternateName: 'Jasa Pemasangan Parental Control mSpy Indonesia',
-        description: 'Jasa Pemasangan Parental Control — mSpy (Indonesia)',
-        url: 'https://penyadap.pages.dev',
-        inLanguage: 'id',
-        publisher: {
-          '@type': 'Organization',
-          '@id': 'https://penyadap.pages.dev/#organization',
-          name: 'penyadap.pages.dev',
-          url: 'https://penyadap.pages.dev'
-        }
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl.value
       },
       {
-        '@id': 'https://penyadap.pages.dev/about#webpage',
-        '@type': ['WebPage', 'AboutPage'],
+        '@type': 'ListItem',
+        position: 2,
         name: title.value,
-        description: description.value,
-        url: 'https://penyadap.pages.dev/about',
-        isPartOf: {
-          '@id': 'https://penyadap.pages.dev/#website'
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': 'https://penyadap.pages.dev/about'
-        },
-        publisher: {
-          '@type': 'Organization',
-          '@id': 'https://penyadap.pages.dev/#organization'
-        }
+        item: url.value
       }
     ]
   })
 );
 
-useHead(() => ({
-  link: [
-    { rel: 'canonical', href: url.value }
-  ],
-  script: [
-    {
+useHead(() => {
+  const script = [];
+  const sanitizers = {};
+
+  if (webPageSchemaJson.value) {
+    script.push({
       type: 'application/ld+json',
-      key: 'schema-org-graph',
-      'data-nuxt-schema-org': 'true',
-      'data-hid': 'schema-org-graph',
-      innerHTML: schemaJson.value
-    }
-  ],
-  __dangerouslyDisableSanitizersByTagID: {
-    'schema-org-graph': ['innerHTML']
+      key: 'schema-org-about-webpage',
+      innerHTML: webPageSchemaJson.value
+    });
+    sanitizers['schema-org-about-webpage'] = ['innerHTML'];
   }
-}));
+
+  if (breadcrumbSchemaJson.value) {
+    script.push({
+      type: 'application/ld+json',
+      key: 'schema-org-about-breadcrumb',
+      innerHTML: breadcrumbSchemaJson.value
+    });
+    sanitizers['schema-org-about-breadcrumb'] = ['innerHTML'];
+  }
+
+  return {
+    link: [
+      { rel: 'canonical', href: url.value }
+    ],
+    script,
+    __dangerouslyDisableSanitizersByTagID: sanitizers
+  };
+});
 </script>
