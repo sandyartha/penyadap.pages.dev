@@ -103,6 +103,8 @@ const breadcrumbSchemaJson = computed(() =>
 );
 
 useHead(() => {
+  if (!aboutDoc.value) return {};
+
   const script = [];
   const sanitizers = {};
 

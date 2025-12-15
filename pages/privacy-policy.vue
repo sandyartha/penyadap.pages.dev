@@ -90,6 +90,8 @@ const breadcrumbSchemaJson = computed(() =>
 )
 
 useHead(() => {
+  if (!privacyDoc.value) return {};
+
   const script = [];
   const sanitizers = {};
 

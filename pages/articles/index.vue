@@ -102,6 +102,8 @@ const breadcrumbSchemaJson = computed(() =>
 )
 
 useHead(() => {
+  if (!articles.value) return {};
+
   const script = [];
   const sanitizers = {};
 
