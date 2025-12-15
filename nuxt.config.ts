@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: process.env.NODE_ENV === "production" ? "cloudflare-pages" : undefined,
-    compatibilityDate: "2025-11-08",
+    compatibilityDate: "2025-12-16",
 
     prerender: {
       crawlLinks: true
@@ -38,6 +38,12 @@ export default defineNuxtConfig({
     },
 
     minify: true
+  },
+
+  // Tailwind module options
+  tailwindcss: {
+    configPath: "tailwind.config.ts",
+    quiet: true
   },
 
   // ======================
