@@ -3,13 +3,12 @@ draft: false
 toc: true
 preview: true
 author: Clara
-lastmod: 2022-02-03T17:07:00+09:00
-title: Panduan Sadap Ponsel Android Jarak Jauh Tanpa Root
-published: 2023-06-04T07:33:41.280Z
+lastmod: 2025-10-07T17:07:00+09:00
+title: "Panduan Sadap Ponsel Android Jarak Jauh Tanpa Root"
+published: 2025-10-07T08:00:00.000Z
 thumbnail: /wp-content/2022/02/03/sadap-android-93839.png
 
-description: Cara Sadap Android & tablet dengan Software KeyLogger dari
-  (StealthGenie) - buktikan pasangan selingkuh secara jarak jauh
+description: "Cara Sadap Android & tablet dengan Software KeyLogger dari StealthGenie - buktikan pasangan selingkuh secara jarak jauh"
 tags:
   - android
   - iphone

@@ -3,13 +3,12 @@ draft: false
 toc: true
 preview: false
 author: Clara
-lastmod: 2022-02-04T17:07:00+09:00
-title: Remote Kamera Secara Jarak Jauh Android & iPhone
-published: 2023-06-03T06:34:53.900Z
+lastmod: 2025-10-06T17:07:00+09:00
+title: "Remote Kamera Secara Jarak Jauh Android & iPhone"
+published: 2025-10-06T08:00:00.000Z
 thumbnail: /wp-content/2022/02/04/sadap-kamera-34323.png
 
-description: Remote Kamera Depan dan Belakang Secara Live Jarak Jauh, Aplikasi
-  Sadap Ponsel Android dan iPhone Untuk Intip Sekitar Ruangan
+description: "Remote Kamera Depan dan Belakang Secara Live Jarak Jauh, Aplikasi Sadap Ponsel Android dan iPhone Untuk Intip Sekitar Ruangan"
 tags:
   - android
   - iphone

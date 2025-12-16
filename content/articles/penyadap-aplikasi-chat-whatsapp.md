@@ -3,13 +3,12 @@ draft: false
 toc: true
 preview: true
 author: Clara
-lastmod: 2022-02-02T17:07:00+09:00
-title: Panduan Sadap Chat, Voice dan Panggilan WhatsApp
-published: 2023-06-02T02:25:05.683Z
+lastmod: 2025-11-03T17:07:00+09:00
+title: "Panduan Sadap Chat, Voice dan Panggilan WhatsApp"
+published: 2025-11-03T08:00:00.000Z
 thumbnail: /wp-content/2022/02/02/sadap-whatsapp-32333221.png
 
-description: Cara sadap Panggilan dan chat WhatsApp untuk ponsel iPhone &
-  Android, dengan mudah bisa secara jarak jauh
+description: "Cara sadap Panggilan dan chat WhatsApp untuk ponsel iPhone & Android, dengan mudah bisa secara jarak jauh"
 tags:
   - android
   - iphone

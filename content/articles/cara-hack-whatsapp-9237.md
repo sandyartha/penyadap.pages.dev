@@ -3,13 +3,12 @@ draft: false
 toc: true
 preview: true
 author: Clara
-lastmod: 2022-02-21T17:07:00+09:00
-title: Sadap Aplikasi WhatsApp dengan IP MaC Address
-published: 2023-05-28T19:34:01.572Z
+lastmod: 2025-11-07T17:07:00+09:00
+title: "Sadap Aplikasi WhatsApp dengan IP MaC Address"
+published: 2025-11-07T08:00:00.000Z
 thumbnail: /wp-content/2022/02/21/sadap-whatsapp-3232.png
 
-description: Cara Sadap Panggilan, Pesan Suara yang dikirim dari Aplikasi Chat
-  WhatsApp, dengan metode Spoof Untuk iPhone & Android
+description: "Cara Sadap Panggilan, Pesan Suara yang dikirim dari Aplikasi Chat WhatsApp, dengan metode Spoof Untuk iPhone & Android"
 tags:
   - android
   - iphone

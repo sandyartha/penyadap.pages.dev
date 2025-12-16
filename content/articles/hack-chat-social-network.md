@@ -3,13 +3,12 @@ draft: false
 toc: true
 preview: true
 author: Clara
-lastmod: 2022-02-10T17:07:00+09:00
-title: Cara Buktikan Tunangan Yang Selingkuh Lewat HP
-published: 2023-06-02T12:02:15.899Z
+lastmod: 2025-11-05T17:07:00+09:00
+title: "Cara Buktikan Tunangan Yang Selingkuh Lewat HP"
+published: 2025-11-05T08:00:00.000Z
 thumbnail: /wp-content/2022/02/10/buktikan-tunangan-selingkuh-23320032.png
 
-description: Cara Sadap untuk iPhone & Android, untuk buktikan tunangan
-  selingkuh lewat hp secara jarak jauh dari whatsapp
+description: "Cara Sadap untuk iPhone & Android, untuk buktikan tunangan selingkuh lewat hp secara jarak jauh dari whatsapp"
 tags:
   - android
   - iphone

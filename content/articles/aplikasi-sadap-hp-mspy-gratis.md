@@ -3,13 +3,12 @@ draft: false
 toc: true
 preview: true
 author: Clara
-lastmod: 2022-02-01T17:07:00+09:00
-title: Panduan Sadap iPhone Jarak Jauh Lewat ID iTunes
-published: 2023-06-05T03:22:32.632Z
+lastmod: 2025-12-04T17:07:00+09:00
+title: "Panduan Sadap iPhone Jarak Jauh Lewat ID iTunes"
+published: 2025-12-04T08:00:00.000Z
 thumbnail: /wp-content/2022/02/01/sadap-iphone.png
 
-description: Cara Mudah Sadap iPhone dan iPad secara jarak jauh tanpa jailbreak
-  dan instal aplikasi apapun untuk buktikan pasangan selingkuh
+description: "Cara Mudah Sadap iPhone dan iPad secara jarak jauh tanpa jailbreak dan instal aplikasi apapun untuk buktikan pasangan selingkuh"
 tags:
   - android
   - iphone

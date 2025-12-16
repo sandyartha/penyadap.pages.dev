@@ -3,13 +3,12 @@ draft: false
 toc: true
 preview: false
 author: Clara
-lastmod: 2022-02-06T17:07:00+09:00
-title: Akses File Galeri HP Secara Jarak Jauh, iPhone & Android
-published: 2023-06-06T13:01:07.300Z
+lastmod: 2025-10-05T17:07:00+09:00
+title: "Akses File Galeri HP Secara Jarak Jauh, iPhone & Android"
+published: 2025-10-05T08:00:00.000Z
 thumbnail: /wp-content/2022/02/06/akses-galeri-jarak-jauh.png
 
-description: Aplikasi SADAP HP iPhone dan Android Untuk Akses Galeri File Foto
-  dan Video secara jarak jauh dengan mudah
+description: "Aplikasi SADAP HP iPhone dan Android Untuk Akses Galeri File Foto dan Video secara jarak jauh dengan mudah"
 tags:
   - android
   - iphone
