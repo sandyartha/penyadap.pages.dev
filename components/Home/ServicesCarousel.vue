@@ -1,7 +1,7 @@
 <template>
   <section class="max-w-5xl mx-auto space-y-6">
     <div class="text-center space-y-3">
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-500">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-400">
         Layanan
       </p>
       <h2 class="text-3xl font-bold text-gray-900 dark:text-white">

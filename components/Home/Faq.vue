@@ -1,7 +1,7 @@
 <template>
   <section class="max-w-4xl mx-auto space-y-6">
     <div class="text-center space-y-3">
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-500">FAQ</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-400">FAQ</p>
       <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Pertanyaan yang sering diajukan</h2>
       <p class="text-gray-600 dark:text-gray-400">
         Semua informasi penting layanan pemasangan aplikasi Spy Indonesia.
