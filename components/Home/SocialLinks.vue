@@ -44,5 +44,10 @@ const links = [
     url: "https://t.me/",
     icon: "mdi:telegram",
   },
+  {
+    name: "WhatsApp",
+    url: "https://wa.me/6285111426625",
+    icon: "mdi:whatsapp",
+  },
 ];
 </script>

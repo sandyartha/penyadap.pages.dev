@@ -33,7 +33,7 @@ Jadi, pada dasarnya Anda wajib memeriksa terlebih dahulu OS perangkat yang digun
 
 Dan pastikan ketersediaan akses internet yang selalu terhubung di ponsel target, karena jaringan internet dari ponsel target wajib dan penting untuk menjalankan di perangkat di smartphone target, agar dapat [sadap data WA secara jarak jauh](/articles/sadap-hp-jarak-jauh) agar bisa secara real-time.
 
-![Aplikasi penyadap hp flexispy](/wp-content/2022/02/02/flexispy-sadap-whatsapp.webp)
+![Aplikasi penyadap hp flexispy](/wp-content/2022/02/02/flexispy-sadap-whatsapp.png)
 
 
 

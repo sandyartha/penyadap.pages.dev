@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: process.env.NODE_ENV === "production" ? "cloudflare-pages" : undefined,
-    compatibilityDate: "2025-12-16",
+    compatibilityDate: "2026-10-19",
 
     prerender: {
       crawlLinks: true
@@ -38,6 +38,12 @@ export default defineNuxtConfig({
     },
 
     minify: true
+  },
+
+  router: {
+    options: {
+      strict: false
+    }
   },
 
   // Tailwind module options
@@ -60,16 +66,18 @@ export default defineNuxtConfig({
 
   // Sitemap
   sitemap: {
-    cacheTtl: 0,
-    autoLastmod: true,
-    defaults: { changefreq: "weekly", priority: 0.7 },
     sources: ["/api/__sitemap__/articles"]
   },
 
   // Robots.txt
   robots: {
     sitemap: [`${SITE_URL}/sitemap.xml`],
-    policies: [{ userAgent: "*", allow: "/" }]
+    groups: [
+      {
+        userAgent: ['*'],
+        allow: ['/']
+      }
+    ]
   },
 
   // Schema.org auto integration
