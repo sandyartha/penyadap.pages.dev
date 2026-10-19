@@ -138,4 +138,5 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-client_secrets.json
+/client_secrets.json
+/config/client_secrets.json
