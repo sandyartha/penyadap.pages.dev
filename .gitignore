@@ -82,6 +82,9 @@ out
 .nuxt
 dist
 
+# Cache database @nuxt/content (dibuat ulang saat build, jangan di-commit)
+.data
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js

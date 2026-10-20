@@ -43,7 +43,10 @@
             v-if="item.image"
             :src="item.image"
             :alt="`Foto ${item.name}`"
+            width="48"
+            height="48"
             loading="lazy"
+            decoding="async"
             class="h-12 w-12 rounded-full object-cover ring-2 ring-blue-100 dark:ring-blue-500/40"
           />
           <div
