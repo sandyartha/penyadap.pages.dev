@@ -67,7 +67,7 @@ Anda dapat mengakses semua data rahasia ponsel yang Anda pantau dengan dashboard
 
 ![Hack Akun WhatsApp](/wp-content/2022/02/20/penyadap-chat-whatsapp-messages.png)
 
-<DownloadButton link="/articles/cara-hack-chat/" title="DOWNLOAD XNSPY"></DownloadButton>
+<DownloadButton link="/articles/cara-hack-chat" title="DOWNLOAD XNSPY"></DownloadButton>
 
 ## 2. Cara Hack WhatsApp Secara Online
 

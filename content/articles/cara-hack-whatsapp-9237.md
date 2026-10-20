@@ -200,7 +200,7 @@ Beberapa aplikasi sama bagusnya, tapi saya rekomendasi menggunakan mSpy adalah a
 
 ![sadap pesan sms mspy](/wp-content/2022/02/21/sadap-sms-mspy.png)
 
-<DownloadButton link="/articles/aplikasi-sadap-hp-mspy-gratis/" title="DOWNLOAD (MSPY)"></DownloadButton>
+<DownloadButton link="/articles/aplikasi-sadap-hp-mspy-gratis" title="DOWNLOAD (MSPY)"></DownloadButton>
 
 
 

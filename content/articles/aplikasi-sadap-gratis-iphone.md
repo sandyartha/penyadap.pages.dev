@@ -62,7 +62,7 @@ Tidak hanya itu saja software penyadap ini merupakan solusi terbaik untuk semua 
 
 ![Sadap Chat WhatsApp dan Facebook](/wp-content/2022/02/19/mspy-sadap-pesan-whatsapp.png)
 
-<DownloadButton link="/articles/penyadap-hp-pasangan-dengan-mspy/" title="DOWNLOAD MSPY"></DownloadButton>
+<DownloadButton link="/articles/penyadap-hp-pasangan-dengan-mspy" title="DOWNLOAD MSPY"></DownloadButton>
 
 ## 2. Flexispy
 
@@ -84,7 +84,7 @@ Pada dasarnya mengutamakan layanan pelanggan dalam umpan balik, FlexiSpy telah m
 
 **Kekurangan** : Penyadapan khusus ponsel buat produk Apple INC belum tersedia untuk iPhone non-jailbreak.   
 
-<DownloadButton link="/articles/penyadap-aplikasi-chat-whatsapp/" title="Download Perangkat FlexiSpy"></DownloadButton>
+<DownloadButton link="/articles/penyadap-aplikasi-chat-whatsapp" title="Download Perangkat FlexiSpy"></DownloadButton>
 
 ## 3. Highster Mobile
 
@@ -108,7 +108,7 @@ Software dapat kapan saja remote menghapus aplikasi yang tidak diinginkan dari i
 
 **Kekurangan** : Membutuhkan Jailbreak untuk mendapatkan fitur yang lengkap pada perangkat target.   
 
-<DownloadButton link="/articles/sadap-hp-jarak-jauh/" title="DOWNLOAD (Highster-Mobile)"></DownloadButton>
+<DownloadButton link="/articles/sadap-hp-jarak-jauh" title="DOWNLOAD (Highster-Mobile)"></DownloadButton>
 
 ## 4. XNSPY
 
@@ -138,7 +138,7 @@ Kemudian mengaktifkan fitur apa saja yang diperlukan untuk memantau, semua lapor
 
 ![Penyadap pesan SMS](/wp-content/2022/02/19/xnspy-sadap-pesan-sms.png)
 
-<DownloadButton link="/articles/cara-hack-chat/" title="DOWNLOAD XNSPY"></DownloadButton>
+<DownloadButton link="/articles/cara-hack-chat" title="DOWNLOAD XNSPY"></DownloadButton>
 
 ## 5. MobiStealth
 

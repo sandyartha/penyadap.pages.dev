@@ -193,7 +193,7 @@ Selain itu, ini memungkinkan untuk melacak lokasi perangkat *Android dan iPhone*
 
 Dapat merekam setiap panggilan VOIP dengan aplikasi sadap FlexiSpy dan memantau aktivitas tertentu dengan membuat peringatan khusus.
 
-<DownloadButton link="/articles/aplikasi-penyadap-hp/" title="DOWNLOAD (flexispy)"></DownloadButton>
+<DownloadButton link="/articles/aplikasi-penyadap-hp" title="DOWNLOAD (flexispy)"></DownloadButton>
 
 
 
@@ -213,7 +213,7 @@ XnSpy menawarkan semua fitur sadap yang diharapkan dari aplikasi mata-mata selul
 
 Misalnya, aplikasi sadap memiliki kemampuan untuk menyadap pesan WhatsApp seseorang. Pemasangan aplikasi juga tidak memakan waktu terlalu lama, tetapi membutuhkan rooting untuk beberapa fitur lanjutan.
 
-<DownloadButton link="/articles/cara-hack-chat/" title="DOWNLOAD XNSPY"></DownloadButton>
+<DownloadButton link="/articles/cara-hack-chat" title="DOWNLOAD XNSPY"></DownloadButton>
 
 
 
@@ -237,7 +237,7 @@ Anda juga dapat memata-matai panggilan, pesan teks, mengakses entri kalender, me
 
 ![Sadap Facebook Messenger](/wp-content/2022/02/22/mspy-demo.jpg)
 
-<DownloadButton link="/articles/aplikasi-sadap-hp-mspy-gratis/" title="DOWNLOAD (MSPY)"></DownloadButton>
+<DownloadButton link="/articles/aplikasi-sadap-hp-mspy-gratis" title="DOWNLOAD (MSPY)"></DownloadButton>
 
 
 

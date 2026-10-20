@@ -17,17 +17,16 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@vueuse/nuxt",
     ["@nuxt/image", {
-      // Dev: gambar disajikan dengan format aslinya (tanpa konversi AVIF)
-      // supaya IPX tidak meng-encode ulang tiap request — encoding AVIF mahal
-      // dan jadi salah satu penyebab `nuxt dev` lambat.
-      // Build produksi: dikonversi ke AVIF oleh IPX lalu ditulis sebagai file
-      // statis (lihat preset cloudflare-pages-static + nuxt generate).
-      ...(isDev ? {} : { format: ['avif'] }),
-      quality: 80,
-      // [1] saja: biar tiap gambar cukup 1 varian AVIF. Dengan [1, 2] jumlah
-      // file & waktu encode saat build berlipat (dimensi markdown ikut dipakai
-      // sebagai target resize).
-      densities: [1]
+      // Provider IPX hanya dipakai saat build (lihat ProseImg.vue): tiap gambar
+      // Markdown dikonversi 1:1 menjadi SATU file WebP dengan dimensi asli.
+      //
+      // `format` dan `densities` sengaja TIDAK diatur di sini karena opsi ini
+      // digabung `defu` dengan default modul secara concatenation, bukan
+      // ditimpa: `format: ['avif']` + default ['webp'] bikin 3 format per
+      // gambar, dan `densities: [1]` + default [1, 2] tetap menghasilkan
+      // varian retina 2x. Pengaturan format karena itu dilakukan di komponen
+      // lewat modifier `$img()`.
+      quality: 80
     }],
 
     // SEO Suite

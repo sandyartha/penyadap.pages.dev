@@ -42,8 +42,13 @@ const siteUrl = useSiteUrl()
 // ======================
 // AMBIL KONTEN INDEX
 // ======================
+// `content/index.md` punya `_path: "/"`, bukan "/index" (akhiran `index`
+// dibuang oleh transformer `path-meta` @nuxt/content). Jadi query-nya harus
+// memakai "/" — `queryContent('index')` akan mencari `_path: "/index"` yang
+// tidak pernah ada, dan saat prerender Nitro menganggapnya 404 lalu
+// menggagalkan build.
 const { data: indexDoc } = await useAsyncData('index-doc', () =>
-  queryContent('index').findOne()
+  queryContent('/').findOne()
 )
 
 // ======================

@@ -21,7 +21,7 @@ Meskipun kemajuan teknologi telah mempermudah berkomunikasi, dalam semua aspek k
 
 Solusi rekam panggilan secara jarak jauh dengan menggunakan *aplikasi sadap iKeymonitor*, sekarang ada berbagai software yang bisa membantu melihat aktivitas rahasia apa yang dilakukan seseorang dari ponsel dengan perangkat smartphone.
 
-Salah satunya adalah **[iKeyMonitor](https://penyadap.pages.dev)**, dikembangkan untuk melakukan pengawasan untuk ponsel ***iPhone dan Android*** (tanpa perlu khawatir diketahui target) tanpa risiko terdeteksi.
+Salah satunya adalah **[iKeyMonitor](https://ikeymonitor.com)**, dikembangkan untuk melakukan pengawasan untuk ponsel ***iPhone dan Android*** (tanpa perlu khawatir diketahui target) tanpa risiko terdeteksi.
 
 <CtaCard></CtaCard>
 
