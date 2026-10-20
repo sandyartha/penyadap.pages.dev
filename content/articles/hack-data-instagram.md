@@ -20,6 +20,8 @@ Tetapi pada saat yang sama, hal itu berdampak negatif bagi anak remaja. Mereka m
 
 Sementara foto dan video terlihat dan dapat dengan mudah dilihat hanya dengan menambahkan anak sebagai pengikut, Instagram tetap bisa di setting dengan *mode private* untuk membatasi pengguna lain melihat foto dan profile.
 
+<CtaCard></CtaCard>
+
 Akibatnya, ketidakmampuan untuk memantau setiap aktivitas pesan secara langsung, menimbulkan banyak kekhawatiran, membuat pertanyaan "**bagaimana cara hack akun IG?**" dengan [aplikasi sadap iPhone](/articles/aplikasi-sadap-hp-mspy-gratis) & Android"
 
 ![Aplikasi hack instagram - Flexispy](/wp-content/2022/02/12/software-sadap-flexispy.png)

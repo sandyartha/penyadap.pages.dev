@@ -29,6 +29,8 @@ Bagian ini membahas 10 alat sadap mata-mata terbaik di tahun 2020. Semua alat ya
 
 Mungkin ada banyak alasan untuk merekam video diruangan tertentu. Bisa jadi untuk mengumpulkan bukti insiden, atau hanya untuk masalah keamanan. Atau, mungkin Anda mencurigai seseorang melakukan sesuatu yang ilegal.
 
+<CtaCard></CtaCard>
+
 Anda tidak dapat menyembunyikan kamera mata-mata di mana pun Anda inginkan. Ada hak atas undang-undang privasi yang harus dipatuhi oleh semua warga negara yang baik. Saya tidak akan masuk ke legalitas di sini kecuali untuk mengatakan: pastikan Anda terbiasa dengan aturan.
 
 

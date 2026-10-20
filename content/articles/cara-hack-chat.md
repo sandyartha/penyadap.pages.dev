@@ -26,6 +26,8 @@ Selingkuh hati nyatanya sangat sulit ditebak & diselesaikan daripada selingkuh s
 
 Meskipun pasangan secara tidak langsung benar-benar menjalin hubungan dengan orang tersebut melainkan menjalankan hubungan hanya lewat sosial media dan aplikasi chat. 
 
+<CtaCard></CtaCard>
+
 Dengan [cara sadap hp]() ini relatif mudah, apalagi yang sedang pacaran menjalani cinta jarak jauh atau *long distance relationship (LDR)* memang tidak semudah hubungan asmara secara berdekatan.
 
 Perbedaan jarak dan waktu membuat hubungan cukup rentan dengan prasangka dari perselingkuhan yang bisa berakhir putus cinta. Inilah keuntungan dan kerugian pacaran jarak jauh.

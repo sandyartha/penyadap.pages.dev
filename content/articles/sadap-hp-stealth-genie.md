@@ -27,6 +27,8 @@ Tidak hanya menyadap chat WhatsApp juga berbagai fitur sadap seperti obrolan dar
 
 **Untuk tujuan apa Anda melakukan penyadap?** data komunikasi dari hp orang lain, harus jelas juga untuk apa karena pengambilan data seseorang, dengan ***cara sadap ini*** ada beberapa bermanfaat, saat yang sama bisa negatif. 
 
+<CtaCard></CtaCard>
+
 Karena ini menyangkut data privasi seseorang yang bisa jadi sangat sensitif untuk diketahui siapapun, jadi gunakan aplikasi penyadap Android ini dengan bijak.
 
 Agar tidak ada pihak yang dirugikan dengan mengetahui rahasia dari handphone seseorang yang akan kamu sadap, apabila hanya sekedar untuk bertujuan iseng - iseng saja, sangat tidak disarankan hanya untuk main-main, gunakan **aplikasi sadap HP** untuk hal-hal yang bermanfaat seperti penjelasan saya dibawah ini.

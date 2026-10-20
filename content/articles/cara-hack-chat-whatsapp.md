@@ -25,6 +25,8 @@ Buktikan suami yang selingkuh dengan [cara sadap hp](/articles/aplikasi-sadap-hp
 
 Banyak pasangan menggunakan media internet untuk tujuan yang negatif, Jangankan yang masih pacaran, pasangan yang sudah menikah atau sudah menjadi suami istri saja masih bisa rentan terhadap perselingkuhan. 
 
+<CtaCard></CtaCard>
+
 Selingkuh lewat sosial media tidak pernah pernah bisa hilang tanpa memandang dari usia dan berapa lama hubungan itu terjalin. 
 
 Sehingga baik [selingkuh yang masih pacaran](/articles/cara-hack-chat) atau sudah jadi suami / istri ada banyak kemungkinan. Dari salah satunya dia memiliki selingkuhan.

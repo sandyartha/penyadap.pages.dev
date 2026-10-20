@@ -26,6 +26,8 @@ Smartphone telah menjadi kebutuhan primer untuk masing-masing individu. Baik dew
 
 Nah, buat orang tua yang ingin mengetahui rincian data pesan dan panggilan rahasia pada ponsel iPhone atau Android anak remaja! Artikel ini akan memandu untuk agar dapat selalu mengawasi tanpa harus perlu khawatir lagi.
 
+<CtaCard></CtaCard>
+
 Dengan beberapa alat penyadap data komunikasi hp seseorang, yang akan membant mengungkapkan setiap detail komunikasi yang dihapus yang akan dikirim ke aplikasi sadap hp.
 
 Mulai dari panggilan telepon, SMS, Sadap aplikasi chat seperti, (WA, Line, Facebook, Telegram, Instagram) ini semua dapat diketahui dengan jelas hanya dengan beberapa langkah mudah.
@@ -60,7 +62,7 @@ Tidak hanya itu saja software penyadap ini merupakan solusi terbaik untuk semua 
 
 ![Sadap Chat WhatsApp dan Facebook](/wp-content/2022/02/19/mspy-sadap-pesan-whatsapp.png)
 
-{{< btn link="/articles/penyadap-hp-pasangan-dengan-mspy/" title="DOWNLOAD MSPY" >}}
+<DownloadButton link="/articles/penyadap-hp-pasangan-dengan-mspy/" title="DOWNLOAD MSPY"></DownloadButton>
 
 ## 2. Flexispy
 
@@ -82,7 +84,7 @@ Pada dasarnya mengutamakan layanan pelanggan dalam umpan balik, FlexiSpy telah m
 
 **Kekurangan** : Penyadapan khusus ponsel buat produk Apple INC belum tersedia untuk iPhone non-jailbreak.   
 
-{{< btn link="/articles/penyadap-aplikasi-chat-whatsapp/" title="Download Perangkat FlexiSpy" >}}
+<DownloadButton link="/articles/penyadap-aplikasi-chat-whatsapp/" title="Download Perangkat FlexiSpy"></DownloadButton>
 
 ## 3. Highster Mobile
 
@@ -106,7 +108,7 @@ Software dapat kapan saja remote menghapus aplikasi yang tidak diinginkan dari i
 
 **Kekurangan** : Membutuhkan Jailbreak untuk mendapatkan fitur yang lengkap pada perangkat target.   
 
-{{< btn link="/articles/sadap-hp-android-iphone-pasangan-selingkuh/" title="DOWNLOAD (Highster-Mobile)" >}}
+<DownloadButton link="/articles/sadap-hp-jarak-jauh/" title="DOWNLOAD (Highster-Mobile)"></DownloadButton>
 
 ## 4. XNSPY
 
@@ -136,7 +138,7 @@ Kemudian mengaktifkan fitur apa saja yang diperlukan untuk memantau, semua lapor
 
 ![Penyadap pesan SMS](/wp-content/2022/02/19/xnspy-sadap-pesan-sms.png)
 
-{{< btn link="/articles/cara-hack-chat/" title="DOWNLOAD XNSPY" >}}
+<DownloadButton link="/articles/cara-hack-chat/" title="DOWNLOAD XNSPY"></DownloadButton>
 
 ## 5. MobiStealth
 
@@ -158,7 +160,7 @@ Semua dapat diketahui dan data dikirim kepada Anda dalam waktu beberapa menit ta
 
 **Kontra** : Hanya tersedia dukungan melalui **help desk**, panggilan dan chat untuk pengguna berlangganan.   
 
-{{< btn link="http://mobistealth.com" title="DOWNLOAD (MobiStealth)" >}}
+<DownloadButton link="http://mobistealth.com" title="DOWNLOAD (MobiStealth)"></DownloadButton>
 
 ## 6. Spyera
 
@@ -182,7 +184,7 @@ Dan bantuan dari aspek dikendalikan remote dapat mengubah pengaturan dari smartp
 
 **Kekurangan :**  Wajib untuk jailbreak iPhone untuk mengambil semua data rahasia dari ponsel target.
 
-{{< btn link="http://spyera.com" title="DOWNLOAD (SpyEra)" >}}
+<DownloadButton link="http://spyera.com" title="DOWNLOAD (SpyEra)"></DownloadButton>
 
 ## 7. TheOneSpy
 
@@ -226,7 +228,7 @@ Juga mudah digunakan dan dapat melihat hasil penyadapan dari hp target dimanapun
 
 **Kekurangan**: **Jailbreak** target iPhone diperlukan.  
 
-{{< btn link="http://auto-forward.com" title="DOWNLOAD (Auto-Forward)" >}}
+<DownloadButton link="http://auto-forward.com" title="DOWNLOAD (Auto-Forward)"></DownloadButton>
 
 **Kesimpulan Aplikasi SADAP HP iPhone Terbaik**
 

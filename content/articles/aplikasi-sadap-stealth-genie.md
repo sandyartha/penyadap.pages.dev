@@ -25,6 +25,8 @@ Aplikasi Signal adalah alternatif terbaik selain WhatsApp dan Telegram dari sisi
 
 Berbeda dengan layanan dari Facebook dan Google yang tahu segalanya tentang data privasi, Aplikasi pesan Signal mempromosikan layanan sebagai super-aman dan pribadi, sedemikian rupa sehingga tidak mungkin bagi untuk dapat di lihat oleh orang lain.
 
+<CtaCard></CtaCard>
+
 Dengan aplikasi sadap HP dengan mudah monitoring setiap pesan yang ada pada aplikasi Signal, untuk pengguna dari iPhone dan Android, untuk [buktikan pasangan selingkuh](/articles/hack-chat-social-network) dengan cara mudah.
 
 

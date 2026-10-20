@@ -26,6 +26,8 @@ Beberapa aplikasi sudah saya review untuk masing-masing **penyadap ponsel Androi
 
 Dengan asmara atau masalah dengan pacar / pasangan, atau permasalahan lainnya yang paling banyak dicari seperti [cara sadap WA](/articles/penyadap-aplikasi-chat-whatsapp) ini tidak boleh di salah gunakan dengan sembarangan ya! gunakan dengan bijaksana.
 
+<CtaCard></CtaCard>
+
 ## Aplikasi Penyadap Android
 
 Untuk teman yang sedang ingin mengetahui setiap percakapan dari hp seseorang dengan mudah. Mungkin cara menyadap handphone dia adalah cara paling ampuh buat membuktikan pacar selingkuh atau tidak dengan orang pria atau wanita lain, ya semoga saja tidak terjadi pada teman kalau pasangan terbukti selingkuh, tidak seperti teman saya menggunakan cara ini.
@@ -342,7 +344,7 @@ Karena tidak ada fitur kririm data ke email gmail. Agan harus mengambil data sec
 
 ![CARA SADAP HP ANDROID 2](/wp-content/2022/02/17/cara-sadap-hp-android-6-2.jpg)
 
-{{< btn link="https://play.google.com/store/apps/details?id=com.backupyourmobile" title="Backup Your Mobile" >}}
+<DownloadButton link="https://play.google.com/store/apps/details?id=com.backupyourmobile" title="Backup Your Mobile"></DownloadButton>
 
 Sekian dari **tutorial cara sadap Android dan Tablet gratis terbaik** kali ini. Semoga bermanfaat bagi teman yang sudah mampi di blog ini, jangan salah gunakan aplikasi untuk tujuan ilegal, kami tidak bertanggung jawab apabila disalah gunakan.
 

@@ -23,6 +23,8 @@ Seperti kebanyakan gadget canggih sekarang banyak di salah gunakan, smartphone b
 
 Dengan aplikasi **StealthGenie** dapat mencari jawaban dengan hal tersebut, [menyadap aplikasi obrolan Spanchat](/articles/aplikasi-penyadap-hp), Line, Instagram, Viber dengan perangkat mata-mata yang memiliki berbagai fitur canggih untuk melakukan penyadapan data komunikasi rahasia **iMessage**.
 
+<CtaCard></CtaCard>
+
 
 
 ## Fitur Sadap StealthGenie

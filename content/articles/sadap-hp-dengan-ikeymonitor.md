@@ -23,6 +23,8 @@ Solusi rekam panggilan secara jarak jauh dengan menggunakan *aplikasi sadap iKey
 
 Salah satunya adalah **[iKeyMonitor](https://penyadap.pages.dev)**, dikembangkan untuk melakukan pengawasan untuk ponsel ***iPhone dan Android*** (tanpa perlu khawatir diketahui target) tanpa risiko terdeteksi.
 
+<CtaCard></CtaCard>
+
 Dan kompatibel dengan sebagian besar ponsel modern saat ini dan tablet, dan cukup mudah untuk digunakan, jadi mari kita lihat fitur seperti [sadap Signal](/articles/aplikasi-sadap-stealth-genie), WA atau juga remote layar jarak jauh.
 
 

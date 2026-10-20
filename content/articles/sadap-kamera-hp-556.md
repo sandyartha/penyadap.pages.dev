@@ -25,6 +25,8 @@ Orang menggunakannya untuk berkomunikasi, berfoto, video, dan banyak hal lainnya
 
 Misalnya, Anda mungkin memiliki bisnis dan ingin mempertahankan produktivitas karyawan melalui penggunaan telepon milik perusahaan. Anda bisa mengkhawatirkan keselamatan anak remaja, apapun yang Anda butuhkan.
 
+<CtaCard></CtaCard>
+
 Sekarang ada teknologi dalam bentuk perangkat untuk ponsel yang dapat membantu untuk hal pengawasan, salah satu aplikasi tersebut adalah **[Highster Mobile](http://highstermobile.com)** yang dapat membantu untuk akses kamera ponsel target secara jarak jauh untuk melihat lingkungan sekitar dengan mudah.
 
 ![Aplikasi Sadap Highster Mobile](/wp-content/2022/02/04/highstermobile-co-situs.png)

@@ -23,6 +23,8 @@ Cara melihat WhatsApp dapat berjalan dengan [aplikasi sadap Android & iPhone](/a
 
 Platform chat untuk saling mengirim pesan suara juga mengirim file foto, video, masih banyak lainnya yang dapat difungsikan secara mudah, dan kirim pesan chat tak terbatas.
 
+<CtaCard></CtaCard>
+
 Jadi, sekarang saatnya membahas cara untuk memata-matai kebenaran tentang pasangan langsung dari WhatsApp yang dihapus oleh target, menjadi kekhawatiran bagi kebanyakan orang. Beberapa orang ingin sekali mengetahui bagaimana cara hack Chat WhatsApp seseorang.
 
 
@@ -65,7 +67,7 @@ Anda dapat mengakses semua data rahasia ponsel yang Anda pantau dengan dashboard
 
 ![Hack Akun WhatsApp](/wp-content/2022/02/20/penyadap-chat-whatsapp-messages.png)
 
-{{< btn link="/articles/cara-hack-chat/" title="DOWNLOAD XNSPY" >}}
+<DownloadButton link="/articles/cara-hack-chat/" title="DOWNLOAD XNSPY"></DownloadButton>
 
 ## 2. Cara Hack WhatsApp Secara Online
 

@@ -25,6 +25,8 @@ WhatsApp telah menjadi sangat populer karena fitur menarik, seperti layanan pesa
 
 Sebagian besar penggunanya dari ponsel pintar seperti untuk iPhone, Android, Laptop dan Dekstop, dengan menggunakan WhatsApp dengan menyediakan fitur yang inovatif dan menakjubkan.   
 
+<CtaCard></CtaCard>
+
 Orang dapat berbagi pesan, gambar dan banyak lagi dengan menggunakan WhatsApp. Kali ini saya akan lebih berat membahas terkait dengan menyadap akun WA pasangan atau anak remaja. Mengakses akun beberapa orang lain seperti teman, kerabat dan kekasih sepertinya terdengar menarik. 
 
 Mungkin bukan karena alasan yang buruk, tapi terkadang Anda ingin melihat pesan obrolan chat rahasia dengan orang lain.
@@ -198,7 +200,7 @@ Beberapa aplikasi sama bagusnya, tapi saya rekomendasi menggunakan mSpy adalah a
 
 ![sadap pesan sms mspy](/wp-content/2022/02/21/sadap-sms-mspy.png)
 
-{{< btn link="/articles/aplikasi-sadap-hp-mspy-gratis/" title="DOWNLOAD (MSPY)" >}}
+<DownloadButton link="/articles/aplikasi-sadap-hp-mspy-gratis/" title="DOWNLOAD (MSPY)"></DownloadButton>
 
 
 

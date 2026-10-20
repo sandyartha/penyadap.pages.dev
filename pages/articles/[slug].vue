@@ -5,10 +5,33 @@
         <template #default="{ doc }">
           <article class="prose dark:prose-invert max-w-none">
             <h1 class="mb-4">{{ doc.title }}</h1>
-            <div class="text-sm text-gray-500 mb-8 flex items-center">
-              <span v-if="formatDate(doc)">{{ formatDate(doc) }}</span>
-              <span v-if="formatDate(doc)" class="mx-2">·</span>
-              <span class="text-gray-400">
+            <div class="mb-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
+              <span
+                v-if="doc.author"
+                class="inline-flex items-center gap-1.5 whitespace-nowrap font-medium text-gray-700 dark:text-gray-200"
+              >
+                <Icon
+                  name="solar:user-circle-linear"
+                  class="h-4 w-4 shrink-0 text-gray-400 dark:text-gray-500"
+                  aria-hidden="true"
+                />
+                {{ doc.author }}
+              </span>
+              <span
+                v-if="doc.author && formatDate(doc)"
+                class="hidden h-4 w-px bg-gray-200 sm:block dark:bg-gray-700"
+                aria-hidden="true"
+              />
+              <span
+                v-if="formatDate(doc)"
+                class="inline-flex items-center gap-1.5 whitespace-nowrap text-gray-500 dark:text-gray-400"
+              >
+                <Icon name="solar:calendar-linear" class="h-4 w-4 shrink-0" aria-hidden="true" />
+                {{ formatDate(doc) }}
+              </span>
+              <span class="hidden h-4 w-px bg-gray-200 sm:block dark:bg-gray-700" aria-hidden="true" />
+              <span class="inline-flex items-center gap-1.5 whitespace-nowrap text-gray-500 dark:text-gray-400">
+                <Icon name="solar:clock-circle-linear" class="h-4 w-4 shrink-0" aria-hidden="true" />
                 {{ getReadingTime(doc) }}
               </span>
             </div>
@@ -37,15 +60,20 @@
                       {{ prevArticle.description }}
                     </p>
                   </div>
-                  <div class="mt-5 flex items-center justify-between text-xs text-gray-400 dark:text-gray-500">
-                    <div class="flex items-center gap-2">
-                      <span v-if="formatDate(prevArticle)">{{ formatDate(prevArticle) }}</span>
-                      <span v-if="formatDate(prevArticle)" aria-hidden="true">·</span>
-                      <span>{{ getReadingTime(prevArticle) }}</span>
+                  <div class="mt-6 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-t border-gray-200 pt-4 dark:border-gray-800">
+                    <div class="flex items-center gap-3 text-xs font-medium text-gray-600 dark:text-gray-300">
+                      <span v-if="formatDate(prevArticle)" class="inline-flex items-center gap-1.5 whitespace-nowrap">
+                        <Icon name="solar:calendar-linear" class="h-3.5 w-3.5 shrink-0 text-gray-400 dark:text-gray-500" aria-hidden="true" />
+                        {{ formatDate(prevArticle) }}
+                      </span>
+                      <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
+                        <Icon name="solar:clock-circle-linear" class="h-3.5 w-3.5 shrink-0 text-gray-400 dark:text-gray-500" aria-hidden="true" />
+                        {{ getReadingTime(prevArticle) }}
+                      </span>
                     </div>
-                    <span class="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 group-hover:no-underline">
-                      <span aria-hidden="true">←</span>
-                      <span class="text-xs font-medium">Baca</span>
+                    <span class="inline-flex shrink-0 items-center gap-1 rounded-full bg-blue-100 px-3 py-1.5 text-xs font-semibold text-blue-700 transition group-hover:bg-blue-200 dark:bg-blue-900/40 dark:text-blue-300 dark:group-hover:bg-blue-900/70">
+                      Baca
+                      <span aria-hidden="true">→</span>
                     </span>
                   </div>
                 </NuxtLink>
@@ -68,14 +96,19 @@
                       {{ nextArticle.description }}
                     </p>
                   </div>
-                  <div class="mt-5 flex items-center justify-between text-xs text-gray-400 dark:text-gray-500">
-                    <div class="flex items-center gap-2">
-                      <span v-if="formatDate(nextArticle)">{{ formatDate(nextArticle) }}</span>
-                      <span v-if="formatDate(nextArticle)" aria-hidden="true">·</span>
-                      <span>{{ getReadingTime(nextArticle) }}</span>
+                  <div class="mt-6 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-t border-gray-200 pt-4 dark:border-gray-800">
+                    <div class="flex items-center gap-3 text-xs font-medium text-gray-600 dark:text-gray-300">
+                      <span v-if="formatDate(nextArticle)" class="inline-flex items-center gap-1.5 whitespace-nowrap">
+                        <Icon name="solar:calendar-linear" class="h-3.5 w-3.5 shrink-0 text-gray-400 dark:text-gray-500" aria-hidden="true" />
+                        {{ formatDate(nextArticle) }}
+                      </span>
+                      <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
+                        <Icon name="solar:clock-circle-linear" class="h-3.5 w-3.5 shrink-0 text-gray-400 dark:text-gray-500" aria-hidden="true" />
+                        {{ getReadingTime(nextArticle) }}
+                      </span>
                     </div>
-                    <span class="inline-flex items-center gap-1 text-violet-600 dark:text-violet-400 group-hover:no-underline">
-                      <span class="text-xs font-medium">Baca</span>
+                    <span class="inline-flex shrink-0 items-center gap-1 rounded-full bg-violet-100 px-3 py-1.5 text-xs font-semibold text-violet-700 transition group-hover:bg-violet-200 dark:bg-violet-900/40 dark:text-violet-300 dark:group-hover:bg-violet-900/70">
+                      Baca
                       <span aria-hidden="true">→</span>
                     </span>
                   </div>
@@ -172,6 +205,8 @@ const currentUrl = computed(() => `${siteUrl.value}/articles/${route.params.slug
 
 const metaTitle = computed(() => article.value?.title || 'Artikel');
 const metaDescription = computed(() => article.value?.description || 'Artikel mSpy Indonesia');
+// Diambil dari frontmatter `author` tiap artikel.
+const metaAuthor = computed(() => article.value?.author || 'penyadap.pages.dev');
 const metaImage = computed(() => {
   if (!article.value) return `${siteUrl.value}${fallbackImage}`;
   const image = article.value.image || article.value.thumbnail || fallbackImage;
@@ -220,6 +255,8 @@ useSeoMeta({
   ogImageAlt: () => metaTitle.value,
   ogType: 'article',
   ogSiteName: 'penyadap.pages.dev',
+  author: () => metaAuthor.value,
+  articleAuthor: () => [metaAuthor.value],
   articlePublishedTime: () => datePublished.value,
   articleModifiedTime: () => dateModified.value,
   articleSection: 'Technology',
@@ -257,10 +294,8 @@ const articleSchemaJson = computed(() => {
     datePublished: datePublished.value,
     dateModified: dateModified.value || datePublished.value,
     author: {
-      '@type': 'Organization',
-      '@id': organizationId,
-      name: 'penyadap.pages.dev',
-      url: siteUrl.value
+      '@type': 'Person',
+      name: metaAuthor.value
     },
     publisher: {
       '@type': 'Organization',

@@ -1,6 +1,13 @@
 <template>
-  <div class="space-y-6 px-4">
-    <div class="text-4xl sm:text-5xl ring-2 border ring-gray-200 border-gray-300 dark:ring-white/10 dark:border-gray-800 hover:ring-4 transition-all duration-300 bg-gray-200 dark:bg-gray-900 rounded-full h-16 w-16 sm:h-24 sm:w-24 flex items-center justify-center">
+  <!-- Hero homepage: kartu berisi logo saja. -->
+  <section class="max-w-4xl mx-auto px-4">
+    <div
+      class="relative overflow-hidden rounded-3xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-white to-violet-50 px-6 py-14 dark:border-violet-500/20 dark:from-violet-950/40 dark:via-zinc-900 dark:to-zinc-950"
+    >
+      <div
+        class="pointer-events-none absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/25 blur-3xl dark:bg-violet-500/20"
+        aria-hidden="true"
+      />
       <img
         src="/penyadap-logo.svg"
         alt="Logo Penyadap"
@@ -8,12 +15,13 @@
         height="896"
         loading="lazy"
         decoding="async"
-        class="h-12 w-12 sm:h-24 sm:w-24"
+        class="relative mx-auto h-20 w-auto sm:h-28"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
-// Using direct static image path for avatar to avoid runtime image processing.
+// Logo statis: pakai path langsung dari `public/` agar tidak diproses
+// runtime image optimizer.
 </script>

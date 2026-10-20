@@ -31,6 +31,8 @@ Tidak ada cara lain mendapatkan HP yang hilang dengan mudah dan cepat, maka Anda
 
 [Cara sadap Android](/articles/sadap-hp-stealth-genie) dan iPhone dan ambil data SMS, **Lacak Lokasi**, **Sadap Panggilan Telepon,** chat WhatsApp, LINE, Viber, Facebook, mengambil data dari kamera dan akses file foto dan video. [Baca Selengkapnya.](/articles/aplikasi-sadap-hp-mspy-gratis)
 
+<CtaCard></CtaCard>
+
 
 
 Ada beberapa metode untuk mencari hp yang hilang atau bisa juga dengan menggunakan aplikasi anti-maling di ulasan kali ini yang bisa jadi membantu dalam kasus hp hilang / jatuh saat dijalan atau bahkan lebih buruk, dicuri oleh seseorang.
@@ -191,7 +193,7 @@ Selain itu, ini memungkinkan untuk melacak lokasi perangkat *Android dan iPhone*
 
 Dapat merekam setiap panggilan VOIP dengan aplikasi sadap FlexiSpy dan memantau aktivitas tertentu dengan membuat peringatan khusus.
 
-{{< btn link="/articles/aplikasi-penyadap-hp/" title="DOWNLOAD (flexispy)" >}}
+<DownloadButton link="/articles/aplikasi-penyadap-hp/" title="DOWNLOAD (flexispy)"></DownloadButton>
 
 
 
@@ -211,7 +213,7 @@ XnSpy menawarkan semua fitur sadap yang diharapkan dari aplikasi mata-mata selul
 
 Misalnya, aplikasi sadap memiliki kemampuan untuk menyadap pesan WhatsApp seseorang. Pemasangan aplikasi juga tidak memakan waktu terlalu lama, tetapi membutuhkan rooting untuk beberapa fitur lanjutan.
 
-{{< btn link="/articles/cara-hack-chat/" title="DOWNLOAD XNSPY" >}}
+<DownloadButton link="/articles/cara-hack-chat/" title="DOWNLOAD XNSPY"></DownloadButton>
 
 
 
@@ -235,7 +237,7 @@ Anda juga dapat memata-matai panggilan, pesan teks, mengakses entri kalender, me
 
 ![Sadap Facebook Messenger](/wp-content/2022/02/22/mspy-demo.jpg)
 
-{{< btn link="/articles/aplikasi-sadap-hp-mspy-gratis/" title="DOWNLOAD (MSPY)" >}}
+<DownloadButton link="/articles/aplikasi-sadap-hp-mspy-gratis/" title="DOWNLOAD (MSPY)"></DownloadButton>
 
 
 

@@ -25,6 +25,8 @@ Meskipun ponsel bisa menjadi sarana negatif bagi penggunanya seperti anak remaja
 
 Ulasan kali ini akan membahas tuntas *cara sadap untuk iPhone dan iPad*, yang dapat berjalan secara jarak jauh memantau data komunikasi rahasia.
 
+<CtaCard></CtaCard>
+
 Bila merasa bahwa pemantauan orang yang Anda cintai adalah bukan ide yang baik, karena akan mengetahui hal-hal yang mungkin tidak inginkan, misal seperti [hack akun Facebook](/articles/penyadap-hp-mobile-tracker). Dan banyak fitur lain, yang saya yakin setelah membaca artikel ini akan mendapatkan perspektif lain.
 
 Ulasan kali akan membahas ***aplikasi Sadap HP*** dari **[mSpy](https://mspy.com)**, saya akan menjelaskan fungsi, berbagai fitur penyadap dan alasan mengapa aplikasi ini benar-benar sebuah program perangkat mata-mata yang dapat diandalkan.
