@@ -1,12 +1,24 @@
 <template>
   <img
-    :src="src"
+    v-if="isDev"
+    :src="originalSrc"
     :alt="alt"
     :width="dimensions?.width"
     :height="dimensions?.height"
     loading="lazy"
     decoding="async"
   />
+  <picture v-else>
+    <source :srcset="webpSrc" type="image/webp" />
+    <img
+      :src="originalSrc"
+      :alt="alt"
+      :width="dimensions?.width"
+      :height="dimensions?.height"
+      loading="lazy"
+      decoding="async"
+    />
+  </picture>
 </template>
 
 <script setup>
@@ -14,25 +26,27 @@ import imageDimensions from "#build/image-dimensions.mjs";
 
 // ProseImg menggantikan komponen bawaan MDC untuk tag <img> di Markdown.
 //
-// DEV   : file asli disajikan langsung dari `public/` (tanpa IPX, tanpa encode)
+// DEV   : satu <img> ke file asli di `public/` (tanpa IPX, tanpa encode)
 //         supaya `nuxt dev` tetap cepat.
-// BUILD : `$img()` menghasilkan SATU URL IPX, lalu Nitro menulis hasil
-//         encode-nya sebagai file statis di `dist/_ipx/` saat `nuxt generate`.
-//         File asli di `public/` tetap ikut ter-copy.
+// BUILD : <img> dibungkus <picture>:
+//           <source type="image/webp"> -> file WebP hasil IPX (1 file/gambar)
+//           <img src="file asli">      -> fallback untuk browser tanpa WebP
+//         File asli TIDAK di-encode ulang; ia sudah ikut ter-copy dari
+//         `public/` ke `dist/`, jadi fallback ini gratis (0 proses sharp).
 //
 // Catatan: penjelasan ini ditaruh di script, bukan di <template>, karena
 // komentar di dalam template Vue ikut tercetak ke HTML hasil render.
 
-// Konversi 1:1: JPG/PNG asli hanya diubah formatnya menjadi WebP dengan dimensi
-// yang sama (tanpa modifier `width`/`height`, jadi sharp tidak melakukan resize).
+// Konversi 1:1: JPG/PNG asli hanya diubah formatnya menjadi WebP pada ukuran
+// yang sama — tanpa modifier `width`/`height`, jadi sharp tidak melakukan
+// resize.
 //
-// Kenapa `$img()` dan bukan <NuxtPicture>/<NuxtImg>? Kedua komponen itu
-// membangun srcset dari `sizes` + `densities`, dan jumlah file yang di-encode =
-// jumlah breakpoint x jumlah density x jumlah format. Dengan nilai bawaan
-// modul, satu gambar pecah jadi 12 file (7 breakpoint x 2 density x
-// avif/webp/png) sehingga build ratusan gambar jadi berjam-jam. `$img()` dengan
-// modifier `format` saja menghasilkan TEPAT satu file, tanpa elemen <picture>
-// dan tanpa srcset yang tidak terpakai.
+// Kenapa `$img()` dan bukan <NuxtPicture>? NuxtPicture membangun srcset dari
+// `sizes` + `densities`, dan jumlah file yang di-encode = jumlah breakpoint x
+// jumlah density x jumlah format. Dengan nilai bawaan modul, satu gambar pecah
+// jadi 12 file (7 breakpoint x 2 density x avif/webp/png) sehingga build
+// ratusan gambar jadi berjam-jam. `$img()` dengan modifier `format` saja
+// menghasilkan TEPAT satu URL IPX, tanpa srcset yang tidak terpakai.
 //
 // AVIF sengaja tidak dipakai: ipx memanggil sharp.toFormat(format, { quality })
 // tanpa meneruskan opsi `effort`, jadi AVIF selalu memakai effort bawaan (4) —
@@ -60,19 +74,25 @@ const props = defineProps({
 // width/height otomatis tidak dirender.
 const dimensions = computed(() => imageDimensions[props.src]);
 
-const src = computed(() => {
+// Path file asli di `public/`, diselaraskan dengan app.baseURL (mis. saat
+// deploy di sub-path). Dipakai dev dan sebagai fallback <img> di build.
+const originalSrc = computed(() => {
   if (!props.src) {
     return "";
   }
-  if (isDev) {
-    // Selaraskan path absolut dengan app.baseURL (mis. saat dev di sub-path).
-    if (baseURL && baseURL !== "/" && props.src.startsWith("/") && !props.src.startsWith("//")) {
-      return `${baseURL.replace(/\/$/, "")}${props.src}`;
-    }
-    return props.src;
+  if (baseURL && baseURL !== "/" && props.src.startsWith("/") && !props.src.startsWith("//")) {
+    return `${baseURL.replace(/\/$/, "")}${props.src}`;
   }
-  // Build: konversi 1:1 ke WebP — ukuran asli dipertahankan, hanya formatnya
-  // yang diubah, jadi satu gambar = satu file.
+  return props.src;
+});
+
+// URL IPX satu varian WebP. Dipanggil di dalam <source>, jadi hanya diunduh
+// browser yang mendukung WebP. Saat prerender, `$img()` mendaftarkan URL ini ke
+// header `x-nitro-prerender` sehingga Nitro menulis filenya ke `dist/_ipx/`.
+const webpSrc = computed(() => {
+  if (!props.src || isDev) {
+    return "";
+  }
   return $img(props.src, { format: "webp", quality: 80 });
 });
 </script>
