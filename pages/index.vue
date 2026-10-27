@@ -22,10 +22,6 @@
       <HomeFaq :faqs="faqItems" />
       
       <HomeFeaturedArticles />
-      <HomeSocialLinks />
-      <HomeNewsletter />
-
-      
     </div>
   </main>
 </template>
@@ -90,21 +86,24 @@ const schemaJson = computed(() =>
   JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': 'https://penyadap.pages.dev/#website',
-    url: 'https://penyadap.pages.dev',
+    // `@id` WebSite & Organization harus identik dengan yang dirujuk schema
+    // Article di halaman artikel (`${siteUrl}#website` / `${siteUrl}#organization`)
+    // agar graph-nya tersambung. Sebelumnya di sini ada trailing slash.
+    '@id': `${siteUrl.value}#website`,
+    url: siteUrl.value,
     name: 'penyadap.pages.dev',
     alternateName: 'Aplikasi Sadap iPhone & Android',
     description: 'Aplikasi Sadap iPhone & Android - WhatsApp, FB, Line, CALL',
     inLanguage: 'id-ID',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://penyadap.pages.dev/search?q={search_term_string}',
-      'query-input': 'required name=search_term_string'
-    },
     publisher: {
       '@type': 'Organization',
+      '@id': `${siteUrl.value}#organization`,
       name: 'penyadap.pages.dev',
-      url: 'https://penyadap.pages.dev'
+      url: siteUrl.value,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl.value}/logo.png`
+      }
     }
   })
 )
@@ -151,4 +150,46 @@ const testimonialItems = (parse(testimonialsSource)?.testimonials ?? []).map(
     id: `${index}-${item.name}`
   })
 )
+
+// ======================
+// SCHEMA.ORG FAQ
+// ======================
+// Pertanyaan di halaman ini berasal dari `data/index_faq.yml`. Ditandai sebagai
+// FAQPage supaya memenuhi syarat rich result FAQ di hasil pencarian.
+const faqSchemaJson = computed(() => {
+  if (!faqItems.length) return null
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `${siteUrl.value}/#faq`,
+    inLanguage: 'id-ID',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        // YAML block scalar menyisakan baris baru di akhir, jadi dipangkas.
+        text: (item.answer || '').trim()
+      }
+    }))
+  })
+})
+
+useHead(() => {
+  if (!faqSchemaJson.value) return {}
+
+  return {
+    script: [
+      {
+        key: 'schema-org-faq',
+        type: 'application/ld+json',
+        innerHTML: faqSchemaJson.value
+      }
+    ],
+    __dangerouslyDisableSanitizersByTagID: {
+      'schema-org-faq': ['innerHTML']
+    }
+  }
+})
 </script>

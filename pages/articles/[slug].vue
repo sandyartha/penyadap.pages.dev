@@ -4,6 +4,36 @@
       <ContentDoc :path="`/articles/${$route.params.slug}`">
         <template #default="{ doc }">
           <article class="prose dark:prose-invert max-w-none">
+            <!-- Breadcrumb visual; versi terstruktur (BreadcrumbList) sudah
+                 ditambahkan lewat JSON-LD di bagian script. -->
+            <nav aria-label="Breadcrumb" class="not-prose mb-6">
+              <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-500 dark:text-gray-400">
+                <li>
+                  <NuxtLink
+                    to="/"
+                    class="text-gray-500 no-underline hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+                  >
+                    Beranda
+                  </NuxtLink>
+                </li>
+                <li aria-hidden="true">/</li>
+                <li>
+                  <NuxtLink
+                    to="/articles"
+                    class="text-gray-500 no-underline hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+                  >
+                    Artikel
+                  </NuxtLink>
+                </li>
+                <li aria-hidden="true">/</li>
+                <li
+                  class="line-clamp-1 max-w-xs font-medium text-gray-700 sm:max-w-md dark:text-gray-200"
+                  aria-current="page"
+                >
+                  {{ doc.title }}
+                </li>
+              </ol>
+            </nav>
             <h1 class="mb-4">{{ doc.title }}</h1>
             <div class="mb-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
               <span
@@ -35,6 +65,58 @@
                 {{ getReadingTime(doc) }}
               </span>
             </div>
+            <!-- Daftar isi dari heading artikel. Tertutup secara default dan
+                 bisa dibuka/tutup; hanya muncul kalau artikel punya heading. -->
+            <nav
+              v-if="doc.toc !== false && doc.body?.toc?.links?.length"
+              aria-label="Daftar Isi"
+              class="not-prose mb-8 rounded-2xl border border-gray-200 bg-gray-50/70 p-4 dark:border-gray-800 dark:bg-zinc-900/60"
+            >
+              <button
+                type="button"
+                class="flex w-full items-center justify-between gap-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100"
+                :aria-expanded="tocOpen ? 'true' : 'false'"
+                aria-controls="toc-panel"
+                @click="tocOpen = !tocOpen"
+              >
+                <span class="inline-flex items-center gap-2">
+                  <Icon
+                    name="solar:list-check-linear"
+                    class="h-4 w-4 shrink-0 text-blue-600 dark:text-blue-400"
+                    aria-hidden="true"
+                  />
+                  Daftar Isi
+                </span>
+                <Icon
+                  :name="tocOpen ? 'solar:alt-arrow-up-linear' : 'solar:alt-arrow-down-linear'"
+                  class="h-4 w-4 shrink-0 text-gray-400"
+                  aria-hidden="true"
+                />
+              </button>
+              <div v-show="tocOpen" id="toc-panel" class="mt-3">
+                <ol class="space-y-1.5 text-sm">
+                  <li v-for="link in doc.body.toc.links" :key="link.id">
+                    <a
+                      :href="`#${link.id}`"
+                      class="text-gray-600 no-underline hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+                    >
+                      {{ link.text }}
+                    </a>
+                    <ol v-if="link.children?.length" class="mt-1.5 ml-4 space-y-1.5">
+                      <li v-for="child in link.children" :key="child.id">
+                        <a
+                          :href="`#${child.id}`"
+                          class="text-gray-500 no-underline hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+                        >
+                          {{ child.text }}
+                        </a>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </div>
+            </nav>
+
             <ContentRenderer :value="doc" />
 
             <section
@@ -115,6 +197,44 @@
                 </NuxtLink>
               </div>
             </section>
+
+            <!-- Artikel terkait: dipilih dari tag yang beririsan dengan artikel ini -->
+            <section v-if="relatedArticles.length" class="not-prose mt-16">
+              <h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Artikel Terkait
+              </h2>
+              <div class="mt-6 grid gap-6 md:grid-cols-3">
+                <NuxtLink
+                  v-for="item in relatedArticles"
+                  :key="item._path"
+                  :to="item._path"
+                  class="group flex flex-col rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-500 hover:shadow-lg no-underline dark:border-gray-800 dark:bg-zinc-900 dark:hover:border-blue-500"
+                >
+                  <h3
+                    class="text-base font-semibold text-gray-900 transition group-hover:text-blue-600 dark:text-gray-100 dark:group-hover:text-blue-300"
+                  >
+                    {{ item.title }}
+                  </h3>
+                  <p
+                    v-if="item.description"
+                    class="mt-2 text-sm text-gray-600 line-clamp-3 dark:text-gray-400"
+                  >
+                    {{ item.description }}
+                  </p>
+                  <span
+                    v-if="formatDate(item)"
+                    class="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 dark:text-gray-400"
+                  >
+                    <Icon
+                      name="solar:calendar-linear"
+                      class="h-3.5 w-3.5 shrink-0"
+                      aria-hidden="true"
+                    />
+                    {{ formatDate(item) }}
+                  </span>
+                </NuxtLink>
+              </div>
+            </section>
           </article>
         </template>
 
@@ -131,9 +251,16 @@
   </main>
 </template>
 <script setup>
+// Peta dimensi asli gambar di `public/` (dibuat modules/image-dimensions.ts).
+// Sudah dipakai juga oleh ProseImg.vue, jadi tidak menambah bundle baru.
+import imageDimensions from '#build/image-dimensions.mjs'
+
 const route = useRoute();
 const siteUrl = useSiteUrl()
 const currentPath = `/articles/${route.params.slug}`;
+
+// Daftar Isi tertutup secara default.
+const tocOpen = ref(false);
 
 const { data: article } = await useAsyncData(
   `article-${route.params.slug}`,
@@ -145,21 +272,38 @@ const { data: adjacentArticles } = await useAsyncData(
   async () => {
     const current = article.value;
 
-    if (!current) return { prev: null, next: null };
+    if (!current) return { prev: null, next: null, related: [] };
 
     const articles = await queryContent('/articles')
-      .only(['_path', 'title', 'description', 'date', 'published', 'createdAt', 'body'])
+      .only(['_path', 'title', 'description', 'date', 'published', 'createdAt', 'body', 'tags'])
       .where({ draft: { $ne: true } })
       .sort({ published: -1, date: -1, createdAt: -1 })
       .find();
 
     const index = articles.findIndex((item) => item._path === current._path);
 
-    if (index === -1) return { prev: null, next: null };
+    if (index === -1) return { prev: null, next: null, related: [] };
+
+    // Artikel terkait: diurutkan dari jumlah tag yang beririsan, maksimal 3.
+    const normalize = (tags) => (tags || []).map((tag) => String(tag).toLowerCase());
+    const currentTags = normalize(current.tags);
+    const related = currentTags.length
+      ? articles
+          .filter((item) => item._path !== current._path)
+          .map((item) => ({
+            item,
+            score: normalize(item.tags).filter((tag) => currentTags.includes(tag)).length
+          }))
+          .filter((entry) => entry.score > 0)
+          .sort((a, b) => b.score - a.score)
+          .slice(0, 3)
+          .map((entry) => entry.item)
+      : [];
 
     return {
       prev: index > 0 ? articles[index - 1] : null,
-      next: index < articles.length - 1 ? articles[index + 1] : null
+      next: index < articles.length - 1 ? articles[index + 1] : null,
+      related
     };
   },
   { watch: [article] }
@@ -167,6 +311,7 @@ const { data: adjacentArticles } = await useAsyncData(
 
 const prevArticle = computed(() => adjacentArticles.value?.prev || null);
 const nextArticle = computed(() => adjacentArticles.value?.next || null);
+const relatedArticles = computed(() => adjacentArticles.value?.related || []);
 
 const formatDate = (doc) => {
   const rawDate = doc?.date || doc?.published || doc?.createdAt;
@@ -207,11 +352,18 @@ const metaTitle = computed(() => article.value?.title || 'Artikel');
 const metaDescription = computed(() => article.value?.description || 'Artikel mSpy Indonesia');
 // Diambil dari frontmatter `author` tiap artikel.
 const metaAuthor = computed(() => article.value?.author || 'penyadap.pages.dev');
-const metaImage = computed(() => {
-  if (!article.value) return `${siteUrl.value}${fallbackImage}`;
-  const image = article.value.image || article.value.thumbnail || fallbackImage;
-  return image?.startsWith('http') ? image : `${siteUrl.value}${image}`;
-});
+
+// Path gambar apa adanya (frontmatter atau fallback), dipakai juga untuk
+// mencari dimensi aslinya di peta `imageDimensions`.
+const rawImage = computed(
+  () => article.value?.image || article.value?.thumbnail || fallbackImage
+);
+const metaImage = computed(() =>
+  rawImage.value?.startsWith('http') ? rawImage.value : `${siteUrl.value}${rawImage.value}`
+);
+// Dimensi asli gambar og. Dipakai di meta og:image dan schema Article supaya
+// angkanya sesuai kenyataan (sebelumnya selalu ditulis 1200x630).
+const ogImageSize = computed(() => imageDimensions[rawImage.value] || null);
 
 const datePublished = computed(() => {
   if (!article.value) return null;
@@ -253,13 +405,15 @@ useSeoMeta({
   ogUrl: () => currentUrl.value,
   ogImage: () => metaImage.value,
   ogImageAlt: () => metaTitle.value,
+  ogImageWidth: () => ogImageSize.value?.width,
+  ogImageHeight: () => ogImageSize.value?.height,
   ogType: 'article',
   ogSiteName: 'penyadap.pages.dev',
   author: () => metaAuthor.value,
   articleAuthor: () => [metaAuthor.value],
   articlePublishedTime: () => datePublished.value,
   articleModifiedTime: () => dateModified.value,
-  articleSection: 'Technology',
+  articleSection: 'Parental Control',
   articleTag: () => article.value?.tags || [],
   twitterCard: 'summary_large_image',
   twitterTitle: () => metaTitle.value,
@@ -288,8 +442,9 @@ const articleSchemaJson = computed(() => {
     image: {
       '@type': 'ImageObject',
       url: metaImage.value,
-      width: 1200,
-      height: 630
+      ...(ogImageSize.value
+        ? { width: ogImageSize.value.width, height: ogImageSize.value.height }
+        : {})
     },
     datePublished: datePublished.value,
     dateModified: dateModified.value || datePublished.value,
@@ -313,7 +468,7 @@ const articleSchemaJson = computed(() => {
       '@type': 'WebPage',
       '@id': currentUrl.value
     },
-    articleSection: 'Technology',
+    articleSection: 'Parental Control',
     keywords: article.value?.tags?.join(', ') || '',
     wordCount: wordCount.value,
     inLanguage: 'id-ID',
@@ -341,7 +496,7 @@ const breadcrumbSchemaJson = computed(() => {
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Home',
+        name: 'Beranda',
         item: siteUrl.value
       },
       {

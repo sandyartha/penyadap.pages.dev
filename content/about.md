@@ -1,19 +1,24 @@
 ---
 title: Tentang Kami
-description: Tentang penyadap.pages.dev — layanan pemasangan dan panduan penggunaan mSpy untuk keamanan digital keluarga.
+description: Tentang penyadap.pages.dev — layanan pemasangan dan panduan penggunaan aplikasi parental control untuk keamanan digital keluarga di Indonesia.
 ---
 
 ## Tentang penyadap.pages.dev
 
-Selamat datang di situs kami. Kami menyediakan artikel, proyek, dan sumber daya terkait pengembangan perangkat lunak.
+penyadap.pages.dev adalah situs layanan pemasangan dan panduan penggunaan aplikasi parental control, seperti mSpy dan FlexiSpy, untuk membantu orang tua dan keluarga memantau aktivitas perangkat anak secara jarak jauh.
 
-Konten di situs ini dibuat untuk tujuan edukasi dan berbagi pengalaman. Jika Anda memiliki pertanyaan atau ingin bekerja sama, silakan hubungi kami.
+Melalui halaman [Artikel](/articles), kami membahas cara kerja, fitur, hingga panduan teknis pemasangan aplikasi pemantauan pada perangkat Android dan iPhone. Seluruh konten disajikan dalam bahasa Indonesia dan ditujukan untuk keperluan edukasi serta pengawasan dalam lingkup keluarga.
 
+> Layanan ini hanya diperuntukkan bagi pemantauan perangkat dalam lingkup keluarga — misalnya perangkat anak di bawah umur, atau perangkat milik pihak yang telah memberikan izin. Segala bentuk penggunaan di luar ketentuan tersebut sepenuhnya menjadi tanggung jawab pengguna.
 
-Bila Anda memiliki pertanyaan yang terkait silahkan hubung kami :
-Hak Cipta
+Jika Anda ingin memesan pemasangan aplikasi atau berkonsultasi mengenai kebutuhan monitoring, silakan lihat halaman [Pemesanan Aplikasi](/pemesanan-aplikasi).
 
-Semua materi yang ada situs ini merupakan dokumentasi situs “penyadapcom”. Beberapa artikel mungkin memuat materi/konten gambar, video dan tulisan karya orang lain, materi/konten gambar, video dan tulisan tersebut mempunyai hak cipta masing-masing. Jika Anda merupakan pemegang hak cipta, materi/konten gambar, video dan tulisan dan tidak berkenan dengan publikasi di situs ini, harap menghubungi kami.
+## Kontak
 
+Untuk pertanyaan, permintaan pemasangan, maupun kerja sama, silakan hubungi kami melalui WhatsApp:
 
-- penyadap.pages.dev
+<CtaWhatsApp text="Hubungi kami di WhatsApp"></CtaWhatsApp>
+
+## Hak Cipta
+
+Semua materi di situs ini merupakan dokumentasi penyadap.pages.dev. Sebagian artikel dapat memuat gambar, video, atau tulisan karya pihak lain yang hak ciptanya dimiliki oleh pemiliknya masing-masing. Jika Anda merupakan pemegang hak cipta dan tidak berkenan dengan publikasi materi Anda di situs ini, silakan hubungi kami agar dapat disesuaikan atau diturunkan.

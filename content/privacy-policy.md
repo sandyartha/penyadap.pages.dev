@@ -16,7 +16,7 @@ As is true of most Web sites, but subject to your browser settings, we gather ce
 
 We use this information, which does not identify individual users, to analyze trends, to administer the site, to track users’ movements around the site and to gather demographic information about our user base as a whole.
 
-We do not link this automatically-collected data to personally identifiable information. We use a third-party tracking service, Google Analytics, that uses cookies to track aggregate non-personally identifiable information about visitors to our site such as number of visits, searched pages and browser type to improve our website and customer experience.
+We do not link this automatically-collected data to personally identifiable information, and we do not use third-party analytics or advertising cookies to track visitors across other Web sites.
 
 What are cookies? Cookies save a file to an Internet user’s computer and store a limited amount of information. For example, some cookies help us remember your computer and streamline the login process, some are used to authenticate you as a user on our systems, and some cookies help us deliver advertising that is more customized to your needs on our Web site and the Web sites of our partners.
 

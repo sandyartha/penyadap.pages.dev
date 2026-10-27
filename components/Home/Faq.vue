@@ -16,9 +16,11 @@
       >
         <button
           type="button"
+          :id="`faq-trigger-${index}`"
           class="flex w-full items-center justify-between gap-4 px-6 py-4 text-left"
           @click="toggle(index)"
           :aria-expanded="activeIndex === index"
+          :aria-controls="`faq-panel-${index}`"
         >
           <span class="font-semibold text-gray-900 dark:text-white">{{ item.question }}</span>
           <span
@@ -33,6 +35,10 @@
         </button>
 
         <div
+          :id="`faq-panel-${index}`"
+          role="region"
+          :aria-labelledby="`faq-trigger-${index}`"
+          :aria-hidden="activeIndex !== index"
           class="px-6 text-sm text-gray-600 dark:text-gray-300 overflow-hidden transition-all duration-300 ease-out"
           :class="activeIndex === index ? 'max-h-[480px] pb-6 opacity-100' : 'max-h-0 opacity-0'"
         >

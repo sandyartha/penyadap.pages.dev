@@ -8,7 +8,7 @@
 defineProps({
   text: {
     type: String,
-    default: "WhatsApp: +62 085-111-426-625"
+    default: "WhatsApp: +62 851-1142-6625"
   }
 })
 </script>

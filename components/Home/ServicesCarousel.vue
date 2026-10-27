@@ -15,9 +15,10 @@
     <div class="relative">
       <div class="grid gap-6 grid-cols-1 md:grid-cols-2">
         <article
-          v-for="service in visibleServices"
+          v-for="(service, index) in services"
           :key="service.id"
           class="rounded-3xl border border-gray-200/80 dark:border-gray-800 bg-white dark:bg-zinc-900/70 shadow-sm p-6 flex flex-col"
+          :class="isServiceVisible(index) ? '' : 'hidden'"
         >
           <div class="text-blue-500 dark:text-blue-300" v-html="service.icon" />
           <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
@@ -61,13 +62,16 @@ const props = defineProps({
 
 const serviceSlide = ref(0)
 
-const visibleServices = computed(() => {
-  if (props.services.length <= 2) return props.services
+// Semua layanan tetap di-render ke DOM (yang tidak aktif disembunyikan dengan
+// `hidden`) supaya deskripsinya ikut terindeks mesin pencari. Kalau hanya
+// layanan aktif yang di-render, konten sisanya hilang dari HTML statis.
+const isServiceVisible = (index) => {
+  if (props.services.length <= 2) return true
 
-  const current = props.services[serviceSlide.value % props.services.length]
-  const next = props.services[(serviceSlide.value + 1) % props.services.length]
-  return [current, next]
-})
+  const current = serviceSlide.value % props.services.length
+  const next = (current + 1) % props.services.length
+  return index === current || index === next
+}
 
 const nextServiceSlide = () => {
   if (!props.services.length) return

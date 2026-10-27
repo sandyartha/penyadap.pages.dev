@@ -129,6 +129,19 @@ export default defineNuxtConfig({
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
         { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
         { rel: "manifest", href: "/site.webmanifest" }
+      ],
+      meta: [
+        // Warna UI browser di mobile, disesuaikan dengan tema terang/gelap.
+        {
+          name: "theme-color",
+          content: "#ffffff",
+          media: "(prefers-color-scheme: light)"
+        },
+        {
+          name: "theme-color",
+          content: "#000000",
+          media: "(prefers-color-scheme: dark)"
+        }
       ]
     }
   },

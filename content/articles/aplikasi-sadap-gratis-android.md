@@ -344,7 +344,7 @@ Karena tidak ada fitur kririm data ke email gmail. Agan harus mengambil data sec
 
 ![CARA SADAP HP ANDROID 2](/wp-content/2022/02/17/cara-sadap-hp-android-6-2.jpg)
 
-<DownloadButton link="https://play.google.com/store/apps/details?id=com.backupyourmobile" title="Backup Your Mobile"></DownloadButton>
+**Backup Your Mobile**
 
 Sekian dari **tutorial cara sadap Android dan Tablet gratis terbaik** kali ini. Semoga bermanfaat bagi teman yang sudah mampi di blog ini, jangan salah gunakan aplikasi untuk tujuan ilegal, kami tidak bertanggung jawab apabila disalah gunakan.
 

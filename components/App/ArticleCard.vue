@@ -3,7 +3,7 @@
     <article>
       <time
         class="relative z-10 order-first mb-3 flex items-center text-sm text-gray-500 dark:text-gray-400 pl-3.5"
-        datetime="2022-09-05"
+        :datetime="getIsoDate(article)"
         ><span
           class="absolute inset-y-0 left-0 flex items-center"
           aria-hidden="true"
@@ -11,7 +11,7 @@
             class="h-4 w-0.5 rounded-full bg-gray-200 dark:bg-gray-500"
           ></span
         ></span>
-        {{ getReadableDate(article.published) }}
+        {{ getReadableDate(article) }}
       </time>
       <h2
         class="text-base font-semibold font-display tracking-tight text-gray-800 dark:text-gray-100 group-hover:text-primary-600"
@@ -33,11 +33,23 @@ defineProps({
   },
 });
 
-const getReadableDate = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", {
+// Tanggal diambil dari frontmatter artikel, dengan urutan prioritas yang sama
+// seperti halaman detail artikel.
+const resolveDate = (article) =>
+  article?.published || article?.date || article?.createdAt;
+
+// Atribut `datetime` wajib format ISO agar dimengerti mesin pencari.
+const getIsoDate = (article) => {
+  const date = new Date(resolveDate(article));
+  return Number.isNaN(date.valueOf()) ? undefined : date.toISOString();
+};
+
+const getReadableDate = (article) => {
+  const date = new Date(resolveDate(article));
+  if (Number.isNaN(date.valueOf())) return "";
+  return date.toLocaleDateString("id-ID", {
     year: "numeric",
-    month: "short",
+    month: "long",
     day: "numeric",
   });
 };

@@ -8,12 +8,13 @@
         class="pointer-events-none absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/25 blur-3xl dark:bg-violet-500/20"
         aria-hidden="true"
       />
+      <!-- Logo hero adalah elemen LCP, jadi dimuat langsung (bukan lazy). -->
       <img
         src="/penyadap-logo.svg"
         alt="Logo Penyadap"
         width="1152"
         height="896"
-        loading="lazy"
+        fetchpriority="high"
         decoding="async"
         class="relative mx-auto h-20 w-auto sm:h-28"
       />

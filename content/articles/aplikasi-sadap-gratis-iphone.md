@@ -160,7 +160,7 @@ Semua dapat diketahui dan data dikirim kepada Anda dalam waktu beberapa menit ta
 
 **Kontra** : Hanya tersedia dukungan melalui **help desk**, panggilan dan chat untuk pengguna berlangganan.   
 
-<DownloadButton link="http://mobistealth.com" title="DOWNLOAD (MobiStealth)"></DownloadButton>
+**DOWNLOAD (MobiStealth)**
 
 ## 6. Spyera
 
