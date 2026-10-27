@@ -4,17 +4,15 @@
       <HomeIntro />
 
       <section class="max-w-4xl mx-auto prose dark:prose-invert prose-headings:font-bold">
-        <ContentDoc>
-          <template #default="{ doc }">
-            <ContentRenderer :value="doc" />
-          </template>
+        <!-- Render langsung dari `indexDoc` (query yang sama dipakai untuk SEO
+             di bawah) supaya tidak ada query ganda dan tidak memakai
+             <ContentDoc>/<ContentQuery> — komponen itu bisa mencetak fallback
+             JSON ("You should use slots with <ContentQuery>") di kondisi tertentu. -->
+        <ContentRenderer v-if="indexDoc" :value="indexDoc" />
 
-          <template #not-found>
-            <div class="text-center py-8">
-              <p class="text-gray-500">Konten tidak ditemukan. Pastikan file content/index.md ada.</p>
-            </div>
-          </template>
-        </ContentDoc>
+        <div v-else class="text-center py-8">
+          <p class="text-gray-500">Konten tidak ditemukan. Pastikan file content/index.md ada.</p>
+        </div>
       </section>
 
       <HomeServicesCarousel :services="serviceCards" />
