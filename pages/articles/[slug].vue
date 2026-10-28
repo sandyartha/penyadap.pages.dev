@@ -199,41 +199,66 @@
             </section>
 
             <!-- Artikel terkait: dipilih dari tag yang beririsan dengan artikel ini -->
-            <section v-if="relatedArticles.length" class="not-prose mt-16">
+            <section
+              v-if="relatedArticles.length"
+              class="not-prose mt-16 border-t border-gray-200 pt-10 dark:border-gray-800"
+            >
               <h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Artikel Terkait
               </h2>
-              <div class="mt-6 grid gap-6 md:grid-cols-3">
-                <NuxtLink
-                  v-for="item in relatedArticles"
-                  :key="item._path"
-                  :to="item._path"
-                  class="group flex flex-col rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-blue-500 hover:shadow-lg no-underline dark:border-gray-800 dark:bg-zinc-900 dark:hover:border-blue-500"
-                >
-                  <h3
-                    class="text-base font-semibold text-gray-900 transition group-hover:text-blue-600 dark:text-gray-100 dark:group-hover:text-blue-300"
+              <!-- Daftar satu kolom: tiap item dipisah garis hairline, tanpa
+                   kartu. Lebih ringan dari grid 3 kolom dan tidak menyisakan
+                   ruang kosong saat panjang deskripsi tiap artikel berbeda. -->
+              <ul class="mt-6 divide-y divide-gray-200 dark:divide-gray-800">
+                <li v-for="item in relatedArticles" :key="item._path">
+                  <NuxtLink
+                    :to="item._path"
+                    class="group flex items-start justify-between gap-4 py-5 no-underline sm:gap-6"
                   >
-                    {{ item.title }}
-                  </h3>
-                  <p
-                    v-if="item.description"
-                    class="mt-2 text-sm text-gray-600 line-clamp-3 dark:text-gray-400"
-                  >
-                    {{ item.description }}
-                  </p>
-                  <span
-                    v-if="formatDate(item)"
-                    class="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 dark:text-gray-400"
-                  >
+                    <div class="min-w-0">
+                      <h3
+                        class="text-lg font-semibold text-gray-900 transition group-hover:text-violet-600 group-hover:underline decoration-2 underline-offset-4 dark:text-gray-100 dark:group-hover:text-violet-300"
+                      >
+                        {{ item.title }}
+                      </h3>
+                      <p
+                        v-if="item.description"
+                        class="mt-2 line-clamp-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400"
+                      >
+                        {{ item.description }}
+                      </p>
+                      <div
+                        class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-medium text-gray-500 dark:text-gray-400"
+                      >
+                        <span
+                          v-if="formatDate(item)"
+                          class="inline-flex items-center gap-1.5 whitespace-nowrap"
+                        >
+                          <Icon
+                            name="solar:calendar-linear"
+                            class="h-3.5 w-3.5 shrink-0"
+                            aria-hidden="true"
+                          />
+                          {{ formatDate(item) }}
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
+                          <Icon
+                            name="solar:clock-circle-linear"
+                            class="h-3.5 w-3.5 shrink-0"
+                            aria-hidden="true"
+                          />
+                          {{ getReadingTime(item) }}
+                        </span>
+                      </div>
+                    </div>
                     <Icon
-                      name="solar:calendar-linear"
-                      class="h-3.5 w-3.5 shrink-0"
+                      name="solar:arrow-right-up-bold"
+                      class="mt-1.5 h-5 w-5 shrink-0 text-gray-300 transition group-hover:-translate-y-0.5 group-hover:text-violet-600 dark:text-gray-600 dark:group-hover:text-violet-300"
                       aria-hidden="true"
                     />
-                    {{ formatDate(item) }}
-                  </span>
-                </NuxtLink>
-              </div>
+                  </NuxtLink>
+                </li>
+              </ul>
             </section>
           </article>
         </template>
