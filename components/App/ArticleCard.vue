@@ -44,6 +44,9 @@ const getIsoDate = (article) => {
   return Number.isNaN(date.valueOf()) ? undefined : date.toISOString();
 };
 
+// `timeZone` dikunci ke zona audiens: tanpa itu hasil `toLocaleDateString`
+// ikut zona perangkat, sehingga HTML prerender (dibuat di mesin build) dan
+// render klien bisa berbeda tanggalnya — pemicu hydration mismatch.
 const getReadableDate = (article) => {
   const date = new Date(resolveDate(article));
   if (Number.isNaN(date.valueOf())) return "";
@@ -51,6 +54,7 @@ const getReadableDate = (article) => {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "Asia/Jakarta",
   });
 };
 </script>

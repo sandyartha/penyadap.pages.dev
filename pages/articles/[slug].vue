@@ -313,6 +313,8 @@ const prevArticle = computed(() => adjacentArticles.value?.prev || null);
 const nextArticle = computed(() => adjacentArticles.value?.next || null);
 const relatedArticles = computed(() => adjacentArticles.value?.related || []);
 
+// `timeZone` dikunci (Asia/Jakarta) supaya tanggal yang dirender sama antara
+// HTML hasil prerender dan render klien, apa pun zona perangkat pengunjung.
 const formatDate = (doc) => {
   const rawDate = doc?.date || doc?.published || doc?.createdAt;
   if (!rawDate) return '';
@@ -321,7 +323,8 @@ const formatDate = (doc) => {
   return parsed.toLocaleDateString('id-ID', {
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
+    timeZone: 'Asia/Jakarta'
   });
 };
 

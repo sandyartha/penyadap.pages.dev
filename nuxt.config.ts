@@ -37,7 +37,10 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      siteUrl: SITE_URL
+      siteUrl: SITE_URL,
+      // Tahun saat build. Nilai ini ikut diserialisasi ke payload sehingga
+      // render server dan klien memakai angka yang sama (lihat Footer.vue).
+      buildYear: new Date().getFullYear()
     }
   },
 
