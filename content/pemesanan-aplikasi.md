@@ -20,7 +20,11 @@ Hubungi Kami
 
 Berikut kontak yang dapat dihubungi untuk pertanyaan lebih lanjut lewat WA (klik tombol berikut):
 
+<CtaWhatsApp text="Kontak WhatsApp"></CtaWhatsApp>
+
 Gimana sih aplikasi sadap berjalan? Bisa cek live demo untuk lihat langsung fitur sadap klik tombol dibawah:
+
+<CtaWhatsApp text="Minta Akses Live Demo"></CtaWhatsApp>
 
 
 ## Aplikasi Social Spy
@@ -281,5 +285,7 @@ Software mata-mata ponsel dibuat pada tahun 2006, dan telah banyak digunakan unt
 Software ini diciptaan oleh pengembang perangkat berpengalaman, seperti pengambilan data berbasis GPRS, satu-satunya app mata-mata, yang memiliki intersepsi fitur rekam panggilan langsung untuk Android, iPhone, verai lengkap di platform smartphone untuk kontrol jarak jauh, dengan fitur sadap lengkap dan kemudahan penggunaan, yang dibutuhkan untuk aplikasi yang paling banyak diminati.
 
 Software penyadap dirancang, dikembangkan dan mendukung semua jenis ponsel dengan produk sadap ini, karena itulah kami mengenalkan produk ini dengan layanan pelanggan berkualitas termasuk WhatsApp, dukungan telepon langsung dengan staf admin, dokumentasi yang ekstensif.
+
+<CtaCard title="Siap Memesan Aplikasi Parental Control?" description="Sampaikan kebutuhan Anda dan tim kami akan membantu memilih paket serta menjelaskan proses pemasangan aplikasi untuk iPhone maupun Android." buttonText="Hubungi via WhatsApp"></CtaCard>
 
 Terima Kasih - penyadap.pages.dev
