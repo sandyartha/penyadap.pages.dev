@@ -56,7 +56,15 @@ export default defineNuxtConfig({
       crawlLinks: true,
       // Route server yang tidak ada link-nya dari halaman mana pun
       // (/robots.txt otomatis ditambahkan oleh @nuxtjs/robots).
-      routes: ["/sitemap.xml", "/feed.xml"]
+      routes: ["/sitemap.xml", "/feed.xml"],
+      // Default `true` menulis halaman sebagai `about/index.html`, dan
+      // Cloudflare Pages lalu me-308 `/about` ke `/about/`. URL berslash itu
+      // tidak cocok dengan `$route.path === item.path` di Navbar sehingga
+      // memicu "Hydration completed but contains mismatches", dan juga
+      // bertabrakan dengan canonical/sitemap yang slash-less.
+      // `false` menulis `about.html` -> Cloudflare menyajikan `/about` 200
+      // tanpa redirect (dan `/about/` yang di-308 ke `/about`).
+      autoSubfolderIndex: false
     },
 
     esbuild: {
@@ -166,6 +174,13 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    // SEMENTARA — hanya untuk diagnosa. Memaksa Vue mencetak detail mismatch
+    // hidrasi (nama komponen + perbedaan node) di build produksi, karena
+    // default produksi hanya menampilkan pesan generic. HAPUS baris ini
+    // setelah akar masalah ditemukan.
+    define: {
+      __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: "true"
+    },
     build: {
       cssCodeSplit: false,
       chunkSizeWarningLimit: 1200,
