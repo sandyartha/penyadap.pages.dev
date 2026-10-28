@@ -174,13 +174,6 @@ export default defineNuxtConfig({
   },
 
   vite: {
-    // SEMENTARA — hanya untuk diagnosa. Memaksa Vue mencetak detail mismatch
-    // hidrasi (nama komponen + perbedaan node) di build produksi, karena
-    // default produksi hanya menampilkan pesan generic. HAPUS baris ini
-    // setelah akar masalah ditemukan.
-    define: {
-      __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: "true"
-    },
     build: {
       cssCodeSplit: false,
       chunkSizeWarningLimit: 1200,

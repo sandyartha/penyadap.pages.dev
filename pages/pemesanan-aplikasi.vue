@@ -4,7 +4,7 @@
       <ContentDoc path="/pemesanan-aplikasi">
         <template #default="{ doc }">
           <section class="space-y-6">
-            <p class="text-sm uppercase tracking-[0.3em] text-blue-500">Pemesanan</p>
+            <p class="text-sm uppercase tracking-[0.3em] text-blue-600 dark:text-blue-400">Pemesanan</p>
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
               {{ doc.title }}
             </h1>
