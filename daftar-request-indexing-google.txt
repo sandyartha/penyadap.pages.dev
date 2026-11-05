@@ -1,0 +1,181 @@
+============================================================
+DAFTAR REQUEST PENGINDEKSAN GOOGLE (URL INSPECTION)
+============================================================
+Situs    : https://penyadap.pages.dev
+Format   : URL | STATUS
+Status   : SUDAH DIMINTA  = sudah pernah diajukan
+           BELUM DIMINTA  = belum diajukan
+Dibuat   : 29-10-2026
+Total    : 28 URL  (23 belum diminta + 5 sudah diminta)
+
+CARA PAKAI (ringkas):
+1. Buka Google Search Console > Inspect URL (kotak di bagian atas)
+2. Tempel 1 URL, tekan Enter, tunggu hasil, klik "Request Indexing"
+3. Kuota normal kurang lebih 10 URL per hari -> pakai urutan GRUP di bawah
+4. Setelah diklik, ganti statusnya dari BELUM DIMINTA menjadi SUDAH DIMINTA
+   (di Notepad: Ctrl+H = Find/Replace, lebih cepat daripada edit manual)
+5. Artikel bertema "bajak"/hack yang sudah diminta tetap dicantumkan di
+   BAGIAN C sebagai arsip dengan status SUDAH DIMINTA (lewati saja saat submit)
+
+Catatan: semua URL tanpa trailing slash (tanpa "/" di akhir) agar cocok
+dengan canonical dan tidak kena redirect 308 dari Cloudflare Pages.
+
+
+============================================================
+BAGIAN A - HALAMAN STATIS (PRIORITAS TERTINGGI)
+============================================================
+https://penyadap.pages.dev/ | BELUM DIMINTA
+https://penyadap.pages.dev/pemesanan-aplikasi | BELUM DIMINTA
+https://penyadap.pages.dev/articles | BELUM DIMINTA
+https://penyadap.pages.dev/about | BELUM DIMINTA
+https://penyadap.pages.dev/privacy-policy | BELUM DIMINTA
+
+
+============================================================
+BAGIAN B - PRIORITAS ARTIKEL (BERDASARKAN JUMLAH & KUALITAS)
+============================================================
+Penilaian pakai 2 hal: JUMLAH kata (panjang artikel) dan KUALITAS
+(kelengkapan struktur: jumlah heading H2/H3, gambar, internal link).
+Semakin panjang dan semakin lengkap strukturnya = prioritas makin tinggi.
+
+--- PRIORITAS 1 - TINGGI (sekitar 2.000+ kata) ---
+https://penyadap.pages.dev/articles/cara-hack-whatsapp-9237 | SUDAH DIMINTA
+https://penyadap.pages.dev/articles/cara-sadap-whatsapp-hp-pasangan | BELUM DIMINTA
+https://penyadap.pages.dev/articles/lacak-hp-hilang-tanpa-aplikasi | BELUM DIMINTA
+https://penyadap.pages.dev/articles/aplikasi-sadap-gratis-android | BELUM DIMINTA
+https://penyadap.pages.dev/articles/hack-chat-social-network | SUDAH DIMINTA
+https://penyadap.pages.dev/articles/cara-hack-chat | SUDAH DIMINTA
+https://penyadap.pages.dev/articles/penyadap-aplikasi-chat-whatsapp | BELUM DIMINTA
+https://penyadap.pages.dev/articles/penyadap-hp-mobile-tracker | BELUM DIMINTA
+https://penyadap.pages.dev/articles/cara-hack-chat-whatsapp | SUDAH DIMINTA
+https://penyadap.pages.dev/articles/aplikasi-sadap-hp-terbaik | BELUM DIMINTA
+
+--- PRIORITAS 2 - SEDANG (sekitar 1.700 - 1.999 kata) ---
+https://penyadap.pages.dev/articles/aplikasi-sadap-gratis-iphone | BELUM DIMINTA
+https://penyadap.pages.dev/articles/software-sadap-hp-phonesheriff | BELUM DIMINTA
+https://penyadap.pages.dev/articles/sadap-hp-dengan-ikeymonitor | BELUM DIMINTA
+https://penyadap.pages.dev/articles/sadap-hp-stealth-genie | BELUM DIMINTA
+https://penyadap.pages.dev/articles/sadap-hp-jarak-jauh | BELUM DIMINTA
+https://penyadap.pages.dev/articles/sadap-kamera-hp-556 | BELUM DIMINTA
+
+--- PRIORITAS 3 - RENDAH (di bawah 1.700 kata) ---
+https://penyadap.pages.dev/articles/10-alat-sadap-terbaik | BELUM DIMINTA
+https://penyadap.pages.dev/articles/penyadap-iphone-jarak-jauh | BELUM DIMINTA
+https://penyadap.pages.dev/articles/penyadap-hp-pasangan-dengan-mspy | BELUM DIMINTA
+https://penyadap.pages.dev/articles/hack-data-instagram | SUDAH DIMINTA
+https://penyadap.pages.dev/articles/aplikasi-sadap-stealth-genie | BELUM DIMINTA
+https://penyadap.pages.dev/articles/aplikasi-sadap-hp-mspy-gratis | BELUM DIMINTA
+https://penyadap.pages.dev/articles/aplikasi-penyadap-hp | BELUM DIMINTA
+
+
+============================================================
+BAGIAN C - KATEGORI BAJAK / HACK (SUDAH DIMINTA)
+============================================================
+Sudah diajukan sebelumnya. Tetap diarsipkan di sini dengan status
+SUDAH DIMINTA supaya tidak diajukan dua kali.
+
+https://penyadap.pages.dev/articles/cara-hack-chat | SUDAH DIMINTA
+https://penyadap.pages.dev/articles/cara-hack-chat-whatsapp | SUDAH DIMINTA
+https://penyadap.pages.dev/articles/cara-hack-whatsapp-9237 | SUDAH DIMINTA
+https://penyadap.pages.dev/articles/hack-chat-social-network | SUDAH DIMINTA
+https://penyadap.pages.dev/articles/hack-data-instagram | SUDAH DIMINTA
+
+
+============================================================
+BAGIAN D - GRUP 10 KOMPOSIT (JADWAL SUBMIT HARIAN)
+============================================================
+Tiap grup berisi 10 URL campuran: prioritas tinggi + sedang + rendah.
+Tujuannya agar kuota harian GSC tetap terpakai untuk artikel penting,
+tanpa mengabaikan artikel yang lebih pendek. Isi grup = BELUM DIMINTA saja.
+
+==================================================
+GRUP 1 - HARI 1 (10 URL)
+==================================================
+1. https://penyadap.pages.dev/ | BELUM DIMINTA
+2. https://penyadap.pages.dev/pemesanan-aplikasi | BELUM DIMINTA
+3. https://penyadap.pages.dev/articles | BELUM DIMINTA
+4. https://penyadap.pages.dev/articles/cara-sadap-whatsapp-hp-pasangan | BELUM DIMINTA
+5. https://penyadap.pages.dev/articles/aplikasi-sadap-gratis-iphone | BELUM DIMINTA
+6. https://penyadap.pages.dev/articles/software-sadap-hp-phonesheriff | BELUM DIMINTA
+7. https://penyadap.pages.dev/articles/sadap-hp-dengan-ikeymonitor | BELUM DIMINTA
+8. https://penyadap.pages.dev/articles/penyadap-iphone-jarak-jauh | BELUM DIMINTA
+9. https://penyadap.pages.dev/articles/penyadap-hp-pasangan-dengan-mspy | BELUM DIMINTA
+10. https://penyadap.pages.dev/articles/aplikasi-sadap-stealth-genie | BELUM DIMINTA
+
+==================================================
+GRUP 2 - HARI 2 (10 URL)
+==================================================
+1. https://penyadap.pages.dev/articles/lacak-hp-hilang-tanpa-aplikasi | BELUM DIMINTA
+2. https://penyadap.pages.dev/articles/aplikasi-sadap-gratis-android | BELUM DIMINTA
+3. https://penyadap.pages.dev/articles/penyadap-aplikasi-chat-whatsapp | BELUM DIMINTA
+4. https://penyadap.pages.dev/articles/penyadap-hp-mobile-tracker | BELUM DIMINTA
+5. https://penyadap.pages.dev/articles/sadap-hp-stealth-genie | BELUM DIMINTA
+6. https://penyadap.pages.dev/articles/sadap-hp-jarak-jauh | BELUM DIMINTA
+7. https://penyadap.pages.dev/articles/sadap-kamera-hp-556 | BELUM DIMINTA
+8. https://penyadap.pages.dev/articles/aplikasi-sadap-hp-mspy-gratis | BELUM DIMINTA
+9. https://penyadap.pages.dev/articles/aplikasi-penyadap-hp | BELUM DIMINTA
+10. https://penyadap.pages.dev/about | BELUM DIMINTA
+
+==================================================
+GRUP 3 - HARI 3 (3 URL)
+==================================================
+1. https://penyadap.pages.dev/articles/aplikasi-sadap-hp-terbaik | BELUM DIMINTA
+2. https://penyadap.pages.dev/articles/10-alat-sadap-terbaik | BELUM DIMINTA
+3. https://penyadap.pages.dev/privacy-policy | BELUM DIMINTA
+
+
+============================================================
+BAGIAN E - RINGKASAN PENILAIAN ARTIKEL
+============================================================
+Kolom: JUMLAH KATA (perkiraan) dan KUALITAS STRUKTUR (heading/gambar/link).
+Angka kata bersifat perkiraan, toleransi kurang lebih 50 kata.
+
+PRIORITAS TINGGI
+2423 kata | 18 heading | 10 gambar | 14 link | cara-hack-whatsapp-9237
+2380 kata | 20 heading |  9 gambar | 16 link | cara-sadap-whatsapp-hp-pasangan
+2340 kata | 22 heading | 11 gambar | 12 link | lacak-hp-hilang-tanpa-aplikasi
+2280 kata | 19 heading | 10 gambar |  8 link | aplikasi-sadap-gratis-android
+2250 kata | 21 heading |  8 gambar | 14 link | hack-chat-social-network
+2200 kata | 20 heading |  9 gambar | 15 link | cara-hack-chat
+2180 kata | 17 heading | 10 gambar | 13 link | penyadap-aplikasi-chat-whatsapp
+2120 kata | 19 heading |  8 gambar | 11 link | penyadap-hp-mobile-tracker
+2080 kata | 18 heading |  9 gambar | 13 link | cara-hack-chat-whatsapp
+2050 kata | 16 heading |  8 gambar | 10 link | aplikasi-sadap-hp-terbaik
+
+PRIORITAS SEDANG
+1980 kata | 18 heading | 7 gambar |  9 link | aplikasi-sadap-gratis-iphone
+1920 kata | 15 heading | 8 gambar | 10 link | software-sadap-hp-phonesheriff
+1880 kata | 16 heading | 7 gambar |  9 link | sadap-hp-dengan-ikeymonitor
+1840 kata | 14 heading | 7 gambar |  8 link | sadap-hp-stealth-genie
+1780 kata | 13 heading | 6 gambar |  9 link | sadap-hp-jarak-jauh
+1720 kata | 14 heading | 6 gambar |  8 link | sadap-kamera-hp-556
+
+PRIORITAS RENDAH
+1650 kata | 12 heading | 5 gambar | 6 link | 10-alat-sadap-terbaik
+1580 kata | 13 heading | 5 gambar | 7 link | penyadap-iphone-jarak-jauh
+1520 kata | 11 heading | 5 gambar | 8 link | penyadap-hp-pasangan-dengan-mspy
+1450 kata | 12 heading | 4 gambar | 7 link | hack-data-instagram
+1380 kata | 10 heading | 5 gambar | 6 link | aplikasi-sadap-stealth-genie
+1320 kata | 11 heading | 4 gambar | 7 link | aplikasi-sadap-hp-mspy-gratis
+1250 kata |  9 heading | 4 gambar | 6 link | aplikasi-penyadap-hp
+
+TOTAL: 23 artikel + 5 halaman statis = 28 URL
+Rata-rata panjang artikel: kurang lebih 1.880 kata per artikel.
+Terpanjang: cara-hack-whatsapp-9237 (2423 kata) - sudah diminta
+Terpendek : aplikasi-penyadap-hp (1250 kata)
+
+
+============================================================
+CATATAN TAMBAHAN
+============================================================
+- Artikel di bawah 1.700 kata sebaiknya ditambah isi (minimal 2.000 kata)
+  lalu diajukan ulang inspeksi URL setelah diperbarui.
+- Jika kuota harian habis, lanjutkan grup berikutnya pada hari berikutnya.
+- Cek berkala: URL yang sudah diminta tapi belum terindeks setelah
+  1-2 minggu -> periksa internal link masuk ke halaman tersebut.
+- Untuk mempercepat, pastikan setiap halaman baru punya minimal 1 link
+  internal dari homepage atau halaman /articles.
+
+============================================================
+SELESAI
+============================================================

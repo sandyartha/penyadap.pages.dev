@@ -1,5 +1,5 @@
 ---
-title: "Aplikasi Sadap iPhone & Android - WhatsApp, FB, Line, CALL"
+title: "Jasa Penyadap WA, Telegram, Skype, Snapchat, IG, & Messenger (FlexiSpy)"
 description: "Jasa Sadap iPhone / Android Secara Jarak Jauh - Panggilan WhatsApp, Line, Instagram dan Facebook, Buktikan pasangan selingkuh."
 published: "2025-11-12"
 slug: "/index"
