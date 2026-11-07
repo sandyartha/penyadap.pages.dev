@@ -100,6 +100,7 @@ export default defineNuxtConfig({
 
   // Sitemap
   sitemap: {
+    xsl: false,
     sources: ["/api/__sitemap__/articles"]
   },
 
